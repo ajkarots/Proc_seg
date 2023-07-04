@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 public class ControladorLoggin implements ActionListener{
     private final Loggin lg;
     private MySql ms ;
-//hola
+
     public ControladorLoggin(Loggin lg) {
         this.lg = lg;
         this.lg.botonIngresar.addActionListener(this);
