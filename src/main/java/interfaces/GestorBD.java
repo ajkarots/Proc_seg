@@ -12,7 +12,8 @@ import java.sql.ResultSet;
  * @author User
  */
 public interface GestorBD {
-    public Connection conectarMysql(String usuario, String clave);    
-    
+    public void conectarMysql();    
+    public int controlusuarios(String nombre,String clave);
+    public void actualizar(String tabla,String columna,int dato,String parametro,String codigo);
     public ResultSet seleccionarProvincias();
 }

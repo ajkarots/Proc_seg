@@ -16,13 +16,17 @@ import javax.swing.JOptionPane;
  */
 public class ControladorLoggin implements ActionListener{
     private final Loggin lg;
-    private MySql ms ;
+    private MySql ms = new MySql()  ;
 
     public ControladorLoggin(Loggin lg) {
         this.lg = lg;
         this.lg.botonIngresar.addActionListener(this);
         this.lg.textoContraseña.addActionListener(this);
         this.lg.textoUsuario.addActionListener(this);
+    }
+    
+    public void iniciar(){
+    this.lg.setVisible(true);
     }
 
     @Override
@@ -31,8 +35,10 @@ public class ControladorLoggin implements ActionListener{
             if (lg.textoUsuario.getText()==null || lg.textoContraseña.getText()==null) {
                 JOptionPane.showMessageDialog(null,"Ingrese datos validos!\n Los campos no pueden estar vacios");
             }else{
-            ms.conectarMysql(lg.textoUsuario.getText(),lg.textoContraseña.getText());
-            
+            ms.conectarMysql();       
+                if (ms.controlusuarios(lg.textoUsuario.getText(),lg.textoContraseña.getText())==2) {
+                   this.lg.setVisible(false);
+                }
             }
         }
     }

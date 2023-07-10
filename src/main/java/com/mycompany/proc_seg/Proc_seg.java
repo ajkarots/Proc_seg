@@ -4,6 +4,7 @@
 
 package com.mycompany.proc_seg;
 
+import Controladores.ControladorLoggin;
 import Frames.Principal;
 import Controladores.ControladorPrincipal;
 import Frames.Loggin;
@@ -22,7 +23,8 @@ public class Proc_seg {
         //pl.setVisible(true);
         //cp.iniciarcontenido();
         Loggin lg = new Loggin();
-        lg.setVisible(true);
+        ControladorLoggin cl = new ControladorLoggin(lg);
+        cl.iniciar();
         
     }
 }

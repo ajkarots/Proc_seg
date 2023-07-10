@@ -1,4 +1,4 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -10,14 +10,19 @@ import interfaces.GestorBD;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author User
  */
 public class MySql extends Gestor implements GestorBD {
-    private static final String url ="jdbc:mysql://localhost:3306/ventas";
+    private static final String url ="jdbc:mysql://localhost:3306/proyecto";
     private static final String driver="com.mysql.cj.jdbc.Driver";
     private  Connection con;
+
+    public void setCon(Connection con) {
+        this.con = con;
+    }
    
     
     
@@ -30,6 +35,18 @@ public class MySql extends Gestor implements GestorBD {
         } catch (SQLException ex) {
             
         }
+    }
+
+    public static String getUrl() {
+        return url;
+    }
+
+    public static String getDriver() {
+        return driver;
+    }
+
+    public Connection getCon() {
+        return con;
     }
     
     
@@ -58,17 +75,17 @@ public class MySql extends Gestor implements GestorBD {
     }
 
     @Override
-    public Connection conectarMysql(String usuario,String clave) {
+    public void conectarMysql() {
          con=null;
-        super.setUser(usuario);
-        super.setClave(clave);
+        super.setUser("root");
+        super.setClave("Ecuador1");
         try
         {
             Class.forName(driver);
             con = (Connection)DriverManager.getConnection(url, super.getUser(), super.getClave());
             if(con!=null)
             {
-                System.out.println("se conexto");
+                System.out.println("se conecto");
             }
             else
             {
@@ -78,7 +95,7 @@ public class MySql extends Gestor implements GestorBD {
         catch(Exception e){
             System.out.println(e); 
         }
-        return con;
+
     }
 
     @Override
@@ -103,6 +120,65 @@ public class MySql extends Gestor implements GestorBD {
         
         return rs;
     }
+
+    @Override
+    public int controlusuarios(String nombre, String clave) {
+        conectarMysql();
+        int controlador=0;
+        int contador_intentos=0;
+        PreparedStatement psusuarios,psintentos;
+        Statement psactualizar;
+        ResultSet rsusuarios,rsintentos;
+        //metodo control bloqueos
+        try {
+            psusuarios = this.getCon().prepareStatement("select userID ,clave from usuarios where userID='"+nombre+"';");
+            rsusuarios = psusuarios.executeQuery();
+            psintentos = this.getCon().prepareStatement("select intentos from usuarios where userID='"+nombre+"';");
+            rsintentos = psintentos.executeQuery();
+            if (rsintentos.next()) {
+                contador_intentos= rsintentos.getInt("intentos");
+            }
+            //if usuarios bloqueados
+            //else{
+            if (rsusuarios.next()) {
+                controlador++;
+                String claveusuario = rsusuarios.getString("contraseña");
+                if (clave.equals(claveusuario)) {
+                    controlador++;
+                    this.actualizar("usuarios", "intentos", 0, "userID",nombre);
+                }
+                else{
+                    if (contador_intentos == 2) {
+                        JOptionPane.showMessageDialog(null, "Usuario Bloqueado");
+                        psusuarios= this.getCon().prepareStatement("update usuarios set bloqueo=1 where userID='"+nombre+"';");
+                        psusuarios.executeUpdate();
+                        
+                    }
+                }
+                
+                
+            }
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(MySql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return controlador;
+    }
+
+    @Override
+    public void actualizar(String tabla, String columna, int dato, String parametro, String codigo) {
+        this.conectarMysql();
+        try {
+            Statement st = con.createStatement();
+            st.executeUpdate("update "+tabla+" set "+columna+"='"+dato+"' where "+parametro+" ='"+codigo+"';");
+        } catch (SQLException ex) {
+            Logger.getLogger(MySql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+
     
    
     
