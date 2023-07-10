@@ -43,11 +43,7 @@ public class Principal extends javax.swing.JFrame implements Fechas {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        CABECERA = new javax.swing.JPanel();
-        Fecha = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         BotonProductos = new javax.swing.JButton();
         BotonProveedor = new javax.swing.JButton();
         BotonCompra = new javax.swing.JButton();
@@ -59,6 +55,10 @@ public class Principal extends javax.swing.JFrame implements Fechas {
         BotonComprasGeneradas = new javax.swing.JButton();
         BotonCiudad = new javax.swing.JButton();
         BotonUsuarios = new javax.swing.JButton();
+        CABECERA = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        Fecha = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         Contenido = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,59 +66,7 @@ public class Principal extends javax.swing.JFrame implements Fechas {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMinimumSize(new java.awt.Dimension(1100, 618));
 
-        CABECERA.setBackground(new java.awt.Color(204, 0, 51));
-        CABECERA.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                CABECERAMouseDragged(evt);
-            }
-        });
-        CABECERA.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                CABECERAMousePressed(evt);
-            }
-        });
-
-        Fecha.setFont(new java.awt.Font("Roboto", 1, 22)); // NOI18N
-        Fecha.setForeground(new java.awt.Color(255, 255, 255));
-        Fecha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Fecha.setText("{dayname} {day} de {month} de {year}");
-
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("X");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout CABECERALayout = new javax.swing.GroupLayout(CABECERA);
-        CABECERA.setLayout(CABECERALayout);
-        CABECERALayout.setHorizontalGroup(
-            CABECERALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CABECERALayout.createSequentialGroup()
-                .addGap(245, 245, 245)
-                .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 442, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap())
-        );
-        CABECERALayout.setVerticalGroup(
-            CABECERALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CABECERALayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(CABECERALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(Fecha))
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-
         jPanel2.setBackground(new java.awt.Color(204, 0, 51));
-
-        jLabel2.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("TOYOTA");
 
         BotonProductos.setBackground(new java.awt.Color(153, 0, 0));
         BotonProductos.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -265,21 +213,15 @@ public class Principal extends javax.swing.JFrame implements Fechas {
             .addComponent(BotonCompra, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(BotonKardex, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(BotonProvincia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(BotonComprasGeneradas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BotonComprasGeneradas, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
             .addComponent(BotonVentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(BotonCiudad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(BotonUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel2)
-                .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(69, 69, 69)
                 .addComponent(BotonProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BotonClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -302,6 +244,64 @@ public class Principal extends javax.swing.JFrame implements Fechas {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BotonUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        CABECERA.setBackground(new java.awt.Color(204, 0, 51));
+        CABECERA.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                CABECERAMouseDragged(evt);
+            }
+        });
+        CABECERA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                CABECERAMousePressed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("TOYOTA");
+
+        Fecha.setFont(new java.awt.Font("Roboto", 1, 22)); // NOI18N
+        Fecha.setForeground(new java.awt.Color(255, 255, 255));
+        Fecha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Fecha.setText("{dayname} {day} de {month} de {year}");
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("X");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CABECERALayout = new javax.swing.GroupLayout(CABECERA);
+        CABECERA.setLayout(CABECERALayout);
+        CABECERALayout.setHorizontalGroup(
+            CABECERALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CABECERALayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel2)
+                .addGap(73, 73, 73)
+                .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 442, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addContainerGap())
+        );
+        CABECERALayout.setVerticalGroup(
+            CABECERALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CABECERALayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(CABECERALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(Fecha))
+                .addContainerGap(19, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CABECERALayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addContainerGap())
         );
 
         Contenido.setBackground(new java.awt.Color(255, 255, 255));
@@ -327,8 +327,6 @@ public class Principal extends javax.swing.JFrame implements Fechas {
                 .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
-        Contenido.getAccessibleContext().setAccessibleParent(null);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

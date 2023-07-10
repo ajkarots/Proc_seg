@@ -78,7 +78,7 @@ public class MySql extends Gestor implements GestorBD {
     public void conectarMysql() {
          con=null;
         super.setUser("root");
-        super.setClave("Ecuador1");
+        super.setClave("Julian01");
         try
         {
             Class.forName(driver);

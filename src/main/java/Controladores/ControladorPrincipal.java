@@ -10,6 +10,7 @@ import interfaces.Metvis;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -50,6 +51,11 @@ public class ControladorPrincipal implements ActionListener,Metvis{
             mostrarJpanel(new Proveedores());
         }
         if (e.getSource()==frmpri.BotonFactura) {
+            String CodigoDeCliente;
+            CodigoDeCliente = OptionPane.showInputDialog(null,"Ingrese su codigod de cliente");
+            if (true) {
+                
+            }
             mostrarJpanel(new Facturas());
         }
         if (e.getSource()==frmpri.BotonCompra) {
