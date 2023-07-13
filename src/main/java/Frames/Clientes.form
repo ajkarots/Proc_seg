@@ -57,7 +57,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="title" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="buscadorProductos" min="-2" pref="108" max="-2" attributes="0"/>
+                                  <Component id="buscadorCliente" min="-2" pref="108" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="buscarCliente" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -113,7 +113,7 @@
                                   <Component id="title" min="-2" pref="30" max="-2" attributes="0"/>
                                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="buscadorProductos" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="buscadorCliente" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                                       <Component id="buscarCliente" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -188,9 +188,9 @@
             <Property name="text" type="java.lang.String" value="CLIENTES"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="buscadorProductos">
+        <Component class="javax.swing.JTextField" name="buscadorCliente">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscadorProductosActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscadorClienteActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

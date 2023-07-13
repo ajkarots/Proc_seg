@@ -18,13 +18,14 @@ public class Proc_seg {
 
     public static void main(String[] args) {
         FlatVuesionIJTheme.setup();
-        //Principal pl = new Principal();
-        //ControladorPrincipal cp = new ControladorPrincipal(pl);
-        //pl.setVisible(true);
-        //cp.iniciarcontenido();
         Loggin lg = new Loggin();
         ControladorLoggin cl = new ControladorLoggin(lg);
         cl.iniciar();
+        
+            
+            
+        
+        
         
     }
 }

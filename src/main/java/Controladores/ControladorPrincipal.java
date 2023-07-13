@@ -52,11 +52,11 @@ public class ControladorPrincipal implements ActionListener,Metvis{
         }
         if (e.getSource()==frmpri.BotonFactura) {
             String CodigoDeCliente;
-            CodigoDeCliente = OptionPane.showInputDialog(null,"Ingrese su codigod de cliente");
+            CodigoDeCliente = JOptionPane.showInputDialog(null,"Ingrese su codigo de cliente");
             if (true) {
-                
+               mostrarJpanel(new Facturas()); 
             }
-            mostrarJpanel(new Facturas());
+            
         }
         if (e.getSource()==frmpri.BotonCompra) {
             mostrarJpanel(new Compra());

@@ -29,7 +29,7 @@ public class ListaFacturas extends javax.swing.JPanel {
         bg3 = new javax.swing.JPanel();
         Buscarciudad = new javax.swing.JButton();
         title9 = new javax.swing.JLabel();
-        BuscarCiudadtxt = new javax.swing.JTextField();
+        buscadorFacturatxt = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable5 = new javax.swing.JTable();
         EditarCiudad = new javax.swing.JButton();
@@ -52,9 +52,9 @@ public class ListaFacturas extends javax.swing.JPanel {
 
         title9.setText("Numero Factura");
 
-        BuscarCiudadtxt.addActionListener(new java.awt.event.ActionListener() {
+        buscadorFacturatxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscarCiudadtxtActionPerformed(evt);
+                buscadorFacturatxtActionPerformed(evt);
             }
         });
 
@@ -104,17 +104,16 @@ public class ListaFacturas extends javax.swing.JPanel {
             .addGroup(bg3Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(bg3Layout.createSequentialGroup()
-                            .addComponent(EditarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(EliminarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bg3Layout.createSequentialGroup()
+                        .addComponent(EditarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(EliminarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
                     .addGroup(bg3Layout.createSequentialGroup()
                         .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(title9)
                             .addGroup(bg3Layout.createSequentialGroup()
-                                .addComponent(BuscarCiudadtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buscadorFacturatxt, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Buscarciudad)))
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -127,7 +126,7 @@ public class ListaFacturas extends javax.swing.JPanel {
                 .addComponent(title9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
                 .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BuscarCiudadtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buscadorFacturatxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Buscarciudad, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(72, 72, 72)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
@@ -156,9 +155,9 @@ public class ListaFacturas extends javax.swing.JPanel {
 
     }//GEN-LAST:event_BuscarciudadActionPerformed
 
-    private void BuscarCiudadtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarCiudadtxtActionPerformed
+    private void buscadorFacturatxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorFacturatxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BuscarCiudadtxtActionPerformed
+    }//GEN-LAST:event_buscadorFacturatxtActionPerformed
 
     private void EliminarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarCiudadActionPerformed
         // TODO add your handling code here:
@@ -166,11 +165,11 @@ public class ListaFacturas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField BuscarCiudadtxt;
     private javax.swing.JButton Buscarciudad;
     private javax.swing.JButton EditarCiudad;
     private javax.swing.JButton EliminarCiudad;
     private javax.swing.JPanel bg3;
+    private javax.swing.JTextField buscadorFacturatxt;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable5;
     private javax.swing.JLabel title9;

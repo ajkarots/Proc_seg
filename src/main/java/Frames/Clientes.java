@@ -29,7 +29,7 @@ public class Clientes extends javax.swing.JPanel {
         bg = new javax.swing.JPanel();
         buscarCliente = new javax.swing.JButton();
         title = new javax.swing.JLabel();
-        buscadorProductos = new javax.swing.JTextField();
+        buscadorCliente = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         editarCliente = new javax.swing.JButton();
@@ -63,9 +63,9 @@ public class Clientes extends javax.swing.JPanel {
 
         title.setText("CLIENTES");
 
-        buscadorProductos.addActionListener(new java.awt.event.ActionListener() {
+        buscadorCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscadorProductosActionPerformed(evt);
+                buscadorClienteActionPerformed(evt);
             }
         });
 
@@ -171,7 +171,7 @@ public class Clientes extends javax.swing.JPanel {
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(title)
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addComponent(buscadorProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buscadorCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(buscarCliente)))
                         .addGap(31, 31, 31)
@@ -212,7 +212,7 @@ public class Clientes extends javax.swing.JPanel {
                                 .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(6, 6, 6)
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(buscadorProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(buscadorCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(title1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -264,9 +264,9 @@ public class Clientes extends javax.swing.JPanel {
 
     }//GEN-LAST:event_buscarClienteActionPerformed
 
-    private void buscadorProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorProductosActionPerformed
+    private void buscadorClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buscadorProductosActionPerformed
+    }//GEN-LAST:event_buscadorClienteActionPerformed
 
     private void eliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarClienteActionPerformed
         // TODO add your handling code here:
@@ -295,7 +295,7 @@ public class Clientes extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
-    public javax.swing.JTextField buscadorProductos;
+    public javax.swing.JTextField buscadorCliente;
     private javax.swing.JButton buscarCliente;
     public javax.swing.JTextField cedulaCliente;
     public javax.swing.JTextField direccionCliente;

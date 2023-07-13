@@ -6,6 +6,7 @@ package Controladores;
 
 import Clases.MySql;
 import Frames.Loggin;
+import Frames.Principal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -16,7 +17,11 @@ import javax.swing.JOptionPane;
  */
 public class ControladorLoggin implements ActionListener{
     private final Loggin lg;
-    private MySql ms = new MySql()  ;
+    private MySql ms = new MySql();
+    private Principal frmpri = new Principal();
+    private ControladorPrincipal cp = new ControladorPrincipal(frmpri);
+    
+    
 
     public ControladorLoggin(Loggin lg) {
         this.lg = lg;
@@ -37,7 +42,9 @@ public class ControladorLoggin implements ActionListener{
             }else{
             ms.conectarMysql();       
                 if (ms.controlusuarios(lg.textoUsuario.getText(),lg.textoContraseña.getText())==2) {
+                   this.lg.dispose();
                    this.lg.setVisible(false);
+                   cp.iniciarcontenido();
                 }
             }
         }

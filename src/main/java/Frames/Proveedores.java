@@ -35,7 +35,7 @@ public class Proveedores extends javax.swing.JPanel {
         editarProveedor = new javax.swing.JButton();
         eliminiarProveedor = new javax.swing.JButton();
         guardarProveedor = new javax.swing.JButton();
-        buscadorProveedores1 = new javax.swing.JTextField();
+        rucproveedortxt = new javax.swing.JTextField();
         title1 = new javax.swing.JLabel();
         nombreProveedor = new javax.swing.JTextField();
         title2 = new javax.swing.JLabel();
@@ -117,9 +117,9 @@ public class Proveedores extends javax.swing.JPanel {
         guardarProveedor.setText("Agregar");
         guardarProveedor.setBorderPainted(false);
 
-        buscadorProveedores1.addActionListener(new java.awt.event.ActionListener() {
+        rucproveedortxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscadorProveedores1ActionPerformed(evt);
+                rucproveedortxtActionPerformed(evt);
             }
         });
 
@@ -176,7 +176,6 @@ public class Proveedores extends javax.swing.JPanel {
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(editarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(eliminiarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -193,7 +192,7 @@ public class Proveedores extends javax.swing.JPanel {
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(title1)
-                                    .addComponent(buscadorProveedores1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(rucproveedortxt, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(title2)
@@ -242,7 +241,7 @@ public class Proveedores extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addComponent(title1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buscadorProveedores1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(rucproveedortxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(title5)
                     .addComponent(title6)
@@ -286,9 +285,9 @@ public class Proveedores extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_eliminiarProveedorActionPerformed
 
-    private void buscadorProveedores1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorProveedores1ActionPerformed
+    private void rucproveedortxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rucproveedortxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buscadorProveedores1ActionPerformed
+    }//GEN-LAST:event_rucproveedortxtActionPerformed
 
     private void nombreProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreProveedorActionPerformed
         // TODO add your handling code here:
@@ -314,7 +313,6 @@ public class Proveedores extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel bg;
     public javax.swing.JTextField buscadorProveedores;
-    public javax.swing.JTextField buscadorProveedores1;
     private javax.swing.JButton buscarProveedores;
     public javax.swing.JTextField ciudadProovedor;
     public javax.swing.JTextField direccionProveedor;
@@ -325,6 +323,7 @@ public class Proveedores extends javax.swing.JPanel {
     private javax.swing.JTable jTable2;
     public javax.swing.JTextField nombreProveedor;
     public javax.swing.JTextField provinciaProovedor;
+    public javax.swing.JTextField rucproveedortxt;
     public javax.swing.JTextField telefonoProveedor;
     private javax.swing.JLabel title;
     private javax.swing.JLabel title1;

@@ -45,19 +45,17 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="EditarCiudad" min="-2" pref="99" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="EliminarCiudad" min="-2" pref="99" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jScrollPane4" alignment="1" pref="768" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="EditarCiudad" min="-2" pref="99" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="EliminarCiudad" min="-2" pref="99" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jScrollPane4" alignment="1" pref="768" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="title9" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="BuscarCiudadtxt" min="-2" pref="105" max="-2" attributes="0"/>
+                                  <Component id="buscadorFacturatxt" min="-2" pref="105" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="Buscarciudad" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -76,7 +74,7 @@
                   <Component id="title9" min="-2" pref="30" max="-2" attributes="0"/>
                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="BuscarCiudadtxt" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="buscadorFacturatxt" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="Buscarciudad" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
@@ -118,9 +116,9 @@
             <Property name="text" type="java.lang.String" value="Numero Factura"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="BuscarCiudadtxt">
+        <Component class="javax.swing.JTextField" name="buscadorFacturatxt">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BuscarCiudadtxtActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscadorFacturatxtActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane4">

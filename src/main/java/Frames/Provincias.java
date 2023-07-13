@@ -27,39 +27,39 @@ public class Provincias extends javax.swing.JPanel {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        buscarCliente = new javax.swing.JButton();
+        BuscarProvincia = new javax.swing.JButton();
         title = new javax.swing.JLabel();
-        buscadorProductos = new javax.swing.JTextField();
+        buscadorProvincia = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        editarCliente = new javax.swing.JButton();
-        eliminarCliente = new javax.swing.JButton();
-        guardarCliente = new javax.swing.JButton();
-        buscadorProductos1 = new javax.swing.JTextField();
+        editarProvincia = new javax.swing.JButton();
+        eliminarProvincia = new javax.swing.JButton();
+        agregarProvincia = new javax.swing.JButton();
+        CodigoProvinciatxt = new javax.swing.JTextField();
         title1 = new javax.swing.JLabel();
-        buscadorProductos2 = new javax.swing.JTextField();
+        nombreProvinciatxt = new javax.swing.JTextField();
         title2 = new javax.swing.JLabel();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setMinimumSize(new java.awt.Dimension(809, 544));
 
-        buscarCliente.setBackground(new java.awt.Color(153, 0, 0));
-        buscarCliente.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        buscarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        buscarCliente.setText("Buscar");
-        buscarCliente.setBorderPainted(false);
-        buscarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        buscarCliente.addActionListener(new java.awt.event.ActionListener() {
+        BuscarProvincia.setBackground(new java.awt.Color(153, 0, 0));
+        BuscarProvincia.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        BuscarProvincia.setForeground(new java.awt.Color(255, 255, 255));
+        BuscarProvincia.setText("Buscar");
+        BuscarProvincia.setBorderPainted(false);
+        BuscarProvincia.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BuscarProvincia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarClienteActionPerformed(evt);
+                BuscarProvinciaActionPerformed(evt);
             }
         });
 
         title.setText("Codigo provincia");
 
-        buscadorProductos.addActionListener(new java.awt.event.ActionListener() {
+        buscadorProvincia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscadorProductosActionPerformed(evt);
+                buscadorProvinciaActionPerformed(evt);
             }
         });
 
@@ -85,40 +85,40 @@ public class Provincias extends javax.swing.JPanel {
         jTable2.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         jScrollPane1.setViewportView(jTable2);
 
-        editarCliente.setBackground(new java.awt.Color(153, 0, 0));
-        editarCliente.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        editarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        editarCliente.setText("Editar");
-        editarCliente.setBorderPainted(false);
+        editarProvincia.setBackground(new java.awt.Color(153, 0, 0));
+        editarProvincia.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        editarProvincia.setForeground(new java.awt.Color(255, 255, 255));
+        editarProvincia.setText("Editar");
+        editarProvincia.setBorderPainted(false);
 
-        eliminarCliente.setBackground(new java.awt.Color(153, 0, 0));
-        eliminarCliente.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        eliminarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        eliminarCliente.setText("Eliminar");
-        eliminarCliente.setBorderPainted(false);
-        eliminarCliente.addActionListener(new java.awt.event.ActionListener() {
+        eliminarProvincia.setBackground(new java.awt.Color(153, 0, 0));
+        eliminarProvincia.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        eliminarProvincia.setForeground(new java.awt.Color(255, 255, 255));
+        eliminarProvincia.setText("Eliminar");
+        eliminarProvincia.setBorderPainted(false);
+        eliminarProvincia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarClienteActionPerformed(evt);
+                eliminarProvinciaActionPerformed(evt);
             }
         });
 
-        guardarCliente.setBackground(new java.awt.Color(153, 0, 0));
-        guardarCliente.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        guardarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        guardarCliente.setText("Agregar");
-        guardarCliente.setBorderPainted(false);
+        agregarProvincia.setBackground(new java.awt.Color(153, 0, 0));
+        agregarProvincia.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        agregarProvincia.setForeground(new java.awt.Color(255, 255, 255));
+        agregarProvincia.setText("Agregar");
+        agregarProvincia.setBorderPainted(false);
 
-        buscadorProductos1.addActionListener(new java.awt.event.ActionListener() {
+        CodigoProvinciatxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscadorProductos1ActionPerformed(evt);
+                CodigoProvinciatxtActionPerformed(evt);
             }
         });
 
         title1.setText("Codigo provincia");
 
-        buscadorProductos2.addActionListener(new java.awt.event.ActionListener() {
+        nombreProvinciatxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscadorProductos2ActionPerformed(evt);
+                nombreProvinciatxtActionPerformed(evt);
             }
         });
 
@@ -133,27 +133,27 @@ public class Provincias extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(bgLayout.createSequentialGroup()
-                            .addComponent(editarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editarProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(eliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(eliminarProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(title)
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addComponent(buscadorProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buscadorProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(buscarCliente)))
+                                .addComponent(BuscarProvincia)))
                         .addGap(18, 18, 18)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(buscadorProductos1, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                            .addComponent(CodigoProvinciatxt, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
                             .addComponent(title1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(buscadorProductos2)
+                            .addComponent(nombreProvinciatxt)
                             .addComponent(title2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(guardarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(agregarProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(35, 35, 35))
         );
         bgLayout.setVerticalGroup(
@@ -166,24 +166,24 @@ public class Provincias extends javax.swing.JPanel {
                             .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(6, 6, 6)
                             .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(buscadorProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(buscadorProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(BuscarProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(bgLayout.createSequentialGroup()
                             .addComponent(title1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(6, 6, 6)
-                            .addComponent(buscadorProductos1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(CodigoProvinciatxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(title2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(4, 4, 4)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(buscadorProductos2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(guardarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(nombreProvinciatxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(agregarProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(70, 70, 70)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
                 .addGap(9, 9, 9)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(editarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(editarProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eliminarProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60))
         );
 
@@ -201,38 +201,38 @@ public class Provincias extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarClienteActionPerformed
+    private void BuscarProvinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarProvinciaActionPerformed
 
-    }//GEN-LAST:event_buscarClienteActionPerformed
+    }//GEN-LAST:event_BuscarProvinciaActionPerformed
 
-    private void buscadorProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorProductosActionPerformed
+    private void buscadorProvinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorProvinciaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buscadorProductosActionPerformed
+    }//GEN-LAST:event_buscadorProvinciaActionPerformed
 
-    private void eliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarClienteActionPerformed
+    private void eliminarProvinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarProvinciaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_eliminarClienteActionPerformed
+    }//GEN-LAST:event_eliminarProvinciaActionPerformed
 
-    private void buscadorProductos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorProductos1ActionPerformed
+    private void CodigoProvinciatxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CodigoProvinciatxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buscadorProductos1ActionPerformed
+    }//GEN-LAST:event_CodigoProvinciatxtActionPerformed
 
-    private void buscadorProductos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorProductos2ActionPerformed
+    private void nombreProvinciatxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreProvinciatxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buscadorProductos2ActionPerformed
+    }//GEN-LAST:event_nombreProvinciatxtActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BuscarProvincia;
+    private javax.swing.JTextField CodigoProvinciatxt;
+    private javax.swing.JButton agregarProvincia;
     private javax.swing.JPanel bg;
-    private javax.swing.JTextField buscadorProductos;
-    private javax.swing.JTextField buscadorProductos1;
-    private javax.swing.JTextField buscadorProductos2;
-    private javax.swing.JButton buscarCliente;
-    private javax.swing.JButton editarCliente;
-    private javax.swing.JButton eliminarCliente;
-    private javax.swing.JButton guardarCliente;
+    private javax.swing.JTextField buscadorProvincia;
+    private javax.swing.JButton editarProvincia;
+    private javax.swing.JButton eliminarProvincia;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTextField nombreProvinciatxt;
     private javax.swing.JLabel title;
     private javax.swing.JLabel title1;
     private javax.swing.JLabel title2;

@@ -90,6 +90,11 @@ public class Loggin extends javax.swing.JFrame {
         textoUsuario.setForeground(new java.awt.Color(204, 204, 204));
         textoUsuario.setText("Ingrese su usuario");
         textoUsuario.setBorder(null);
+        textoUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                textoUsuarioMouseClicked(evt);
+            }
+        });
         textoUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textoUsuarioActionPerformed(evt);
@@ -104,6 +109,11 @@ public class Loggin extends javax.swing.JFrame {
         textoContraseña.setForeground(new java.awt.Color(204, 204, 204));
         textoContraseña.setText("jPasswordField1");
         textoContraseña.setBorder(null);
+        textoContraseña.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                textoContraseñaMouseClicked(evt);
+            }
+        });
         jPanel1.add(textoContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 217, 166, -1));
 
         jLabel5.setText("_________________________________");
@@ -166,6 +176,20 @@ public class Loggin extends javax.swing.JFrame {
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         System.exit(0);
     }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void textoUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoUsuarioMouseClicked
+        this.textoUsuario.setText("");
+        if (this.textoContraseña.getText().equals("")) {
+            this.textoContraseña.setText("****************");
+        }
+    }//GEN-LAST:event_textoUsuarioMouseClicked
+
+    private void textoContraseñaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoContraseñaMouseClicked
+       this.textoContraseña.setText("");
+        if (this.textoUsuario.getText().equals("")) {
+            this.textoUsuario.setText("Ingrese su usuario");
+        }
+    }//GEN-LAST:event_textoContraseñaMouseClicked
 
     /**
      * @param args the command line arguments
