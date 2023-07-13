@@ -78,6 +78,9 @@ public class ControladorPrincipal implements ActionListener,Metvis{
         this.frmpri.Contenido.revalidate();
         this.frmpri.Contenido.repaint();
     }
+    public void visibleframe(){
+    this.frmpri.setVisible(true);
+    }
     
     
 }
