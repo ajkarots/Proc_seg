@@ -8,7 +8,7 @@ package Modelo;
  *
  * @author pc
  */
-public class Usuario {
+public class modeloUsuario {
 
     private String userID;
     private String contraseña;
@@ -16,9 +16,7 @@ public class Usuario {
             permiso_factura, permiso_compra, permiso_kardex, permiso_provincias, permiso_ciudades,
             permiso_lista_venta, permiso_lista_compra, permiso_gestor_usuario,bloqueo;
 
-
-
-    public Usuario() {
+    public modeloUsuario(String userID, String contraseña, int intentos, int permiso_producto, int permiso_cliente, int permiso_proveedor, int permiso_factura, int permiso_compra, int permiso_kardex, int permiso_provincias, int permiso_ciudades, int permiso_lista_venta, int permiso_lista_compra, int permiso_gestor_usuario, int bloqueo) {
         this.userID = userID;
         this.contraseña = contraseña;
         this.intentos = intentos;
@@ -35,6 +33,28 @@ public class Usuario {
         this.permiso_gestor_usuario = permiso_gestor_usuario;
         this.bloqueo = bloqueo;
     }
+
+
+   
+    public modeloUsuario() {
+        this.userID = userID;
+        this.contraseña = contraseña;
+        this.intentos = intentos;
+        this.permiso_producto = permiso_producto;
+        this.permiso_cliente = permiso_cliente;
+        this.permiso_proveedor = permiso_proveedor;
+        this.permiso_factura = permiso_factura;
+        this.permiso_compra = permiso_compra;
+        this.permiso_kardex = permiso_kardex;
+        this.permiso_provincias = permiso_provincias;
+        this.permiso_ciudades = permiso_ciudades;
+        this.permiso_lista_venta = permiso_lista_venta;
+        this.permiso_lista_compra = permiso_lista_compra;
+        this.permiso_gestor_usuario = permiso_gestor_usuario;
+        this.bloqueo = bloqueo;
+    }
+    
+    
 
     public String getUserID() {
         return this.userID;

@@ -8,12 +8,12 @@ package Frames;
  *
  * @author pc
  */
-public class Productos extends javax.swing.JPanel {
+public class FrameProductos extends javax.swing.JPanel {
 
     /**
      * Creates new form NewJPanel
      */
-    public Productos() {
+    public FrameProductos() {
         initComponents();
     }
 

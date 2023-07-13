@@ -42,31 +42,51 @@ public class ControladorPrincipal implements ActionListener,Metvis{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==frmpri.BotonProductos) {
-            mostrarJpanel(new Productos());
+            mostrarJpanel(new FrameProductos());
         }
         if (e.getSource()==frmpri.BotonClientes) {
-            mostrarJpanel(new Clientes());
+            mostrarJpanel(new FrameClientes());
         }
         if (e.getSource()==frmpri.BotonProveedor) {
-            mostrarJpanel(new Proveedores());
+            mostrarJpanel(new FrameProveedores());
         }
         if (e.getSource()==frmpri.BotonFactura) {
             String CodigoDeCliente;
             CodigoDeCliente = JOptionPane.showInputDialog(null,"Ingrese su codigo de cliente");
             if (true) {
-               mostrarJpanel(new Facturas()); 
+               mostrarJpanel(new FrameFacturas()); 
             }
             
         }
         if (e.getSource()==frmpri.BotonCompra) {
-            mostrarJpanel(new Compra());
+            mostrarJpanel(new FrameCompra());
         }
+        if (e.getSource()==frmpri.BotonKardex) {
+            mostrarJpanel(new FrameCompra());
+        }
+        if (e.getSource()==frmpri.BotonProvincia) {
+            mostrarJpanel(new FrameProvincias());
+        }
+        if (e.getSource()==frmpri.BotonCiudad) {
+            mostrarJpanel(new FrameCiudades());
+        }
+        if (e.getSource()==frmpri.BotonVentas) {
+            mostrarJpanel(new FrameFacturas());
+        }
+        if (e.getSource()==frmpri.BotonComprasGeneradas) {
+            mostrarJpanel(new FrameCiudades());
+        }
+        if (e.getSource()==frmpri.BotonUsuarios) {
+            mostrarJpanel(new FrameCiudades());
+        }
+        
+        
         
     }
 
     @Override
     public void iniciarcontenido() {
-        mostrarJpanel(new Productos());
+        mostrarJpanel(new FrameProductos());
     }
 
     @Override

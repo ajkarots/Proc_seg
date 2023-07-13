@@ -4,10 +4,10 @@
  */
 package Frames;
 
-import Frames.Clientes;
-import Frames.Facturas;
-import Frames.Productos;
-import Frames.Proveedores;
+import Frames.FrameClientes;
+import Frames.FrameFacturas;
+import Frames.FrameProductos;
+import Frames.FrameProveedores;
 import com.formdev.flatlaf.intellijthemes.FlatLightFlatIJTheme;
 import com.formdev.flatlaf.intellijthemes.FlatVuesionIJTheme;
 import interfaces.Fechas;

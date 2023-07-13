@@ -5,7 +5,9 @@ Frames\Principal$9.class
 Frames\Proveedores$10.class
 Frames\Provincias$4.class
 Frames\Principal$6.class
+Modelo\modeloProveedor.class
 Frames\Productos$5.class
+Modelo\modeloCiudad.class
 Frames\Provincias$1.class
 Controladores\ControladorPrincipal.class
 Frames\Proveedores$8.class
@@ -15,6 +17,7 @@ Frames\Loggin$3.class
 Frames\ListaFacturas$3.class
 Frames\Loggin$6.class
 Frames\Proveedores$5.class
+Controladores\Controlusuario.class
 Frames\Clientes.class
 Frames\Ciudades$6.class
 Frames\Facturas$1.class
@@ -40,6 +43,7 @@ Frames\Principal$10.class
 Frames\Proveedores.class
 Frames\Provincias$3.class
 Frames\Loggin$5.class
+Modelo\modeloProvincia.class
 Frames\ListaFacturas$4.class
 Frames\Principal$4.class
 Clases\MySql.class
@@ -47,6 +51,7 @@ Frames\Provincias$6.class
 Frames\Proveedores$7.class
 Frames\Clientes$8.class
 Frames\Compra$1.class
+Modelo\modeloClientes.class
 Frames\Proveedores$3.class
 Frames\Principal$1.class
 Frames\Provincias$2.class
@@ -55,6 +60,7 @@ Frames\Loggin$1.class
 Frames\Principal.class
 Frames\Principal$11.class
 com\mycompany\proc_seg\Proc_seg.class
+Modelo\modeloUsuario.class
 Frames\Ciudades$3.class
 interfaces\Metvis.class
 Frames\Productos$3.class
@@ -70,6 +76,7 @@ interfaces\Fechas.class
 Controladores\ControladorLoggin.class
 Frames\Principal$5.class
 interfaces\GestorBD.class
+Modelo\modeloProductos.class
 Frames\Clientes$6.class
 Frames\Proveedores$9.class
 Frames\ListaFacturas$2.class
@@ -77,4 +84,5 @@ Frames\Productos$2.class
 Frames\Ciudades$4.class
 Frames\Provincias.class
 Frames\Principal$8.class
+Modelo\modeloFactura.class
 Frames\Loggin$2.class

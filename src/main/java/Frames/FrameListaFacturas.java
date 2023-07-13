@@ -8,12 +8,12 @@ package Frames;
  *
  * @author pc
  */
-public class ListaFacturas extends javax.swing.JPanel {
+public class FrameListaFacturas extends javax.swing.JPanel {
 
     /**
      * Creates new form ListaFacturas
      */
-    public ListaFacturas() {
+    public FrameListaFacturas() {
         initComponents();
     }
 

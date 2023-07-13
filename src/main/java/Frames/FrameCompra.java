@@ -11,12 +11,12 @@ import java.time.LocalDate;
  *
  * @author JONATHAN
  */
-public class Compra extends javax.swing.JPanel implements Fechas {
+public class FrameCompra extends javax.swing.JPanel implements Fechas {
 
     /**
      * Creates new form Compra
      */
-    public Compra() {
+    public FrameCompra() {
         initComponents();
         Fecha();
     }

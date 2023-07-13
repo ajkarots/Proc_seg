@@ -8,12 +8,12 @@ package Frames;
  *
  * @author JONATHAN
  */
-public class Provincias extends javax.swing.JPanel {
+public class FrameProvincias extends javax.swing.JPanel {
 
     /**
      * Creates new form Provincias
      */
-    public Provincias() {
+    public FrameProvincias() {
         initComponents();
     }
 

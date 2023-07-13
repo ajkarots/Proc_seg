@@ -6,8 +6,8 @@ package Modelo;
 
 /**
  *
- * @author pc
+ * @author JONATHAN
  */
-public class Productos {
+public class modeloFactura {
     
 }

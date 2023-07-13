@@ -7,7 +7,7 @@ package Controladores;
 import Clases.MySql;
 import Frames.Loggin;
 import Frames.Principal;
-import Modelo.Usuario;
+import Modelo.modeloUsuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
@@ -28,7 +28,7 @@ public class ControladorLoggin implements ActionListener{
     private MySql ms = new MySql();
     private Principal frmpri = new Principal();
     private ControladorPrincipal cp = new ControladorPrincipal(frmpri);
-    private Usuario user = new Usuario();
+    private modeloUsuario user = new modeloUsuario();
     private Controlusuario ctrlloggin;
     
 

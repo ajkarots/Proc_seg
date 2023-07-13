@@ -11,12 +11,12 @@ import java.time.LocalDate;
  *
  * @author pc
  */
-public class Facturas extends javax.swing.JPanel implements Fechas{
+public class FrameFacturas extends javax.swing.JPanel implements Fechas{
 
     /**
      * Creates new form Facturas
      */
-    public Facturas() {
+    public FrameFacturas() {
         initComponents();
         Fecha();
     }

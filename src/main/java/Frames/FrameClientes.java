@@ -8,12 +8,12 @@ package Frames;
  *
  * @author pc
  */
-public class Clientes extends javax.swing.JPanel {
+public class FrameClientes extends javax.swing.JPanel {
 
     /**
      * Creates new form clientesw
      */
-    public Clientes() {
+    public FrameClientes() {
         initComponents();
     }
 

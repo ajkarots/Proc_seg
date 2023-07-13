@@ -8,12 +8,12 @@ package Frames;
  *
  * @author pc
  */
-public class Ciudades extends javax.swing.JPanel {
+public class FrameCiudades extends javax.swing.JPanel {
 
     /**
      * Creates new form Ciudades
      */
-    public Ciudades() {
+    public FrameCiudades() {
         initComponents();
     }
 
@@ -230,50 +230,11 @@ public class Ciudades extends javax.swing.JPanel {
     private javax.swing.JButton EditarCiudad;
     private javax.swing.JButton EliminarCiudad;
     private javax.swing.JTextField Nombreciudadtxt;
-    private javax.swing.JPanel bg;
-    private javax.swing.JPanel bg1;
-    private javax.swing.JPanel bg2;
     private javax.swing.JPanel bg3;
-    private javax.swing.JTextField buscadorProductos;
-    private javax.swing.JTextField buscadorProductos1;
-    private javax.swing.JTextField buscadorProductos2;
-    private javax.swing.JTextField buscadorProductos3;
-    private javax.swing.JTextField buscadorProductos4;
-    private javax.swing.JTextField buscadorProductos5;
-    private javax.swing.JTextField buscadorProductos6;
-    private javax.swing.JTextField buscadorProductos7;
-    private javax.swing.JTextField buscadorProductos8;
-    private javax.swing.JButton buscarCliente;
-    private javax.swing.JButton buscarCliente1;
-    private javax.swing.JButton buscarCliente2;
-    private javax.swing.JButton editarCliente;
-    private javax.swing.JButton editarCliente1;
-    private javax.swing.JButton editarCliente2;
-    private javax.swing.JButton eliminarCliente;
-    private javax.swing.JButton eliminarCliente1;
-    private javax.swing.JButton eliminarCliente2;
-    private javax.swing.JButton guardarCliente;
-    private javax.swing.JButton guardarCliente1;
-    private javax.swing.JButton guardarCliente2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
-    private javax.swing.JLabel title;
-    private javax.swing.JLabel title1;
     private javax.swing.JLabel title10;
     private javax.swing.JLabel title11;
-    private javax.swing.JLabel title2;
-    private javax.swing.JLabel title3;
-    private javax.swing.JLabel title4;
-    private javax.swing.JLabel title5;
-    private javax.swing.JLabel title6;
-    private javax.swing.JLabel title7;
-    private javax.swing.JLabel title8;
     private javax.swing.JLabel title9;
     // End of variables declaration//GEN-END:variables
 }

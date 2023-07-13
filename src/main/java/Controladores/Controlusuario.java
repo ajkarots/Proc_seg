@@ -5,7 +5,7 @@
 package Controladores;
 
 import Clases.MySql;
-import Modelo.Usuario;
+import Modelo.modeloUsuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,7 +24,7 @@ import javax.swing.JOptionPane;
 public class Controlusuario {
     MySql ms = new MySql();
      
-    public int controlusuarios(Usuario user) {
+    public int controlusuarios(modeloUsuario user) {
         Connection con1 = ms.iniciarConexion();
         Connection con2 = ms.iniciarConexion();
         boolean control=false;
@@ -77,6 +77,9 @@ public class Controlusuario {
         ms.finalizarConexion(con1);
         ms.finalizarConexion(con2);
         System.out.println(controlador);
+        if (controlador==1) {
+            JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
+        }
         return controlador;
     }
 }
