@@ -52,9 +52,9 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="buscadorProductos" min="-2" pref="103" max="-2" attributes="0"/>
+                                  <Component id="buscadorProductostxt" min="-2" pref="103" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="buscarProducto" min="-2" pref="94" max="-2" attributes="0"/>
+                                  <Component id="buscarProductobtn" min="-2" pref="94" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -68,28 +68,28 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="560" max="-2" attributes="0"/>
-                                  <Component id="editarProducto" min="-2" pref="99" max="-2" attributes="0"/>
+                                  <Component id="editarProductobtn" min="-2" pref="99" max="-2" attributes="0"/>
                                   <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
-                                  <Component id="eliminarProducto" min="-2" pref="99" max="-2" attributes="0"/>
+                                  <Component id="eliminarProductobtn" min="-2" pref="99" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="title2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="buscadorProductos2" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
+                                      <Component id="nombreProductotxt" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="title1" max="32767" attributes="0"/>
-                                      <Component id="buscadorProductos1" min="-2" pref="110" max="-2" attributes="0"/>
+                                      <Component id="codigoProductotxt" min="-2" pref="110" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="title3" max="32767" attributes="0"/>
-                                      <Component id="buscadorProductos3" min="-2" pref="114" max="-2" attributes="0"/>
+                                      <Component id="codigoProveedortxt" min="-2" pref="114" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="guardarProducto" min="-2" pref="99" max="-2" attributes="0"/>
+                                  <Component id="agregarProductobtn" min="-2" pref="99" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="0" pref="34" max="32767" attributes="0"/>
@@ -108,8 +108,8 @@
                           <Component id="title" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="buscadorProductos" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="buscarProducto" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="buscadorProductostxt" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="buscarProductobtn" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -124,20 +124,20 @@
                               <Group type="102" attributes="0">
                                   <Component id="title2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  <Component id="buscadorProductos2" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="nombreProductotxt" min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="title1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  <Component id="buscadorProductos1" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="codigoProductotxt" min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" pref="244" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="editarProducto" min="-2" pref="44" max="-2" attributes="0"/>
-                              <Component id="eliminarProducto" min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="editarProductobtn" min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="eliminarProductobtn" min="-2" pref="44" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                       </Group>
@@ -145,8 +145,8 @@
                           <Component id="title3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="buscadorProductos3" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="guardarProducto" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="codigoProveedortxt" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="agregarProductobtn" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -156,7 +156,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="buscarProducto">
+        <Component class="javax.swing.JButton" name="buscarProductobtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="99" type="rgb"/>
@@ -174,7 +174,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarProductoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarProductobtnActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -185,9 +185,9 @@
             <Property name="text" type="java.lang.String" value="CODIGO PRODUCTO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="buscadorProductos">
+        <Component class="javax.swing.JTextField" name="buscadorProductostxt">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscadorProductosActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscadorProductostxtActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -217,7 +217,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="editarProducto">
+        <Component class="javax.swing.JButton" name="editarProductobtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="99" type="rgb"/>
@@ -235,7 +235,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="eliminarProducto">
+        <Component class="javax.swing.JButton" name="eliminarProductobtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="99" type="rgb"/>
@@ -250,13 +250,13 @@
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eliminarProductoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eliminarProductobtnActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="guardarProducto">
+        <Component class="javax.swing.JButton" name="agregarProductobtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="99" type="rgb"/>
@@ -274,9 +274,9 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="buscadorProductos1">
+        <Component class="javax.swing.JTextField" name="codigoProductotxt">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscadorProductos1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="codigoProductotxtActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -287,9 +287,9 @@
             <Property name="text" type="java.lang.String" value="CODIGO PRODUCTO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="buscadorProductos2">
+        <Component class="javax.swing.JTextField" name="nombreProductotxt">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscadorProductos2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreProductotxtActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -300,9 +300,9 @@
             <Property name="text" type="java.lang.String" value="NOMBRE"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="buscadorProductos3">
+        <Component class="javax.swing.JTextField" name="codigoProveedortxt">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscadorProductos3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="codigoProveedortxtActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

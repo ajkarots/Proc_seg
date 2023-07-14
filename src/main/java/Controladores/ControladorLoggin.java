@@ -55,7 +55,6 @@ public class ControladorLoggin implements ActionListener{
                     this.lg.dispose();
                     this.lg.setVisible(false);
                     this.cp.visibleframe();
-                    cp.iniciarcontenido();
                 }
             } else{                  
                    JOptionPane.showMessageDialog(null,"Ingrese datos validos!\n Los campos no pueden estar vacios");

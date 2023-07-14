@@ -27,19 +27,19 @@ public class FrameProductos extends javax.swing.JPanel {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        buscarProducto = new javax.swing.JButton();
+        buscarProductobtn = new javax.swing.JButton();
         title = new javax.swing.JLabel();
-        buscadorProductos = new javax.swing.JTextField();
+        buscadorProductostxt = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaProductos = new javax.swing.JTable();
-        editarProducto = new javax.swing.JButton();
-        eliminarProducto = new javax.swing.JButton();
-        guardarProducto = new javax.swing.JButton();
-        buscadorProductos1 = new javax.swing.JTextField();
+        editarProductobtn = new javax.swing.JButton();
+        eliminarProductobtn = new javax.swing.JButton();
+        agregarProductobtn = new javax.swing.JButton();
+        codigoProductotxt = new javax.swing.JTextField();
         title1 = new javax.swing.JLabel();
-        buscadorProductos2 = new javax.swing.JTextField();
+        nombreProductotxt = new javax.swing.JTextField();
         title2 = new javax.swing.JLabel();
-        buscadorProductos3 = new javax.swing.JTextField();
+        codigoProveedortxt = new javax.swing.JTextField();
         title3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -47,23 +47,23 @@ public class FrameProductos extends javax.swing.JPanel {
         bg.setMinimumSize(new java.awt.Dimension(809, 490));
         bg.setPreferredSize(new java.awt.Dimension(809, 490));
 
-        buscarProducto.setBackground(new java.awt.Color(153, 0, 0));
-        buscarProducto.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        buscarProducto.setForeground(new java.awt.Color(255, 255, 255));
-        buscarProducto.setText("Buscar");
-        buscarProducto.setBorderPainted(false);
-        buscarProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        buscarProducto.addActionListener(new java.awt.event.ActionListener() {
+        buscarProductobtn.setBackground(new java.awt.Color(153, 0, 0));
+        buscarProductobtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        buscarProductobtn.setForeground(new java.awt.Color(255, 255, 255));
+        buscarProductobtn.setText("Buscar");
+        buscarProductobtn.setBorderPainted(false);
+        buscarProductobtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        buscarProductobtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarProductoActionPerformed(evt);
+                buscarProductobtnActionPerformed(evt);
             }
         });
 
         title.setText("CODIGO PRODUCTO");
 
-        buscadorProductos.addActionListener(new java.awt.event.ActionListener() {
+        buscadorProductostxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscadorProductosActionPerformed(evt);
+                buscadorProductostxtActionPerformed(evt);
             }
         });
 
@@ -89,48 +89,48 @@ public class FrameProductos extends javax.swing.JPanel {
         tablaProductos.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         jScrollPane1.setViewportView(tablaProductos);
 
-        editarProducto.setBackground(new java.awt.Color(153, 0, 0));
-        editarProducto.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        editarProducto.setForeground(new java.awt.Color(255, 255, 255));
-        editarProducto.setText("Editar");
-        editarProducto.setBorderPainted(false);
+        editarProductobtn.setBackground(new java.awt.Color(153, 0, 0));
+        editarProductobtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        editarProductobtn.setForeground(new java.awt.Color(255, 255, 255));
+        editarProductobtn.setText("Editar");
+        editarProductobtn.setBorderPainted(false);
 
-        eliminarProducto.setBackground(new java.awt.Color(153, 0, 0));
-        eliminarProducto.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        eliminarProducto.setForeground(new java.awt.Color(255, 255, 255));
-        eliminarProducto.setText("Eliminar");
-        eliminarProducto.setBorderPainted(false);
-        eliminarProducto.addActionListener(new java.awt.event.ActionListener() {
+        eliminarProductobtn.setBackground(new java.awt.Color(153, 0, 0));
+        eliminarProductobtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        eliminarProductobtn.setForeground(new java.awt.Color(255, 255, 255));
+        eliminarProductobtn.setText("Eliminar");
+        eliminarProductobtn.setBorderPainted(false);
+        eliminarProductobtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarProductoActionPerformed(evt);
+                eliminarProductobtnActionPerformed(evt);
             }
         });
 
-        guardarProducto.setBackground(new java.awt.Color(153, 0, 0));
-        guardarProducto.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        guardarProducto.setForeground(new java.awt.Color(255, 255, 255));
-        guardarProducto.setText("Agregar");
-        guardarProducto.setBorderPainted(false);
+        agregarProductobtn.setBackground(new java.awt.Color(153, 0, 0));
+        agregarProductobtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        agregarProductobtn.setForeground(new java.awt.Color(255, 255, 255));
+        agregarProductobtn.setText("Agregar");
+        agregarProductobtn.setBorderPainted(false);
 
-        buscadorProductos1.addActionListener(new java.awt.event.ActionListener() {
+        codigoProductotxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscadorProductos1ActionPerformed(evt);
+                codigoProductotxtActionPerformed(evt);
             }
         });
 
         title1.setText("CODIGO PRODUCTO");
 
-        buscadorProductos2.addActionListener(new java.awt.event.ActionListener() {
+        nombreProductotxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscadorProductos2ActionPerformed(evt);
+                nombreProductotxtActionPerformed(evt);
             }
         });
 
         title2.setText("NOMBRE");
 
-        buscadorProductos3.addActionListener(new java.awt.event.ActionListener() {
+        codigoProveedortxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscadorProductos3ActionPerformed(evt);
+                codigoProveedortxtActionPerformed(evt);
             }
         });
 
@@ -152,9 +152,9 @@ public class FrameProductos extends javax.swing.JPanel {
                                 .addComponent(title))
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(buscadorProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buscadorProductostxt, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(buscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(buscarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2))
                     .addGroup(bgLayout.createSequentialGroup()
@@ -164,24 +164,24 @@ public class FrameProductos extends javax.swing.JPanel {
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addGap(560, 560, 560)
-                                .addComponent(editarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(editarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(11, 11, 11)
-                                .addComponent(eliminarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(eliminarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(title2)
-                                    .addComponent(buscadorProductos2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(nombreProductotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(title1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(buscadorProductos1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(codigoProductotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(title3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(buscadorProductos3, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(codigoProveedortxt, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addComponent(guardarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(agregarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 34, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -194,8 +194,8 @@ public class FrameProductos extends javax.swing.JPanel {
                         .addComponent(title)
                         .addGap(6, 6, 6)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(buscadorProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(buscadorProductostxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buscarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel2)))
@@ -206,24 +206,24 @@ public class FrameProductos extends javax.swing.JPanel {
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(title2)
                                 .addGap(6, 6, 6)
-                                .addComponent(buscadorProductos2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(nombreProductotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(title1)
                                 .addGap(6, 6, 6)
-                                .addComponent(buscadorProductos1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(codigoProductotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(25, 25, 25)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
                         .addGap(8, 8, 8)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(editarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(eliminarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(editarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(eliminarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(8, 8, 8))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(title3)
                         .addGap(2, 2, 2)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(buscadorProductos3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(guardarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(codigoProveedortxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(agregarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -239,43 +239,43 @@ public class FrameProductos extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buscarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarProductoActionPerformed
+    private void buscarProductobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarProductobtnActionPerformed
 
-    }//GEN-LAST:event_buscarProductoActionPerformed
+    }//GEN-LAST:event_buscarProductobtnActionPerformed
 
-    private void buscadorProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorProductosActionPerformed
+    private void buscadorProductostxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorProductostxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buscadorProductosActionPerformed
+    }//GEN-LAST:event_buscadorProductostxtActionPerformed
 
-    private void eliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarProductoActionPerformed
+    private void eliminarProductobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarProductobtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_eliminarProductoActionPerformed
+    }//GEN-LAST:event_eliminarProductobtnActionPerformed
 
-    private void buscadorProductos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorProductos1ActionPerformed
+    private void codigoProductotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoProductotxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buscadorProductos1ActionPerformed
+    }//GEN-LAST:event_codigoProductotxtActionPerformed
 
-    private void buscadorProductos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorProductos2ActionPerformed
+    private void nombreProductotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreProductotxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buscadorProductos2ActionPerformed
+    }//GEN-LAST:event_nombreProductotxtActionPerformed
 
-    private void buscadorProductos3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorProductos3ActionPerformed
+    private void codigoProveedortxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoProveedortxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buscadorProductos3ActionPerformed
+    }//GEN-LAST:event_codigoProveedortxtActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton agregarProductobtn;
     private javax.swing.JPanel bg;
-    public javax.swing.JTextField buscadorProductos;
-    public javax.swing.JTextField buscadorProductos1;
-    public javax.swing.JTextField buscadorProductos2;
-    public javax.swing.JTextField buscadorProductos3;
-    public javax.swing.JButton buscarProducto;
-    public javax.swing.JButton editarProducto;
-    public javax.swing.JButton eliminarProducto;
-    public javax.swing.JButton guardarProducto;
+    public javax.swing.JTextField buscadorProductostxt;
+    public javax.swing.JButton buscarProductobtn;
+    public javax.swing.JTextField codigoProductotxt;
+    public javax.swing.JTextField codigoProveedortxt;
+    public javax.swing.JButton editarProductobtn;
+    public javax.swing.JButton eliminarProductobtn;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTextField nombreProductotxt;
     public javax.swing.JTable tablaProductos;
     private javax.swing.JLabel title;
     private javax.swing.JLabel title1;

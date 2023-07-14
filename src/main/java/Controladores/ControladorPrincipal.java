@@ -6,6 +6,7 @@ package Controladores;
 
 import Frames.*;
 import Frames.Principal;
+import Modelo.modeloProductos;
 import interfaces.Metvis;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -19,6 +20,9 @@ import javax.swing.JPanel;
  */
 public class ControladorPrincipal implements ActionListener,Metvis{
     private Principal frmpri;
+    private FrameProductos fProductos =  new FrameProductos();
+    private modeloProductos mProductos = new modeloProductos();
+    private ControladorProductos controladorProductos = new ControladorProductos(fProductos,mProductos);
 
     public ControladorPrincipal(Principal frmpri) {
         this.frmpri = frmpri;
@@ -43,6 +47,8 @@ public class ControladorPrincipal implements ActionListener,Metvis{
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==frmpri.BotonProductos) {
             mostrarJpanel(new FrameProductos());
+            controladorProductos.actionPerformed(e);
+            
         }
         if (e.getSource()==frmpri.BotonClientes) {
             mostrarJpanel(new FrameClientes());
