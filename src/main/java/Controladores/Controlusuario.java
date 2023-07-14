@@ -52,12 +52,14 @@ public class Controlusuario {
             if (rsusuarios.next()){
                 System.out.println(rsusuarios.getString("userID"));
                 controlador++;
+                String nombreusuario= rsusuarios.getString("userID");
                 String claveusuario = rsusuarios.getString("contraseña");
-                if (user.getContraseña().equals(claveusuario)) {
+                if (user.getContraseña().equals(claveusuario)&&user.getUserID().equals(nombreusuario)) {
                     controlador++;
                     ms.actualizar("usuarios", "intentos", 0, "userID", user.getUserID());
                     
                 } else {
+                    
                     if (contador_intentos == 2) {
                         JOptionPane.showMessageDialog(null, "Usuario Bloqueado");
                         psusuarios = ms.getCon().prepareStatement("update usuarios set bloqueo=1 where userID='" + user.getUserID() + "';");
@@ -78,7 +80,7 @@ public class Controlusuario {
         ms.finalizarConexion(con2);
         System.out.println(controlador);
         if (controlador==1) {
-            JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
+            JOptionPane.showMessageDialog(null, "Contraseña incorrecta/o usuario incorrecto");
         }
         return controlador;
     }

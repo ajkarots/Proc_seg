@@ -31,9 +31,10 @@ public class FrameListaFacturas extends javax.swing.JPanel {
         title9 = new javax.swing.JLabel();
         buscadorFacturatxt = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        tablaListaFacturas = new javax.swing.JTable();
         EditarCiudad = new javax.swing.JButton();
         EliminarCiudad = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         bg3.setBackground(new java.awt.Color(255, 255, 255));
         bg3.setMinimumSize(new java.awt.Dimension(809, 544));
@@ -58,7 +59,7 @@ public class FrameListaFacturas extends javax.swing.JPanel {
             }
         });
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        tablaListaFacturas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -77,8 +78,8 @@ public class FrameListaFacturas extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jTable5.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        jScrollPane4.setViewportView(jTable5);
+        tablaListaFacturas.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        jScrollPane4.setViewportView(tablaListaFacturas);
 
         EditarCiudad.setBackground(new java.awt.Color(153, 0, 0));
         EditarCiudad.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -97,6 +98,9 @@ public class FrameListaFacturas extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        jLabel2.setText("LISTA FACTURAS");
+
         javax.swing.GroupLayout bg3Layout = new javax.swing.GroupLayout(bg3);
         bg3.setLayout(bg3Layout);
         bg3Layout.setHorizontalGroup(
@@ -105,6 +109,7 @@ public class FrameListaFacturas extends javax.swing.JPanel {
                 .addGap(6, 6, 6)
                 .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bg3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(EditarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(EliminarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -116,18 +121,22 @@ public class FrameListaFacturas extends javax.swing.JPanel {
                                 .addComponent(buscadorFacturatxt, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Buscarciudad)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)))
                 .addGap(35, 35, 35))
         );
         bg3Layout.setVerticalGroup(
             bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bg3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(title9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buscadorFacturatxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Buscarciudad, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bg3Layout.createSequentialGroup()
+                        .addComponent(title9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buscadorFacturatxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Buscarciudad, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel2))
                 .addGap(72, 72, 72)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
                 .addGap(9, 9, 9)
@@ -165,13 +174,14 @@ public class FrameListaFacturas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Buscarciudad;
-    private javax.swing.JButton EditarCiudad;
-    private javax.swing.JButton EliminarCiudad;
+    public javax.swing.JButton Buscarciudad;
+    public javax.swing.JButton EditarCiudad;
+    public javax.swing.JButton EliminarCiudad;
     private javax.swing.JPanel bg3;
-    private javax.swing.JTextField buscadorFacturatxt;
+    public javax.swing.JTextField buscadorFacturatxt;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable5;
+    public javax.swing.JTable tablaListaFacturas;
     private javax.swing.JLabel title9;
     // End of variables declaration//GEN-END:variables
 }

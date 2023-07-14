@@ -239,12 +239,12 @@ public class FrameCompra extends javax.swing.JPanel implements Fechas {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTextField CodigoCompra;
     private javax.swing.JLabel Fecha;
-    private javax.swing.JButton añadirCompra;
-    private javax.swing.JButton botonTotalCompra;
+    public javax.swing.JButton añadirCompra;
+    public javax.swing.JButton botonTotalCompra;
     public javax.swing.JTextField cantidadCompra;
     public javax.swing.JTextField codigoProveedorCompra;
     public javax.swing.JTextField codigoproductoCompra;
-    private javax.swing.JButton eliminarCompra;
+    public javax.swing.JButton eliminarCompra;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -257,7 +257,7 @@ public class FrameCompra extends javax.swing.JPanel implements Fechas {
     private javax.swing.JTable jTable1;
     public javax.swing.JTextField poductoCompra;
     public javax.swing.JTextField precioproductoCompra;
-    private javax.swing.JTextField totalCompra;
+    public javax.swing.JTextField totalCompra;
     // End of variables declaration//GEN-END:variables
 
     @Override

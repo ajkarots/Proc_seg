@@ -71,13 +71,13 @@ public class ControladorPrincipal implements ActionListener,Metvis{
             mostrarJpanel(new FrameCiudades());
         }
         if (e.getSource()==frmpri.BotonVentas) {
-            mostrarJpanel(new FrameFacturas());
+            mostrarJpanel(new FrameListaFacturas());
         }
         if (e.getSource()==frmpri.BotonComprasGeneradas) {
-            mostrarJpanel(new FrameCiudades());
+            mostrarJpanel(new FrameComprasGeneradas());
         }
         if (e.getSource()==frmpri.BotonUsuarios) {
-            mostrarJpanel(new FrameCiudades());
+            mostrarJpanel(new FrameUsuarios());
         }
         
         

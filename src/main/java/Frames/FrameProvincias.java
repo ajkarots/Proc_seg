@@ -31,7 +31,7 @@ public class FrameProvincias extends javax.swing.JPanel {
         title = new javax.swing.JLabel();
         buscadorProvincia = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tablaProvincias = new javax.swing.JTable();
         editarProvincia = new javax.swing.JButton();
         eliminarProvincia = new javax.swing.JButton();
         agregarProvincia = new javax.swing.JButton();
@@ -39,6 +39,7 @@ public class FrameProvincias extends javax.swing.JPanel {
         title1 = new javax.swing.JLabel();
         nombreProvinciatxt = new javax.swing.JTextField();
         title2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setMinimumSize(new java.awt.Dimension(809, 544));
@@ -63,7 +64,7 @@ public class FrameProvincias extends javax.swing.JPanel {
             }
         });
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tablaProvincias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -82,8 +83,8 @@ public class FrameProvincias extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jTable2.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        jScrollPane1.setViewportView(jTable2);
+        tablaProvincias.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        jScrollPane1.setViewportView(tablaProvincias);
 
         editarProvincia.setBackground(new java.awt.Color(153, 0, 0));
         editarProvincia.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -124,6 +125,9 @@ public class FrameProvincias extends javax.swing.JPanel {
 
         title2.setText("Nombre provincia");
 
+        jLabel3.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        jLabel3.setText("PROVINCIAS");
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
@@ -133,6 +137,8 @@ public class FrameProvincias extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(bgLayout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(editarProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(eliminarProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -180,11 +186,16 @@ public class FrameProvincias extends javax.swing.JPanel {
                             .addComponent(agregarProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(70, 70, 70)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
-                .addGap(9, 9, 9)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(editarProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eliminarProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(60, 60, 60))
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(editarProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(eliminarProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel3)))
+                .addGap(58, 58, 58))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -223,16 +234,17 @@ public class FrameProvincias extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BuscarProvincia;
-    private javax.swing.JTextField CodigoProvinciatxt;
-    private javax.swing.JButton agregarProvincia;
+    public javax.swing.JButton BuscarProvincia;
+    public javax.swing.JTextField CodigoProvinciatxt;
+    public javax.swing.JButton agregarProvincia;
     private javax.swing.JPanel bg;
-    private javax.swing.JTextField buscadorProvincia;
-    private javax.swing.JButton editarProvincia;
-    private javax.swing.JButton eliminarProvincia;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField nombreProvinciatxt;
+    public javax.swing.JTextField buscadorProvincia;
+    public javax.swing.JButton editarProvincia;
+    public javax.swing.JButton eliminarProvincia;
+    private javax.swing.JLabel jLabel3;
+    public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTextField nombreProvinciatxt;
+    public javax.swing.JTable tablaProvincias;
     private javax.swing.JLabel title;
     private javax.swing.JLabel title1;
     private javax.swing.JLabel title2;

@@ -40,7 +40,7 @@ public class FrameFacturas extends javax.swing.JPanel implements Fechas{
         precioproductoFactura = new javax.swing.JTextField();
         Fecha = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaFactura = new javax.swing.JTable();
         BotontotalFactura = new javax.swing.JButton();
         añadirFactura = new javax.swing.JButton();
         totalFactura = new javax.swing.JTextField();
@@ -64,7 +64,7 @@ public class FrameFacturas extends javax.swing.JPanel implements Fechas{
         Fecha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Fecha.setText("{dayname} {day} de {month} de {year}");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaFactura.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -99,7 +99,7 @@ public class FrameFacturas extends javax.swing.JPanel implements Fechas{
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaFactura);
 
         BotontotalFactura.setText("TOTAL");
 
@@ -190,20 +190,20 @@ public class FrameFacturas extends javax.swing.JPanel implements Fechas{
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotontotalFactura;
+    public javax.swing.JButton BotontotalFactura;
     private javax.swing.JLabel Fecha;
-    private javax.swing.JButton añadirFactura;
-    private javax.swing.JTextField cantidadProductosFactura;
-    private javax.swing.JTextField codigoProductoFactura;
+    public javax.swing.JButton añadirFactura;
+    public javax.swing.JTextField cantidadProductosFactura;
+    public javax.swing.JTextField codigoProductoFactura;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField precioproductoFactura;
-    private javax.swing.JTextField totalFactura;
+    public javax.swing.JTextField precioproductoFactura;
+    public javax.swing.JTable tablaFactura;
+    public javax.swing.JTextField totalFactura;
     // End of variables declaration//GEN-END:variables
 
     @Override
