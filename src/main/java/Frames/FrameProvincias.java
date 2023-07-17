@@ -40,6 +40,7 @@ public class FrameProvincias extends javax.swing.JPanel {
         nombreProvinciatxt = new javax.swing.JTextField();
         title2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        actualizarbtn = new javax.swing.JButton();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setMinimumSize(new java.awt.Dimension(809, 544));
@@ -125,6 +126,18 @@ public class FrameProvincias extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
         jLabel3.setText("PROVINCIAS");
 
+        actualizarbtn.setBackground(new java.awt.Color(153, 0, 0));
+        actualizarbtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        actualizarbtn.setForeground(new java.awt.Color(255, 255, 255));
+        actualizarbtn.setText("Actualizar");
+        actualizarbtn.setBorderPainted(false);
+        actualizarbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        actualizarbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarbtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
@@ -158,6 +171,10 @@ public class FrameProvincias extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(agregarProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(35, 35, 35))
+            .addGroup(bgLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(actualizarbtn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,8 +198,10 @@ public class FrameProvincias extends javax.swing.JPanel {
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(nombreProvinciatxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(agregarProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(70, 70, 70)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(actualizarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(9, 9, 9)
@@ -229,10 +248,15 @@ public class FrameProvincias extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreProvinciatxtActionPerformed
 
+    private void actualizarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarbtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actualizarbtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BuscarProvincia;
     public javax.swing.JTextField CodigoProvinciatxt;
+    public javax.swing.JButton actualizarbtn;
     public javax.swing.JButton agregarProvincia;
     private javax.swing.JPanel bg;
     public javax.swing.JTextField buscadorProvincia;

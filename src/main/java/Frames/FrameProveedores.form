@@ -65,8 +65,11 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="title" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="buscadorProveedores" min="-2" pref="94" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="Actualizarbtn" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="buscadorProveedores" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                   <Component id="buscarProveedores" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -99,17 +102,27 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="title5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="provinciaProovedor" alignment="0" min="-2" pref="106" max="-2" attributes="0"/>
+                                      <Component id="title5" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ProvinciaProveedortxt" min="-2" pref="100" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="title6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ciudadProovedor" alignment="0" min="-2" pref="106" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="title6" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="CiudadProveedortxt" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="title7" min="-2" max="-2" attributes="0"/>
+                                      <Component id="codigoProveedortxt" min="-2" pref="106" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="112" max="32767" attributes="0"/>
+                          <EmptySpace pref="102" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -152,17 +165,25 @@
                               <Component id="title5" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="title6" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="title4" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="title7" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="ciudadProovedor" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                                  <Component id="direccionProveedor" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="provinciaProovedor" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="direccionProveedor" max="32767" attributes="0"/>
+                              <Component id="codigoProveedortxt" alignment="0" pref="40" max="32767" attributes="0"/>
+                              <Component id="ProvinciaProveedortxt" alignment="0" max="32767" attributes="0"/>
+                              <Component id="CiudadProveedortxt" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" pref="224" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Actualizarbtn" min="-2" pref="40" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jScrollPane1" pref="232" max="32767" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="editarProveedor" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
@@ -170,7 +191,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -225,7 +246,8 @@
             <Component class="javax.swing.JTable" name="tablaProveedores">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="6" rowCount="4">
+                  <Table columnCount="7" rowCount="0">
+                    <Column editable="true" title="CODIGO PROVEEDOR" type="java.lang.String"/>
                     <Column editable="true" title="RUC" type="java.lang.String"/>
                     <Column editable="true" title="NOMBRE" type="java.lang.String"/>
                     <Column editable="true" title="TELEFONO" type="java.lang.String"/>
@@ -351,26 +373,10 @@
             <Property name="text" type="java.lang.String" value="DIRECCION"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="provinciaProovedor">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="provinciaProovedorActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-          </AuxValues>
-        </Component>
         <Component class="javax.swing.JLabel" name="title5">
           <Properties>
             <Property name="text" type="java.lang.String" value="PROVINCIA"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="ciudadProovedor">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ciudadProovedorActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="title6">
           <Properties>
@@ -384,6 +390,75 @@
             </Property>
             <Property name="text" type="java.lang.String" value="PROVEEDORES"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="codigoProveedortxt">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="codigoProveedortxtActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="title7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CODIGO PROVEEDOR"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="ProvinciaProveedortxt">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Item 1"/>
+                <StringItem index="1" value="Item 2"/>
+                <StringItem index="2" value="Item 3"/>
+                <StringItem index="3" value="Item 4"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="CiudadProveedortxt">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Item 1"/>
+                <StringItem index="1" value="Item 2"/>
+                <StringItem index="2" value="Item 3"/>
+                <StringItem index="3" value="Item 4"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="Actualizarbtn">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="99" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Roboto" size="18" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Actualizar"/>
+            <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Default Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ActualizarbtnActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

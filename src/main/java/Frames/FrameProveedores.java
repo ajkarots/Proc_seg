@@ -43,11 +43,14 @@ public class FrameProveedores extends javax.swing.JPanel {
         title3 = new javax.swing.JLabel();
         direccionProveedor = new javax.swing.JTextField();
         title4 = new javax.swing.JLabel();
-        provinciaProovedor = new javax.swing.JTextField();
         title5 = new javax.swing.JLabel();
-        ciudadProovedor = new javax.swing.JTextField();
         title6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        codigoProveedortxt = new javax.swing.JTextField();
+        title7 = new javax.swing.JLabel();
+        ProvinciaProveedortxt = new javax.swing.JComboBox<>();
+        CiudadProveedortxt = new javax.swing.JComboBox<>();
+        Actualizarbtn = new javax.swing.JButton();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setMinimumSize(new java.awt.Dimension(809, 490));
@@ -75,17 +78,14 @@ public class FrameProveedores extends javax.swing.JPanel {
 
         tablaProveedores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
-                "RUC", "NOMBRE", "TELEFONO", "DIRECCION", "PROVINCIA", "CIUDAD"
+                "CODIGO PROVEEDOR", "RUC", "NOMBRE", "TELEFONO", "DIRECCION", "PROVINCIA", "CIUDAD"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -150,24 +150,36 @@ public class FrameProveedores extends javax.swing.JPanel {
 
         title4.setText("DIRECCION");
 
-        provinciaProovedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                provinciaProovedorActionPerformed(evt);
-            }
-        });
-
         title5.setText("PROVINCIA");
-
-        ciudadProovedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ciudadProovedorActionPerformed(evt);
-            }
-        });
 
         title6.setText("CIUDAD");
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
         jLabel3.setText("PROVEEDORES");
+
+        codigoProveedortxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codigoProveedortxtActionPerformed(evt);
+            }
+        });
+
+        title7.setText("CODIGO PROVEEDOR");
+
+        ProvinciaProveedortxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        CiudadProveedortxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        Actualizarbtn.setBackground(new java.awt.Color(153, 0, 0));
+        Actualizarbtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        Actualizarbtn.setForeground(new java.awt.Color(255, 255, 255));
+        Actualizarbtn.setText("Actualizar");
+        Actualizarbtn.setBorderPainted(false);
+        Actualizarbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Actualizarbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ActualizarbtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -190,8 +202,10 @@ public class FrameProveedores extends javax.swing.JPanel {
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(title)
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addComponent(buscadorProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(Actualizarbtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(buscadorProveedores, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(6, 6, 6)
                                 .addComponent(buscarProveedores)))
                         .addGap(43, 43, 43)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,12 +231,19 @@ public class FrameProveedores extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(title5)
-                                    .addComponent(provinciaProovedor, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ProvinciaProveedortxt, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(title6)
-                                    .addComponent(ciudadProovedor, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(112, Short.MAX_VALUE))))
+                                    .addGroup(bgLayout.createSequentialGroup()
+                                        .addComponent(title6)
+                                        .addGap(69, 69, 69))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                                        .addComponent(CiudadProveedortxt, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(title7)
+                                    .addComponent(codigoProveedortxt, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(102, Short.MAX_VALUE))))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -253,21 +274,27 @@ public class FrameProveedores extends javax.swing.JPanel {
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(title5)
                             .addComponent(title6)
-                            .addComponent(title4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(ciudadProovedor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(direccionProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(provinciaProovedor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(26, 26, 26)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+                            .addComponent(title4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(title7))
+                        .addGap(10, 10, 10)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(direccionProveedor)
+                            .addComponent(codigoProveedortxt, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                            .addComponent(ProvinciaProveedortxt)
+                            .addComponent(CiudadProveedortxt)))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Actualizarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(26, 26, 26)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(editarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(eliminiarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(46, 46, 46))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                    .addGroup(bgLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addContainerGap())))
@@ -313,20 +340,23 @@ public class FrameProveedores extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_direccionProveedorActionPerformed
 
-    private void provinciaProovedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_provinciaProovedorActionPerformed
+    private void codigoProveedortxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoProveedortxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_provinciaProovedorActionPerformed
+    }//GEN-LAST:event_codigoProveedortxtActionPerformed
 
-    private void ciudadProovedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ciudadProovedorActionPerformed
+    private void ActualizarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarbtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ciudadProovedorActionPerformed
+    }//GEN-LAST:event_ActualizarbtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton Actualizarbtn;
+    public javax.swing.JComboBox<String> CiudadProveedortxt;
+    public javax.swing.JComboBox<String> ProvinciaProveedortxt;
     public javax.swing.JPanel bg;
     public javax.swing.JTextField buscadorProveedores;
     public javax.swing.JButton buscarProveedores;
-    public javax.swing.JTextField ciudadProovedor;
+    public javax.swing.JTextField codigoProveedortxt;
     public javax.swing.JTextField direccionProveedor;
     public javax.swing.JButton editarProveedor;
     public javax.swing.JButton eliminiarProveedor;
@@ -334,7 +364,6 @@ public class FrameProveedores extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTextField nombreProveedor;
-    public javax.swing.JTextField provinciaProovedor;
     public javax.swing.JTextField rucproveedortxt;
     public javax.swing.JTable tablaProveedores;
     public javax.swing.JTextField telefonoProveedor;
@@ -345,5 +374,6 @@ public class FrameProveedores extends javax.swing.JPanel {
     private javax.swing.JLabel title4;
     private javax.swing.JLabel title5;
     private javax.swing.JLabel title6;
+    private javax.swing.JLabel title7;
     // End of variables declaration//GEN-END:variables
 }

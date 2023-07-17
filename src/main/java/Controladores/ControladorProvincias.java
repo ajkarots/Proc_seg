@@ -6,6 +6,7 @@ package Controladores;
 
 import Clases.MySql;
 import Frames.FrameProvincias;
+import Modelo.modeloProductos;
 import Modelo.modeloProvincia;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,13 +39,18 @@ public class ControladorProvincias implements ActionListener {
         this.fProvincia.agregarProvincia.addActionListener(this);
         this.fProvincia.editarProvincia.addActionListener(this);
         this.fProvincia.eliminarProvincia.addActionListener(this);
+        this.fProvincia.actualizarbtn.addActionListener(this);
         this.cargarProvincias();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.fProvincia.BuscarProvincia) {
-
+            try {
+                this.buscarProvincia();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorProvincias.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if (e.getSource() == this.fProvincia.agregarProvincia) {
             try {
@@ -68,7 +74,43 @@ public class ControladorProvincias implements ActionListener {
                 Logger.getLogger(ControladorProvincias.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        if (e.getSource()==this.fProvincia.actualizarbtn) {
+            this.cargarProvincias();
+        }
 
+    }
+
+    
+    public void buscarProvincia() throws SQLException {
+        String ordenBuscarProvincia = ("select * from provincias where codigoProvincia =?;");
+        conProvincias = msProvincias.iniciarConexion();
+        DefaultTableModel model = (DefaultTableModel) fProvincia.tablaProvincias.getModel();
+        PreparedStatement psProvincia = conProvincias.prepareStatement(ordenBuscarProvincia);
+
+        try {
+            if (this.fProvincia.buscadorProvincia.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Ingrese un valor en el cuadro de busqueda");
+            } else {
+                psProvincia.setString(1, this.fProvincia.buscadorProvincia.getText());
+                ResultSet rsProvincia = psProvincia.executeQuery();
+                if (rsProvincia.next()) {
+                    modeloProvincia moProvincia = new modeloProvincia();
+                    moProvincia.setCodigoProvincia(rsProvincia.getString("codigoProvincia"));
+                    moProvincia.setNombreProvincia(rsProvincia.getString("NombreProvincia"));
+                    model.getDataVector().removeAllElements();
+                    this.fProvincia.tablaProvincias.updateUI();
+                    model.addRow(new Object[]{moProvincia.getCodigoProvincia(),moProvincia.getNombreProvincia()});
+                } else {
+                    JOptionPane.showMessageDialog(null, "No existe la provincia buscada");
+                }
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+            System.out.println("Ingrese unicamente hasta 4 digitos entre numeros y letras" + e);
+        }
+
+        
     }
 
     public void modificarProvincia() throws SQLException {
@@ -77,23 +119,23 @@ public class ControladorProvincias implements ActionListener {
         DefaultTableModel model = (DefaultTableModel) fProvincia.tablaProvincias.getModel();
         PreparedStatement psProvincia = conProvincias.prepareStatement(ordenModificarProvincia);
         try {
-            if (this.fProvincia.nombreProvinciatxt.getText().isEmpty() ||this.fProvincia.CodigoProvinciatxt.getText().isEmpty() ) {
+            if (this.fProvincia.nombreProvinciatxt.getText().isEmpty() || this.fProvincia.CodigoProvinciatxt.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Debe Seleccionar e Ingresar nuevos valores en los campos");
-            }else{
+            } else {
                 System.out.println(this.fProvincia.tablaProvincias.getValueAt(this.fProvincia.tablaProvincias.getSelectedRow(), 0));
                 psProvincia.setString(1, this.fProvincia.CodigoProvinciatxt.getText());
                 psProvincia.setString(2, this.fProvincia.nombreProvinciatxt.getText());
                 psProvincia.setString(3, (String) this.fProvincia.tablaProvincias.getValueAt(this.fProvincia.tablaProvincias.getSelectedRow(), 0));
-                if (psProvincia.executeUpdate()>0) {
-                    
-                }
-                else{
-                JOptionPane.showMessageDialog(null, "Error al modificar");
+                if (psProvincia.executeUpdate() > 0) {
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al modificar");
                 }
             }
-            
+
         } catch (Exception e) {
-            System.out.println("Error del servidor"+e);
+            JOptionPane.showMessageDialog(null, "Error al modificar debe seleccionar un item para modificar");
+            System.out.println("Error del servidor" + e);
         }
         this.cargarProvincias();
     }

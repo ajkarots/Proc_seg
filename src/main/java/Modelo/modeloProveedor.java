@@ -11,15 +11,16 @@ package Modelo;
 public class modeloProveedor {
 
     private int rucProveedor, telefonoProveedor;
-    private String nombreProveedor, codigoProvincia, direccionProveedor, codigoCiudad;
+    private String nombreProveedor, codigoProvincia, direccionProveedor, codigoCiudad, codigoProveedor;
 
-    public modeloProveedor(int rucProveedor, int telefonoProveedor, String nombreProveedor, String codigoProvincia, String direccionProveedor, String codigoCiudad) {
+    public modeloProveedor(int rucProveedor, int telefonoProveedor, String nombreProveedor, String codigoProvincia, String direccionProveedor, String codigoCiudad, String codigoProveedor) {
         this.rucProveedor = rucProveedor;
         this.telefonoProveedor = telefonoProveedor;
         this.nombreProveedor = nombreProveedor;
         this.codigoProvincia = codigoProvincia;
         this.direccionProveedor = direccionProveedor;
         this.codigoCiudad = codigoCiudad;
+        this.codigoProveedor = codigoProveedor;
     }
 
     public modeloProveedor() {
@@ -29,6 +30,15 @@ public class modeloProveedor {
         this.codigoProvincia = codigoProvincia;
         this.direccionProveedor = direccionProveedor;
         this.codigoCiudad = codigoCiudad;
+        this.codigoProveedor = codigoProveedor;
+    }
+
+    public void setCodigoProveedor(String codigoProveedor) {
+        this.codigoProveedor = codigoProveedor;
+    }
+
+    public String getCodigoProveedor() {
+        return this.codigoProveedor;
     }
 
     public void setRucProveedor(int rucProveedor) {
