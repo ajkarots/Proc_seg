@@ -78,7 +78,7 @@ public class ControladorProductos implements ActionListener,Metvis {
         if (e.getSource() == this.fProductos.agregarProductobtn) {
             try {
                 this.agregarProductos();
-                System.out.println("");
+                System.out.println("hola");
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorProductos.class.getName()).log(Level.SEVERE, null, ex);
             }
