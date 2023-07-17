@@ -29,10 +29,10 @@ public class ControladorLoggin implements ActionListener{
     private Principal frmpri = new Principal();
     private ControladorPrincipal cp = new ControladorPrincipal(frmpri);
     private modeloUsuario user = new modeloUsuario();
-    private Controlusuario ctrlloggin;
+    private ControladorUsuario ctrlloggin= new ControladorUsuario();
     
 
-    public ControladorLoggin(Loggin lg,Controlusuario ctrlloggin) {
+    public ControladorLoggin(Loggin lg,ControladorUsuario ctrlloggin) {
         this.lg = lg;
         this.lg.botonIngresar.addActionListener(this);
         this.lg.textoContraseña.addActionListener(this);

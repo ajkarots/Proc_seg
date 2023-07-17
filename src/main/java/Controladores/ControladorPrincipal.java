@@ -5,12 +5,14 @@
 package Controladores;
 
 import Frames.*;
-import Frames.Principal;
-import Modelo.modeloProductos;
+import Modelo.*;
 import interfaces.Metvis;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -23,9 +25,15 @@ public class ControladorPrincipal implements ActionListener,Metvis{
     private FrameProductos fProductos =  new FrameProductos();
     private modeloProductos mProductos = new modeloProductos();
     private ControladorProductos controladorProductos = new ControladorProductos(fProductos,mProductos);
+    private FrameProvincias fProvincias = new FrameProvincias();
+    private modeloProvincia mProvincia= new modeloProvincia();
+    private ControladorProvincias cProvincia = new ControladorProvincias(fProvincias,mProvincia);
+
+    
 
     public ControladorPrincipal(Principal frmpri) {
-        this.frmpri = frmpri;
+        this.frmpri = frmpri;        
+        this.fProductos.agregarProductobtn.addActionListener(this);
         this.frmpri.BotonCiudad.addActionListener(this);
         this.frmpri.BotonClientes.addActionListener(this);
         this.frmpri.BotonCompra.addActionListener(this);
@@ -37,6 +45,7 @@ public class ControladorPrincipal implements ActionListener,Metvis{
         this.frmpri.BotonProvincia.addActionListener(this);
         this.frmpri.BotonUsuarios.addActionListener(this);
         this.frmpri.BotonVentas.addActionListener(this);
+        
     }
     
     /**
@@ -46,9 +55,7 @@ public class ControladorPrincipal implements ActionListener,Metvis{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==frmpri.BotonProductos) {
-            mostrarJpanel(new FrameProductos());
-            controladorProductos.actionPerformed(e);
-            
+            mostrarJpanel(fProductos);
         }
         if (e.getSource()==frmpri.BotonClientes) {
             mostrarJpanel(new FrameClientes());
@@ -71,8 +78,9 @@ public class ControladorPrincipal implements ActionListener,Metvis{
             mostrarJpanel(new FrameCompra());
         }
         if (e.getSource()==frmpri.BotonProvincia) {
-            mostrarJpanel(new FrameProvincias());
+            mostrarJpanel(fProvincias);
         }
+        
         if (e.getSource()==frmpri.BotonCiudad) {
             mostrarJpanel(new FrameCiudades());
         }
