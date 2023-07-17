@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
  *
  * @author pc
  */
-public class Controlusuario {
+public class ControladorUsuario {
     MySql ms = new MySql();
      
     public int controlusuarios(modeloUsuario user) {

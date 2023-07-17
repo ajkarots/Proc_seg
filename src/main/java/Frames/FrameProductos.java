@@ -4,13 +4,25 @@
  */
 package Frames;
 
+import Clases.MySql;
+import Controladores.ControladorPrincipal;
+import Controladores.ControladorProductos;
+import Modelo.modeloProductos;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pc
  */
 public class FrameProductos extends javax.swing.JPanel {
 
-    /**
+    /**p
      * Creates new form NewJPanel
      */
     public FrameProductos() {
@@ -39,9 +51,9 @@ public class FrameProductos extends javax.swing.JPanel {
         title1 = new javax.swing.JLabel();
         nombreProductotxt = new javax.swing.JTextField();
         title2 = new javax.swing.JLabel();
-        codigoProveedortxt = new javax.swing.JTextField();
         title3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        codigoProveedortxt = new javax.swing.JComboBox<>();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setMinimumSize(new java.awt.Dimension(809, 490));
@@ -111,6 +123,11 @@ public class FrameProductos extends javax.swing.JPanel {
         agregarProductobtn.setForeground(new java.awt.Color(255, 255, 255));
         agregarProductobtn.setText("Agregar");
         agregarProductobtn.setBorderPainted(false);
+        agregarProductobtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                agregarProductobtnMouseClicked(evt);
+            }
+        });
 
         codigoProductotxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,16 +145,12 @@ public class FrameProductos extends javax.swing.JPanel {
 
         title2.setText("NOMBRE");
 
-        codigoProveedortxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codigoProveedortxtActionPerformed(evt);
-            }
-        });
-
         title3.setText("CODIGO PROVEEDOR");
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
         jLabel2.setText("PRODUCTOS");
+
+        codigoProveedortxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -146,15 +159,8 @@ public class FrameProductos extends javax.swing.JPanel {
             .addGroup(bgLayout.createSequentialGroup()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(title))
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(buscadorProductostxt, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(buscarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(6, 6, 6)
+                        .addComponent(title)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2))
                     .addGroup(bgLayout.createSequentialGroup()
@@ -179,9 +185,14 @@ public class FrameProductos extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(title3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(codigoProveedortxt, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(codigoProveedortxt, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
-                                .addComponent(agregarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(agregarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(buscadorProductostxt, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(buscarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 34, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -200,31 +211,30 @@ public class FrameProductos extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(jLabel2)))
                 .addGap(20, 20, 20)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addComponent(title2)
-                                .addGap(6, 6, 6)
-                                .addComponent(nombreProductotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addComponent(title1)
-                                .addGap(6, 6, 6)
-                                .addComponent(codigoProductotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(25, 25, 25)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
-                        .addGap(8, 8, 8)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(editarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(eliminarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(8, 8, 8))
+                        .addComponent(title2)
+                        .addGap(6, 6, 6)
+                        .addComponent(nombreProductotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addComponent(title1)
+                        .addGap(6, 6, 6)
+                        .addComponent(codigoProductotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(title3)
                         .addGap(2, 2, 2)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(codigoProveedortxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(agregarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(codigoProveedortxt))
+                            .addComponent(agregarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(25, 25, 25)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                .addGap(8, 8, 8)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(editarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eliminarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -259,9 +269,9 @@ public class FrameProductos extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreProductotxtActionPerformed
 
-    private void codigoProveedortxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoProveedortxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_codigoProveedortxtActionPerformed
+    private void agregarProductobtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregarProductobtnMouseClicked
+
+    }//GEN-LAST:event_agregarProductobtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -270,7 +280,7 @@ public class FrameProductos extends javax.swing.JPanel {
     public javax.swing.JTextField buscadorProductostxt;
     public javax.swing.JButton buscarProductobtn;
     public javax.swing.JTextField codigoProductotxt;
-    public javax.swing.JTextField codigoProveedortxt;
+    public javax.swing.JComboBox<String> codigoProveedortxt;
     public javax.swing.JButton editarProductobtn;
     public javax.swing.JButton eliminarProductobtn;
     private javax.swing.JLabel jLabel2;

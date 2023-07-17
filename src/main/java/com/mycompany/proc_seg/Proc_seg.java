@@ -7,7 +7,7 @@ package com.mycompany.proc_seg;
 import Controladores.ControladorLoggin;
 import Frames.Principal;
 import Controladores.ControladorPrincipal;
-import Controladores.Controlusuario;
+import Controladores.ControladorUsuario;
 import Frames.Loggin;
 import com.formdev.flatlaf.intellijthemes.FlatVuesionIJTheme;
 
@@ -20,7 +20,7 @@ public class Proc_seg {
     public static void main(String[] args) {
         FlatVuesionIJTheme.setup();
         Loggin lg = new Loggin();
-        Controlusuario cluser = new Controlusuario();
+        ControladorUsuario cluser = new ControladorUsuario();
         ControladorLoggin cl = new ControladorLoggin(lg,cluser);
         cl.iniciar();
         
