@@ -28,6 +28,9 @@ public class ControladorPrincipal implements ActionListener,Metvis{
     private FrameProvincias fProvincias = new FrameProvincias();
     private modeloProvincia mProvincia= new modeloProvincia();
     private ControladorProvincias cProvincia = new ControladorProvincias(fProvincias,mProvincia);
+    private FrameProveedores fProveedores = new FrameProveedores();
+    private modeloProveedor mProveedor= new modeloProveedor();
+    private ControladorProveedores cProveedores = new ControladorProveedores(fProveedores, mProveedor);
 
     
 
@@ -61,7 +64,7 @@ public class ControladorPrincipal implements ActionListener,Metvis{
             mostrarJpanel(new FrameClientes());
         }
         if (e.getSource()==frmpri.BotonProveedor) {
-            mostrarJpanel(new FrameProveedores());
+            mostrarJpanel(fProveedores);
         }
         if (e.getSource()==frmpri.BotonFactura) {
             String CodigoDeCliente;

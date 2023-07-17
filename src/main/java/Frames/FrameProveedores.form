@@ -54,9 +54,9 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="editarProveedor" min="-2" pref="99" max="-2" attributes="0"/>
+                                  <Component id="editarProveedorbtn" min="-2" pref="99" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="eliminiarProveedor" min="-2" pref="99" max="-2" attributes="0"/>
+                                  <Component id="eliminiarProveedorbtn" min="-2" pref="99" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
@@ -70,7 +70,7 @@
                                       <Component id="buscadorProveedores" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                  <Component id="buscarProveedores" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BuscarProveedorbtn" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
@@ -91,7 +91,7 @@
                                       <Group type="102" attributes="0">
                                           <Component id="telefonoProveedor" min="-2" pref="106" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="guardarProveedor" min="-2" pref="99" max="-2" attributes="0"/>
+                                          <Component id="AgregarProveedorbtn" min="-2" pref="99" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -135,7 +135,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                           <Component id="telefonoProveedor" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="guardarProveedor" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                          <Component id="AgregarProveedorbtn" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -150,7 +150,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="buscadorProveedores" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="buscarProveedores" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="BuscarProveedorbtn" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -186,13 +186,12 @@
                           <Component id="jScrollPane1" pref="232" max="32767" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="editarProveedor" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                              <Component id="eliminiarProveedor" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="editarProveedorbtn" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="eliminiarProveedorbtn" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -202,7 +201,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="buscarProveedores">
+        <Component class="javax.swing.JButton" name="BuscarProveedorbtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="99" type="rgb"/>
@@ -220,7 +219,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarProveedoresActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BuscarProveedorbtnActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -264,7 +263,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="editarProveedor">
+        <Component class="javax.swing.JButton" name="editarProveedorbtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="99" type="rgb"/>
@@ -282,7 +281,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="eliminiarProveedor">
+        <Component class="javax.swing.JButton" name="eliminiarProveedorbtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="99" type="rgb"/>
@@ -297,13 +296,13 @@
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eliminiarProveedorActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eliminiarProveedorbtnActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="guardarProveedor">
+        <Component class="javax.swing.JButton" name="AgregarProveedorbtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="99" type="rgb"/>

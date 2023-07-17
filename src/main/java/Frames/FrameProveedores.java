@@ -27,14 +27,14 @@ public class FrameProveedores extends javax.swing.JPanel {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        buscarProveedores = new javax.swing.JButton();
+        BuscarProveedorbtn = new javax.swing.JButton();
         title = new javax.swing.JLabel();
         buscadorProveedores = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaProveedores = new javax.swing.JTable();
-        editarProveedor = new javax.swing.JButton();
-        eliminiarProveedor = new javax.swing.JButton();
-        guardarProveedor = new javax.swing.JButton();
+        editarProveedorbtn = new javax.swing.JButton();
+        eliminiarProveedorbtn = new javax.swing.JButton();
+        AgregarProveedorbtn = new javax.swing.JButton();
         rucproveedortxt = new javax.swing.JTextField();
         title1 = new javax.swing.JLabel();
         nombreProveedor = new javax.swing.JTextField();
@@ -56,15 +56,15 @@ public class FrameProveedores extends javax.swing.JPanel {
         bg.setMinimumSize(new java.awt.Dimension(809, 490));
         bg.setPreferredSize(new java.awt.Dimension(809, 490));
 
-        buscarProveedores.setBackground(new java.awt.Color(153, 0, 0));
-        buscarProveedores.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        buscarProveedores.setForeground(new java.awt.Color(255, 255, 255));
-        buscarProveedores.setText("Buscar");
-        buscarProveedores.setBorderPainted(false);
-        buscarProveedores.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        buscarProveedores.addActionListener(new java.awt.event.ActionListener() {
+        BuscarProveedorbtn.setBackground(new java.awt.Color(153, 0, 0));
+        BuscarProveedorbtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        BuscarProveedorbtn.setForeground(new java.awt.Color(255, 255, 255));
+        BuscarProveedorbtn.setText("Buscar");
+        BuscarProveedorbtn.setBorderPainted(false);
+        BuscarProveedorbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BuscarProveedorbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarProveedoresActionPerformed(evt);
+                BuscarProveedorbtnActionPerformed(evt);
             }
         });
 
@@ -95,28 +95,28 @@ public class FrameProveedores extends javax.swing.JPanel {
         tablaProveedores.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         jScrollPane1.setViewportView(tablaProveedores);
 
-        editarProveedor.setBackground(new java.awt.Color(153, 0, 0));
-        editarProveedor.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        editarProveedor.setForeground(new java.awt.Color(255, 255, 255));
-        editarProveedor.setText("Editar");
-        editarProveedor.setBorderPainted(false);
+        editarProveedorbtn.setBackground(new java.awt.Color(153, 0, 0));
+        editarProveedorbtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        editarProveedorbtn.setForeground(new java.awt.Color(255, 255, 255));
+        editarProveedorbtn.setText("Editar");
+        editarProveedorbtn.setBorderPainted(false);
 
-        eliminiarProveedor.setBackground(new java.awt.Color(153, 0, 0));
-        eliminiarProveedor.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        eliminiarProveedor.setForeground(new java.awt.Color(255, 255, 255));
-        eliminiarProveedor.setText("Eliminar");
-        eliminiarProveedor.setBorderPainted(false);
-        eliminiarProveedor.addActionListener(new java.awt.event.ActionListener() {
+        eliminiarProveedorbtn.setBackground(new java.awt.Color(153, 0, 0));
+        eliminiarProveedorbtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        eliminiarProveedorbtn.setForeground(new java.awt.Color(255, 255, 255));
+        eliminiarProveedorbtn.setText("Eliminar");
+        eliminiarProveedorbtn.setBorderPainted(false);
+        eliminiarProveedorbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminiarProveedorActionPerformed(evt);
+                eliminiarProveedorbtnActionPerformed(evt);
             }
         });
 
-        guardarProveedor.setBackground(new java.awt.Color(153, 0, 0));
-        guardarProveedor.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        guardarProveedor.setForeground(new java.awt.Color(255, 255, 255));
-        guardarProveedor.setText("Agregar");
-        guardarProveedor.setBorderPainted(false);
+        AgregarProveedorbtn.setBackground(new java.awt.Color(153, 0, 0));
+        AgregarProveedorbtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        AgregarProveedorbtn.setForeground(new java.awt.Color(255, 255, 255));
+        AgregarProveedorbtn.setText("Agregar");
+        AgregarProveedorbtn.setBorderPainted(false);
 
         rucproveedortxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,9 +194,9 @@ public class FrameProveedores extends javax.swing.JPanel {
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(editarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(editarProveedorbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(eliminiarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(eliminiarProveedorbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(34, 34, 34))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,7 +206,7 @@ public class FrameProveedores extends javax.swing.JPanel {
                                     .addComponent(Actualizarbtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(buscadorProveedores, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(6, 6, 6)
-                                .addComponent(buscarProveedores)))
+                                .addComponent(BuscarProveedorbtn)))
                         .addGap(43, 43, 43)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgLayout.createSequentialGroup()
@@ -223,7 +223,7 @@ public class FrameProveedores extends javax.swing.JPanel {
                                     .addGroup(bgLayout.createSequentialGroup()
                                         .addComponent(telefonoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(guardarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(AgregarProveedorbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(title4)
@@ -252,7 +252,7 @@ public class FrameProveedores extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(telefonoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(guardarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(AgregarProveedorbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(title2)
@@ -264,7 +264,7 @@ public class FrameProveedores extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(buscadorProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buscarProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(BuscarProveedorbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addComponent(title1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -291,11 +291,10 @@ public class FrameProveedores extends javax.swing.JPanel {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(editarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(eliminiarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(editarProveedorbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(eliminiarProveedorbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(46, 46, 46))
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addContainerGap())))
         );
@@ -312,17 +311,17 @@ public class FrameProveedores extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buscarProveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarProveedoresActionPerformed
+    private void BuscarProveedorbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarProveedorbtnActionPerformed
 
-    }//GEN-LAST:event_buscarProveedoresActionPerformed
+    }//GEN-LAST:event_BuscarProveedorbtnActionPerformed
 
     private void buscadorProveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorProveedoresActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buscadorProveedoresActionPerformed
 
-    private void eliminiarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminiarProveedorActionPerformed
+    private void eliminiarProveedorbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminiarProveedorbtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_eliminiarProveedorActionPerformed
+    }//GEN-LAST:event_eliminiarProveedorbtnActionPerformed
 
     private void rucproveedortxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rucproveedortxtActionPerformed
         // TODO add your handling code here:
@@ -351,16 +350,16 @@ public class FrameProveedores extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton Actualizarbtn;
+    public javax.swing.JButton AgregarProveedorbtn;
+    public javax.swing.JButton BuscarProveedorbtn;
     public javax.swing.JComboBox<String> CiudadProveedortxt;
     public javax.swing.JComboBox<String> ProvinciaProveedortxt;
     public javax.swing.JPanel bg;
     public javax.swing.JTextField buscadorProveedores;
-    public javax.swing.JButton buscarProveedores;
     public javax.swing.JTextField codigoProveedortxt;
     public javax.swing.JTextField direccionProveedor;
-    public javax.swing.JButton editarProveedor;
-    public javax.swing.JButton eliminiarProveedor;
-    public javax.swing.JButton guardarProveedor;
+    public javax.swing.JButton editarProveedorbtn;
+    public javax.swing.JButton eliminiarProveedorbtn;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTextField nombreProveedor;

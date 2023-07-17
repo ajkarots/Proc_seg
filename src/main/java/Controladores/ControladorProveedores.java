@@ -26,8 +26,9 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author pc
  */
-public class ControladorProveedores implements ActionListener{
-    private FrameProveedores fProveedores ;
+public class ControladorProveedores implements ActionListener {
+
+    private FrameProveedores fProveedores;
     private modeloProveedor mProveedor;
     private MySql msProveedores = new MySql();
     Connection conProveedores;
@@ -35,11 +36,12 @@ public class ControladorProveedores implements ActionListener{
     public ControladorProveedores(FrameProveedores fProveedores, modeloProveedor mProveedor) {
         this.fProveedores = fProveedores;
         this.mProveedor = mProveedor;
-        this.fProveedores.buscarProveedores.addActionListener(this);
-        this.fProveedores.editarProveedor.addActionListener(this);
-        this.fProveedores.eliminiarProveedor.addActionListener(this);
-        this.fProveedores.editarProveedor.addActionListener(this);
+        this.fProveedores.BuscarProveedorbtn.addActionListener(this);
+        this.fProveedores.editarProveedorbtn.addActionListener(this);
+        this.fProveedores.eliminiarProveedorbtn.addActionListener(this);
+        this.fProveedores.editarProveedorbtn.addActionListener(this);
         this.fProveedores.Actualizarbtn.addActionListener(this);
+        this.fProveedores.AgregarProveedorbtn.addActionListener(this);
         this.cargarProveedores();
     }
 
@@ -61,38 +63,39 @@ public class ControladorProveedores implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource()==fProveedores.Actualizarbtn) {
+        if (e.getSource() == fProveedores.Actualizarbtn) {
             this.cargarProveedores();
+
         }
-        if (e.getSource()==fProveedores.eliminiarProveedor) {
+        if (e.getSource() == fProveedores.eliminiarProveedorbtn) {
             try {
                 this.eliminarProveedor();
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorProveedores.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        if (e.getSource()==fProveedores.editarProveedor) {
-
+        if (e.getSource() == fProveedores.editarProveedorbtn) {
             try {
                 this.modificarProveedor();
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorProveedores.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        if (e.getSource()==fProveedores.guardarProveedor) {
+        if (e.getSource() == fProveedores.AgregarProveedorbtn) {
             try {
+                System.out.println("Agregar");
                 this.agregarProveedor();
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorProveedores.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        if (e.getSource()==fProveedores.buscadorProveedores) {
+        if (e.getSource() == fProveedores.BuscarProveedorbtn) {
             try {
+                System.out.println("Buscar");
                 this.buscarProveedor();
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorProveedores.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
         }
     }
 
@@ -101,7 +104,6 @@ public class ControladorProveedores implements ActionListener{
         conProveedores = msProveedores.iniciarConexion();
         DefaultTableModel model = (DefaultTableModel) fProveedores.tablaProveedores.getModel();
         PreparedStatement psProveedores = conProveedores.prepareStatement(OrdenBuscarProveedor);
-
         try {
             if (this.fProveedores.buscadorProveedores.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Ingrese un valor en el cuadro de busqueda");
@@ -119,19 +121,17 @@ public class ControladorProveedores implements ActionListener{
                     moProveedor.setCodigoProvincia(rsProveedores.getString("codigoProvincia"));
                     model.getDataVector().removeAllElements();
                     this.fProveedores.tablaProveedores.updateUI();
-                    model.addRow(new Object[]{moProveedor.getCodigoProveedor(),moProveedor.getRucProveedor(),moProveedor.getNombreProveedor(),moProveedor.getTelefonoProveedor(),
-                    moProveedor.getDireccionProveedor(),moProveedor.getCodigoCiudad(),moProveedor.getCodigoProvincia()});
+                    model.addRow(new Object[]{moProveedor.getCodigoProveedor(), moProveedor.getRucProveedor(), moProveedor.getNombreProveedor(), moProveedor.getTelefonoProveedor(),
+                        moProveedor.getDireccionProveedor(), moProveedor.getCodigoCiudad(), moProveedor.getCodigoProvincia()});
                 } else {
-                    JOptionPane.showMessageDialog(null, "No existe el Proveedor buscad");
+                    JOptionPane.showMessageDialog(null, "No existe el Proveedor buscado");
                 }
             }
-
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, e);
             System.out.println("Ingrese unicamente hasta 4 digitos entre numeros y letras" + e);
         }
 
-        
     }
 
     public void modificarProveedor() throws SQLException {
@@ -142,17 +142,17 @@ public class ControladorProveedores implements ActionListener{
         PreparedStatement psProveedores = conProveedores.prepareStatement(OrdenModificarProveedores);
         try {
             if (this.fProveedores.rucproveedortxt.getText().isEmpty() || this.fProveedores.nombreProveedor.getText().isEmpty()
-                    || this.fProveedores.nombreProveedor.getText().isEmpty() ||this.fProveedores.telefonoProveedor.getText().isEmpty()
+                    || this.fProveedores.nombreProveedor.getText().isEmpty() || this.fProveedores.telefonoProveedor.getText().isEmpty()
                     || this.fProveedores.direccionProveedor.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Debe Seleccionar e Ingresar nuevos valores en los campos");
             } else {
-            psProveedores.setString(1, this.fProveedores.codigoProveedortxt.getText());
-            psProveedores.setInt(2, Integer.parseInt(this.fProveedores.rucproveedortxt.getText()));
-            psProveedores.setString(3, this.fProveedores.nombreProveedor.getText());
-            psProveedores.setInt(4, Integer.parseInt(this.fProveedores.telefonoProveedor.getText()));
-            psProveedores.setString(5, this.fProveedores.direccionProveedor.getText());
-            psProveedores.setString(6, this.fProveedores.CiudadProveedortxt.getSelectedItem().toString());
-            psProveedores.setString(7, this.fProveedores.ProvinciaProveedortxt.getSelectedItem().toString());
+                psProveedores.setString(1, this.fProveedores.codigoProveedortxt.getText());
+                psProveedores.setInt(2, Integer.parseInt(this.fProveedores.rucproveedortxt.getText()));
+                psProveedores.setString(3, this.fProveedores.nombreProveedor.getText());
+                psProveedores.setInt(4, Integer.parseInt(this.fProveedores.telefonoProveedor.getText()));
+                psProveedores.setString(5, this.fProveedores.direccionProveedor.getText());
+                psProveedores.setString(6, this.fProveedores.CiudadProveedortxt.getSelectedItem().toString());
+                psProveedores.setString(7, this.fProveedores.ProvinciaProveedortxt.getSelectedItem().toString());
                 if (psProveedores.executeUpdate() > 0) {
 
                 } else {
@@ -194,11 +194,12 @@ public class ControladorProveedores implements ActionListener{
     }
 
     public void agregarProveedor() throws SQLException {
-        String OrdenAgregarProveedor = ("insert into proveedores(codigoProveedor,rucProveedor,nombreProveedor,telefonoProveedor,direccionProveedor\n" +
-",codigoCiudad,cdoigoProvincia) values(?,?,?,?,?,?,?);");
-        conProveedores = msProveedores.iniciarConexion();
+        String OrdenAgregarProveedor = ("insert into proveedores(codigoProveedor,rucProveedor,nombreProveedor,telefonoProveedor,direccionProveedor\n"
+                + ",codigoCiudad,cdoigoProvincia) values(?,?,?,?,?,?,?);");
+        
 
         try {
+            conProveedores = msProveedores.iniciarConexion();
             PreparedStatement psProveedores = conProveedores.prepareStatement(OrdenAgregarProveedor);
             psProveedores.setString(1, this.fProveedores.codigoProveedortxt.getText());
             psProveedores.setInt(2, Integer.parseInt(this.fProveedores.rucproveedortxt.getText()));
@@ -208,15 +209,18 @@ public class ControladorProveedores implements ActionListener{
             psProveedores.setString(6, this.fProveedores.CiudadProveedortxt.getSelectedItem().toString());
             psProveedores.setString(7, this.fProveedores.ProvinciaProveedortxt.getSelectedItem().toString());
             if (this.fProveedores.rucproveedortxt.getText().isEmpty() || this.fProveedores.nombreProveedor.getText().isEmpty()
-                    || this.fProveedores.nombreProveedor.getText().isEmpty() ||this.fProveedores.telefonoProveedor.getText().isEmpty()
+                    || this.fProveedores.nombreProveedor.getText().isEmpty() || this.fProveedores.telefonoProveedor.getText().isEmpty()
                     || this.fProveedores.direccionProveedor.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "No puede dejar los campos en blanco", "Error", WARNING_MESSAGE);
             } else {
-                psProveedores.executeUpdate();
+                if (psProveedores.executeUpdate() > 0) {
+                }else{
+                  JOptionPane.showMessageDialog(null,"No puede dejar los campos en blanco", "Error", WARNING_MESSAGE);  }
             }
             msProveedores.finalizarConexion(conProveedores);
             psProveedores.close();
         } catch (HeadlessException | NumberFormatException | SQLException e) {
+
             JOptionPane.showMessageDialog(null, "No se a podido agregar el Proveedor" + e);
         }
         this.cargarProveedores();
@@ -231,13 +235,13 @@ public class ControladorProveedores implements ActionListener{
             while (rsProveedores.next()) {
 
                 modeloProveedor moProveedor = new modeloProveedor();
-                    moProveedor.setCodigoCiudad(rsProveedores.getString("codigoProveedor"));
-                    moProveedor.setRucProveedor(rsProveedores.getInt("rucProveedor"));
-                    moProveedor.setNombreProveedor(rsProveedores.getString("nombreProveedor"));
-                    moProveedor.setTelefonoProveedor(rsProveedores.getInt("telefonoProveedor"));
-                    moProveedor.setDireccionProveedor(rsProveedores.getString("direccionProveedor"));
-                    moProveedor.setCodigoCiudad(rsProveedores.getString("codigoCiudad"));
-                    moProveedor.setCodigoProvincia(rsProveedores.getString("codigoProvincia"));
+                moProveedor.setCodigoCiudad(rsProveedores.getString("codigoProveedor"));
+                moProveedor.setRucProveedor(rsProveedores.getInt("rucProveedor"));
+                moProveedor.setNombreProveedor(rsProveedores.getString("nombreProveedor"));
+                moProveedor.setTelefonoProveedor(rsProveedores.getInt("telefonoProveedor"));
+                moProveedor.setDireccionProveedor(rsProveedores.getString("direccionProveedor"));
+                moProveedor.setCodigoCiudad(rsProveedores.getString("codigoCiudad"));
+                moProveedor.setCodigoProvincia(rsProveedores.getString("codigoProvincia"));
                 listaProveedores.add(moProveedor);
             }
             psProveedores.close();
@@ -255,13 +259,11 @@ public class ControladorProveedores implements ActionListener{
             DefaultTableModel model = (DefaultTableModel) fProveedores.tablaProveedores.getModel();
             model.getDataVector().removeAllElements();
             this.fProveedores.tablaProveedores.updateUI();
-            ListarProveedores().forEach((lista) -> model.addRow(new Object[]{lista.getCodigoProveedor(),lista.getRucProveedor(),lista.getNombreProveedor(),lista.getTelefonoProveedor(),
-                    lista.getDireccionProveedor(),lista.getCodigoCiudad(),lista.getCodigoProvincia()}));
+            ListarProveedores().forEach((lista) -> model.addRow(new Object[]{lista.getCodigoProveedor(), lista.getRucProveedor(), lista.getNombreProveedor(), lista.getTelefonoProveedor(),
+                lista.getDireccionProveedor(), lista.getCodigoCiudad(), lista.getCodigoProvincia()}));
         } catch (Exception e) {
 
         }
     }
 
 }
-    
-
