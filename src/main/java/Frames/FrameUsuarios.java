@@ -29,7 +29,7 @@ public class FrameUsuarios extends javax.swing.JPanel {
         bg = new javax.swing.JPanel();
         buscarUsuariobtn = new javax.swing.JButton();
         title = new javax.swing.JLabel();
-        buscadorClientetxt = new javax.swing.JTextField();
+        buscadorUsuariotxt = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaUsuarios = new javax.swing.JTable();
         editarUsuariobtn = new javax.swing.JButton();
@@ -71,9 +71,9 @@ public class FrameUsuarios extends javax.swing.JPanel {
 
         title.setText("UserID");
 
-        buscadorClientetxt.addActionListener(new java.awt.event.ActionListener() {
+        buscadorUsuariotxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscadorClientetxtActionPerformed(evt);
+                buscadorUsuariotxtActionPerformed(evt);
             }
         });
 
@@ -194,7 +194,7 @@ public class FrameUsuarios extends javax.swing.JPanel {
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(title)
                                     .addGroup(bgLayout.createSequentialGroup()
-                                        .addComponent(buscadorClientetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(buscadorUsuariotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(buscarUsuariobtn))
                                     .addGroup(bgLayout.createSequentialGroup()
@@ -251,7 +251,7 @@ public class FrameUsuarios extends javax.swing.JPanel {
                                     .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(6, 6, 6)
                                     .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(buscadorClientetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(buscadorUsuariotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(buscarUsuariobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGroup(bgLayout.createSequentialGroup()
                                     .addComponent(title1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -326,9 +326,9 @@ public class FrameUsuarios extends javax.swing.JPanel {
 
     }//GEN-LAST:event_buscarUsuariobtnActionPerformed
 
-    private void buscadorClientetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorClientetxtActionPerformed
+    private void buscadorUsuariotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorUsuariotxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buscadorClientetxtActionPerformed
+    }//GEN-LAST:event_buscadorUsuariotxtActionPerformed
 
     private void eliminarUsuariobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarUsuariobtnActionPerformed
         // TODO add your handling code here:
@@ -363,7 +363,7 @@ public class FrameUsuarios extends javax.swing.JPanel {
     public javax.swing.JCheckBox boxProveedores;
     public javax.swing.JCheckBox boxProvincia;
     public javax.swing.JCheckBox boxUsuarios;
-    public javax.swing.JTextField buscadorClientetxt;
+    public javax.swing.JTextField buscadorUsuariotxt;
     public javax.swing.JButton buscarUsuariobtn;
     public javax.swing.JTextField contraseñaUsuariotxt;
     public javax.swing.JButton editarUsuariobtn;

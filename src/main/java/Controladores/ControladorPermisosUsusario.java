@@ -25,10 +25,11 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author pc
  */
-public class ControladorPermisosUsusario implements ActionListener{
+public class ControladorPermisosUsusario implements ActionListener {
+
     private modeloUsuario mUsuario;
     private FrameUsuarios fUsuarios;
-    private MySql msUsuarios= new MySql();
+    private MySql msUsuarios = new MySql();
     private Connection conUsuarios;
 
     public ControladorPermisosUsusario(modeloUsuario mUsuario, FrameUsuarios frameUsuarios) {
@@ -60,33 +61,32 @@ public class ControladorPermisosUsusario implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource()==this.fUsuarios.Actualizarbtn) {
+        if (e.getSource() == this.fUsuarios.Actualizarbtn) {
             this.cargarUsuarios();
-            
-            
+
         }
-        if (e.getSource()==this.fUsuarios.buscarUsuariobtn) {
+        if (e.getSource() == this.fUsuarios.buscarUsuariobtn) {
             try {
                 this.BuscarUsuario();
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorPermisosUsusario.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        if (e.getSource()==this.fUsuarios.eliminarUsuariobtn) {
+        if (e.getSource() == this.fUsuarios.eliminarUsuariobtn) {
             try {
                 this.EliminarUsuario();
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorPermisosUsusario.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        if (e.getSource()==this.fUsuarios.AgregarUsuariobtn) {
+        if (e.getSource() == this.fUsuarios.AgregarUsuariobtn) {
             try {
                 this.agregarUsuario();
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorPermisosUsusario.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        if (e.getSource()==this.fUsuarios.editarUsuariobtn) {
+        if (e.getSource() == this.fUsuarios.editarUsuariobtn) {
             try {
                 this.EditarUsuario();
             } catch (SQLException ex) {
@@ -94,16 +94,17 @@ public class ControladorPermisosUsusario implements ActionListener{
             }
         }
     }
-    public void agregarUsuario() throws SQLException{
-        String OrdenAgregarUsuario=("insert into usuarios(userID=?, contraseña=?,intentos=?,permiso_producto=?,permiso_cliente=?,permiso_proveedor=?,\n" +
-"permiso_factura=?,permiso_compra=?,permiso_kardex=?,permiso_provincias=?,permiso_ciudades=?,\n" +
-"permiso_lista_venta=?,permiso_lista_compra=?,permiso_gestor_usuario=?,bloqueo=? values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
-        conUsuarios= msUsuarios.iniciarConexion();
+
+    public void agregarUsuario() throws SQLException {
+        String OrdenAgregarUsuario = ("insert into usuarios(userID, contraseña,intentos,permiso_producto,permiso_cliente,permiso_proveedor,"
+                + "permiso_factura,permiso_compra,permiso_kardex,permiso_provincias,permiso_ciudades,"
+                + "permiso_lista_venta,permiso_lista_compra,permiso_gestor_usuario,bloqueo) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
+        conUsuarios = msUsuarios.iniciarConexion();
         try {
             PreparedStatement psUsuarios = conUsuarios.prepareStatement(OrdenAgregarUsuario);
             psUsuarios.setString(1, this.fUsuarios.nombreUsuariotxt.getText());
             psUsuarios.setString(2, this.fUsuarios.contraseñaUsuariotxt.getText());
-            psUsuarios.setInt(3,0);
+            psUsuarios.setInt(3, 0);
             psUsuarios.setInt(4, this.interpreteBox(this.fUsuarios.boxProductos));
             psUsuarios.setInt(5, this.interpreteBox(this.fUsuarios.boxCliente));
             psUsuarios.setInt(6, this.interpreteBox(this.fUsuarios.boxProveedores));
@@ -116,29 +117,30 @@ public class ControladorPermisosUsusario implements ActionListener{
             psUsuarios.setInt(13, this.interpreteBox(this.fUsuarios.boxFacturas));
             psUsuarios.setInt(14, this.interpreteBox(this.fUsuarios.boxUsuarios));
             psUsuarios.setInt(15, 0);
-            if (this.fUsuarios.nombreUsuariotxt.getText().isEmpty()||this.fUsuarios.contraseñaUsuariotxt.getText().isEmpty()) {
+            if (this.fUsuarios.nombreUsuariotxt.getText().isEmpty() || this.fUsuarios.contraseñaUsuariotxt.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "No deje los campos en blanco");
-            }else{
-            if (psUsuarios.executeUpdate()>0) {
+            } else {
+                if (psUsuarios.executeUpdate() > 0) {
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se ha podido agregar al usuario");
+                }
             }
-            else{
-                JOptionPane.showMessageDialog(null, "No se ha podido agregar al usuario");
-            }}
             psUsuarios.close();
         } catch (HeadlessException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error "+e);
+            JOptionPane.showMessageDialog(null, "Error " + e);
         }
         msUsuarios.finalizarConexion(conUsuarios);
         this.cargarUsuarios();
+        this.limpiarSeleccion();
     }
-    
-    public void EliminarUsuario()throws SQLException{
-    String OrdenEliminarUsuario=("delete from usuarios where userID=?;");
-    conUsuarios= msUsuarios.iniciarConexion();
+
+    public void EliminarUsuario() throws SQLException {
+        String OrdenEliminarUsuario = ("delete from usuarios where userID=?;");
+        conUsuarios = msUsuarios.iniciarConexion();
         try {
             PreparedStatement psUsuarios = conUsuarios.prepareStatement(OrdenEliminarUsuario);
             for (int i = 0; i < this.fUsuarios.TablaUsuarios.getSelectedRows().length; i++) {
-                psUsuarios.setString(1, (String) this.fUsuarios.TablaUsuarios.getValueAt(this.fUsuarios.TablaUsuarios.getSelectedRows()[i],0));
+                psUsuarios.setString(1, (String) this.fUsuarios.TablaUsuarios.getValueAt(this.fUsuarios.TablaUsuarios.getSelectedRows()[i], 0));
                 psUsuarios.executeUpdate();
             }
         } catch (SQLException e) {
@@ -146,13 +148,14 @@ public class ControladorPermisosUsusario implements ActionListener{
         }
         this.cargarUsuarios();
     }
-    
-    public void BuscarUsuario()throws SQLException{
-        String OrdenBuscarUsuario=("select * from usuarios where userID=?;");
-        conUsuarios= msUsuarios.iniciarConexion();
-        DefaultTableModel model = (DefaultTableModel)this.fUsuarios.TablaUsuarios.getModel();
+
+    public void BuscarUsuario() throws SQLException {
+        String OrdenBuscarUsuario = ("select * from usuarios where userID=?;");
+        conUsuarios = msUsuarios.iniciarConexion();
+        DefaultTableModel model = (DefaultTableModel) this.fUsuarios.TablaUsuarios.getModel();
         try {
             PreparedStatement psUsuarios = conUsuarios.prepareStatement(OrdenBuscarUsuario);
+            psUsuarios.setString(1, this.fUsuarios.buscadorUsuariotxt.getText());
             ResultSet rsUsuarios = psUsuarios.executeQuery();
             if (rsUsuarios.next()) {
                 modeloUsuario moUsuario = new modeloUsuario();
@@ -173,12 +176,11 @@ public class ControladorPermisosUsusario implements ActionListener{
                 moUsuario.setBloqueo(rsUsuarios.getInt("bloqueo"));
                 model.getDataVector().removeAllElements();
                 this.fUsuarios.TablaUsuarios.updateUI();
-                model.addRow(new Object[]{moUsuario.getUserID(),moUsuario.getContraseña(),this.interpreteBox2(moUsuario.getPermiso_producto()),this.interpreteBox2(moUsuario.getPermiso_cliente()),
-                this.interpreteBox2(moUsuario.getPermiso_proveedor()),this.interpreteBox2(moUsuario.getPermiso_factura()),this.interpreteBox2(moUsuario.getPermiso_compra()),this.interpreteBox2(moUsuario.getPermiso_kardex()),this.interpreteBox2(moUsuario.getPermiso_provincias()),this.interpreteBox2(moUsuario.getPermiso_ciudades()),
-                this.interpreteBox2(moUsuario.getPermiso_lista_venta()),this.interpreteBox2(moUsuario.getPermiso_lista_compra()),this.interpreteBox2(moUsuario.getPermiso_gestor_usuario()),this.interpreteBox2(moUsuario.getBloqueo())});
-            }
-            else{
-            JOptionPane.showMessageDialog(null, "El usuario buscado no existe");
+                model.addRow(new Object[]{moUsuario.getUserID(), moUsuario.getContraseña(), this.interpreteBox2(moUsuario.getPermiso_producto()), this.interpreteBox2(moUsuario.getPermiso_cliente()),
+                    this.interpreteBox2(moUsuario.getPermiso_proveedor()), this.interpreteBox2(moUsuario.getPermiso_factura()), this.interpreteBox2(moUsuario.getPermiso_compra()), this.interpreteBox2(moUsuario.getPermiso_kardex()), this.interpreteBox2(moUsuario.getPermiso_provincias()), this.interpreteBox2(moUsuario.getPermiso_ciudades()),
+                    this.interpreteBox2(moUsuario.getPermiso_lista_venta()), this.interpreteBox2(moUsuario.getPermiso_lista_compra()), this.interpreteBox2(moUsuario.getPermiso_gestor_usuario()), this.interpreteBox2(moUsuario.getBloqueo())});
+            } else {
+                JOptionPane.showMessageDialog(null, "El usuario buscado no existe");
             }
             rsUsuarios.close();
             psUsuarios.close();
@@ -187,17 +189,17 @@ public class ControladorPermisosUsusario implements ActionListener{
         }
         msUsuarios.finalizarConexion(conUsuarios);
     }
-    
-    public void EditarUsuario()throws SQLException{
-    String OrdenModificarUsuario=("update usuarios set userID=?, contraseña=?,intentos=?,permiso_producto=?,permiso_cliente=?,permiso_proveedor=?,\n" +
-"permiso_factura=?,permiso_compra=?,permiso_kardex=?,permiso_provincias=?,permiso_ciudades=?,"
-            + "permiso_lista_venta=?,permiso_lista_compra=?,permiso_gestor_usuario=?,bloqueo=? where userID=?;");
-            conUsuarios = msUsuarios.iniciarConexion();
+
+    public void EditarUsuario() throws SQLException {
+        String OrdenModificarUsuario = ("update usuarios set userID=?, contraseña=?,intentos=?,permiso_producto=?,permiso_cliente=?,permiso_proveedor=?,"
+                + "permiso_factura=?,permiso_compra=?,permiso_kardex=?,permiso_provincias=?,permiso_ciudades=?,"
+                + "permiso_lista_venta=?,permiso_lista_compra=?,permiso_gestor_usuario=?,bloqueo=? where userID=?;");
+        conUsuarios = msUsuarios.iniciarConexion();
         try {
             PreparedStatement psUsuarios = conUsuarios.prepareStatement(OrdenModificarUsuario);
             psUsuarios.setString(1, this.fUsuarios.nombreUsuariotxt.getText());
             psUsuarios.setString(2, this.fUsuarios.contraseñaUsuariotxt.getText());
-            psUsuarios.setInt(3,0);
+            psUsuarios.setInt(3, 0);
             psUsuarios.setInt(4, this.interpreteBox(this.fUsuarios.boxProductos));
             psUsuarios.setInt(5, this.interpreteBox(this.fUsuarios.boxCliente));
             psUsuarios.setInt(6, this.interpreteBox(this.fUsuarios.boxProveedores));
@@ -210,42 +212,44 @@ public class ControladorPermisosUsusario implements ActionListener{
             psUsuarios.setInt(13, this.interpreteBox(this.fUsuarios.boxFacturas));
             psUsuarios.setInt(14, this.interpreteBox(this.fUsuarios.boxUsuarios));
             psUsuarios.setInt(15, 0);
-            if (psUsuarios.executeUpdate()>0) { 
-            }else{
+            psUsuarios.setString(16, this.fUsuarios.TablaUsuarios.getValueAt(this.fUsuarios.TablaUsuarios.getSelectedRow(), 0).toString());
+            if (psUsuarios.executeUpdate() > 0) {
+            } else {
                 JOptionPane.showMessageDialog(null, "No se ha podido modificar el usuario");
             }
             psUsuarios.close();
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error "+e);
+            JOptionPane.showMessageDialog(null, "Error " + e);
             msUsuarios.finalizarConexion(conUsuarios);
         }
         this.cargarUsuarios();
+        this.limpiarSeleccion();
     }
-    public int interpreteBox(JCheckBox entrada){
+
+    public int interpreteBox(JCheckBox entrada) {
         if (entrada.isSelected()) {
             return 1;
-        }
-        else{
-        return 0;
+        } else {
+            return 0;
         }
     }
-    
-    public String interpreteBox2(int a){
-        if (a==1) {
+
+    public String interpreteBox2(int a) {
+        if (a == 1) {
             return "Si";
-        }
-        else{
-        return "No";
+        } else {
+            return "No";
         }
     }
-    public LinkedList<modeloUsuario> ListarUsuarios(){
-    LinkedList<modeloUsuario>ListaUsuarios = new LinkedList<>();
-    String OrdenSeleccionarUsuarios=("select * from usuarios");
-    conUsuarios= msUsuarios.iniciarConexion();
+
+    public LinkedList<modeloUsuario> ListarUsuarios() {
+        LinkedList<modeloUsuario> ListaUsuarios = new LinkedList<>();
+        String OrdenSeleccionarUsuarios = ("select * from usuarios");
+        conUsuarios = msUsuarios.iniciarConexion();
         try {
             PreparedStatement psUsuarios = conUsuarios.prepareStatement(OrdenSeleccionarUsuarios);
             ResultSet rsUsuarios = psUsuarios.executeQuery();
-            while (rsUsuarios.next()) {  
+            while (rsUsuarios.next()) {
                 modeloUsuario moUsuario = new modeloUsuario();
                 moUsuario.setUserID(rsUsuarios.getString("userID"));
                 moUsuario.setContraseña(rsUsuarios.getString("contraseña"));
@@ -267,23 +271,37 @@ public class ControladorPermisosUsusario implements ActionListener{
             rsUsuarios.close();
             psUsuarios.close();
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al listar los usuarios"+e);
+            JOptionPane.showMessageDialog(null, "Error al listar los usuarios" + e);
         }
         msUsuarios.finalizarConexion(conUsuarios);
-    return ListaUsuarios;
+        return ListaUsuarios;
     }
-    
-    public void cargarUsuarios(){
-        DefaultTableModel model = (DefaultTableModel)this.fUsuarios.TablaUsuarios.getModel();
+
+    public void cargarUsuarios() {
+        DefaultTableModel model = (DefaultTableModel) this.fUsuarios.TablaUsuarios.getModel();
         try {
             model.getDataVector().removeAllElements();
             this.fUsuarios.TablaUsuarios.updateUI();
-            ListarUsuarios().forEach((lista) ->model.addRow(new Object[]{lista.getUserID(),lista.getContraseña(),this.interpreteBox2(lista.getPermiso_producto()),this.interpreteBox2(lista.getPermiso_cliente()),
-                this.interpreteBox2(lista.getPermiso_proveedor()),this.interpreteBox2(lista.getPermiso_factura()),this.interpreteBox2(lista.getPermiso_compra()),this.interpreteBox2(lista.getPermiso_kardex()),this.interpreteBox2(lista.getPermiso_provincias()),this.interpreteBox2(lista.getPermiso_ciudades()),
-                this.interpreteBox2(lista.getPermiso_lista_venta()),this.interpreteBox2(lista.getPermiso_lista_compra()),this.interpreteBox2(lista.getPermiso_gestor_usuario()),this.interpreteBox2(lista.getBloqueo())}));
+            ListarUsuarios().forEach((lista) -> model.addRow(new Object[]{lista.getUserID(), lista.getContraseña(), this.interpreteBox2(lista.getPermiso_producto()), this.interpreteBox2(lista.getPermiso_cliente()),
+                this.interpreteBox2(lista.getPermiso_proveedor()), this.interpreteBox2(lista.getPermiso_factura()), this.interpreteBox2(lista.getPermiso_compra()), this.interpreteBox2(lista.getPermiso_kardex()), this.interpreteBox2(lista.getPermiso_provincias()), this.interpreteBox2(lista.getPermiso_ciudades()),
+                this.interpreteBox2(lista.getPermiso_lista_venta()), this.interpreteBox2(lista.getPermiso_lista_compra()), this.interpreteBox2(lista.getPermiso_gestor_usuario()), this.interpreteBox2(lista.getBloqueo())}));
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se pudo cargar los usuarios"+e);
+            JOptionPane.showMessageDialog(null, "No se pudo cargar los usuarios" + e);
         }
-    
+
+    }
+
+    public void limpiarSeleccion() {
+        this.fUsuarios.boxCiudad.setSelected(false);
+        this.fUsuarios.boxCliente.setSelected(false);
+        this.fUsuarios.boxCompra.setSelected(false);
+        this.fUsuarios.boxCompras.setSelected(false);
+        this.fUsuarios.boxFactura.setSelected(false);
+        this.fUsuarios.boxFacturas.setSelected(false);
+        this.fUsuarios.boxKardex.setSelected(false);
+        this.fUsuarios.boxProductos.setSelected(false);
+        this.fUsuarios.boxProveedores.setSelected(false);
+        this.fUsuarios.boxProvincia.setSelected(false);
+        this.fUsuarios.boxUsuarios.setSelected(false);
     }
 }
