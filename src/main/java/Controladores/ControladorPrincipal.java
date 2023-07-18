@@ -37,6 +37,9 @@ public class ControladorPrincipal implements ActionListener,Metvis{
     private FrameClientes fClientes = new FrameClientes();
     private modeloClientes mClientes = new modeloClientes();
     private ControladorClientes cClientes = new ControladorClientes(fClientes, mClientes);
+    private FrameUsuarios fUsuario = new FrameUsuarios();
+    private modeloUsuario mUsuario = new modeloUsuario();
+    private ControladorPermisosUsusario cPermisosUsuario = new ControladorPermisosUsusario(mUsuario, fUsuario);
 
     
 
@@ -122,7 +125,7 @@ public class ControladorPrincipal implements ActionListener,Metvis{
             mostrarJpanel(new FrameComprasGeneradas());
         }
         if (e.getSource()==frmpri.BotonUsuarios) {
-            mostrarJpanel(new FrameUsuarios());
+            mostrarJpanel(fUsuario);
         }
         
         

@@ -82,11 +82,11 @@ public class FrameUsuarios extends javax.swing.JPanel {
 
             },
             new String [] {
-                "userID", "contraseña", "producto", "cliente", "proveedor", "factura", "compra", "kardex", "provincias", "ciudades", "lista_venta", "lista_compra", "gestor_usuario"
+                "userID", "contraseña", "Title 3", "cliente", "proveedor", "factura", "compra", "kardex", "provincias", "ciudades", "lista_venta", "lista_compra", "gestor_usuario", "bloqueo"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {

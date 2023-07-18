@@ -14,6 +14,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -36,7 +39,7 @@ public class ControladorPermisosUsusario implements ActionListener{
         this.fUsuarios.editarUsuariobtn.addActionListener(this);
         this.fUsuarios.buscarUsuariobtn.addActionListener(this);
         this.fUsuarios.Actualizarbtn.addActionListener(this);
-        
+        this.cargarUsuarios();
     }
 
     public modeloUsuario getmUsuario() {
@@ -58,19 +61,37 @@ public class ControladorPermisosUsusario implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==this.fUsuarios.Actualizarbtn) {
+            this.cargarUsuarios();
+            
             
         }
         if (e.getSource()==this.fUsuarios.buscarUsuariobtn) {
-            
+            try {
+                this.BuscarUsuario();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPermisosUsusario.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if (e.getSource()==this.fUsuarios.eliminarUsuariobtn) {
-            
+            try {
+                this.EliminarUsuario();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPermisosUsusario.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if (e.getSource()==this.fUsuarios.AgregarUsuariobtn) {
-            
+            try {
+                this.agregarUsuario();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPermisosUsusario.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if (e.getSource()==this.fUsuarios.editarUsuariobtn) {
-            
+            try {
+                this.EditarUsuario();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPermisosUsusario.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     public void agregarUsuario() throws SQLException{
@@ -95,11 +116,14 @@ public class ControladorPermisosUsusario implements ActionListener{
             psUsuarios.setInt(13, this.interpreteBox(this.fUsuarios.boxFacturas));
             psUsuarios.setInt(14, this.interpreteBox(this.fUsuarios.boxUsuarios));
             psUsuarios.setInt(15, 0);
+            if (this.fUsuarios.nombreUsuariotxt.getText().isEmpty()||this.fUsuarios.contraseñaUsuariotxt.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "No deje los campos en blanco");
+            }else{
             if (psUsuarios.executeUpdate()>0) {
             }
             else{
                 JOptionPane.showMessageDialog(null, "No se ha podido agregar al usuario");
-            }
+            }}
             psUsuarios.close();
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error "+e);
@@ -108,7 +132,7 @@ public class ControladorPermisosUsusario implements ActionListener{
         this.cargarUsuarios();
     }
     
-    public void EliminarUsuario(){
+    public void EliminarUsuario()throws SQLException{
     String OrdenEliminarUsuario=("delete from usuarios where userID=?;");
     conUsuarios= msUsuarios.iniciarConexion();
         try {
@@ -123,7 +147,7 @@ public class ControladorPermisosUsusario implements ActionListener{
         this.cargarUsuarios();
     }
     
-    public void BuscarUsuario(){
+    public void BuscarUsuario()throws SQLException{
         String OrdenBuscarUsuario=("select * from usuarios where userID=?;");
         conUsuarios= msUsuarios.iniciarConexion();
         DefaultTableModel model = (DefaultTableModel)this.fUsuarios.TablaUsuarios.getModel();
@@ -149,7 +173,7 @@ public class ControladorPermisosUsusario implements ActionListener{
                 moUsuario.setBloqueo(rsUsuarios.getInt("bloqueo"));
                 model.getDataVector().removeAllElements();
                 this.fUsuarios.TablaUsuarios.updateUI();
-                model.addRow(new Object[]{moUsuario.getUserID(),moUsuario.getContraseña(),moUsuario.getIntentos(),this.interpreteBox2(moUsuario.getPermiso_producto()),this.interpreteBox2(moUsuario.getPermiso_cliente()),
+                model.addRow(new Object[]{moUsuario.getUserID(),moUsuario.getContraseña(),this.interpreteBox2(moUsuario.getPermiso_producto()),this.interpreteBox2(moUsuario.getPermiso_cliente()),
                 this.interpreteBox2(moUsuario.getPermiso_proveedor()),this.interpreteBox2(moUsuario.getPermiso_factura()),this.interpreteBox2(moUsuario.getPermiso_compra()),this.interpreteBox2(moUsuario.getPermiso_kardex()),this.interpreteBox2(moUsuario.getPermiso_provincias()),this.interpreteBox2(moUsuario.getPermiso_ciudades()),
                 this.interpreteBox2(moUsuario.getPermiso_lista_venta()),this.interpreteBox2(moUsuario.getPermiso_lista_compra()),this.interpreteBox2(moUsuario.getPermiso_gestor_usuario()),this.interpreteBox2(moUsuario.getBloqueo())});
             }
@@ -164,9 +188,38 @@ public class ControladorPermisosUsusario implements ActionListener{
         msUsuarios.finalizarConexion(conUsuarios);
     }
     
-    public void EditarUsuario(){
-    
-    
+    public void EditarUsuario()throws SQLException{
+    String OrdenModificarUsuario=("update usuarios set userID=?, contraseña=?,intentos=?,permiso_producto=?,permiso_cliente=?,permiso_proveedor=?,\n" +
+"permiso_factura=?,permiso_compra=?,permiso_kardex=?,permiso_provincias=?,permiso_ciudades=?,"
+            + "permiso_lista_venta=?,permiso_lista_compra=?,permiso_gestor_usuario=?,bloqueo=? where userID=?;");
+            conUsuarios = msUsuarios.iniciarConexion();
+        try {
+            PreparedStatement psUsuarios = conUsuarios.prepareStatement(OrdenModificarUsuario);
+            psUsuarios.setString(1, this.fUsuarios.nombreUsuariotxt.getText());
+            psUsuarios.setString(2, this.fUsuarios.contraseñaUsuariotxt.getText());
+            psUsuarios.setInt(3,0);
+            psUsuarios.setInt(4, this.interpreteBox(this.fUsuarios.boxProductos));
+            psUsuarios.setInt(5, this.interpreteBox(this.fUsuarios.boxCliente));
+            psUsuarios.setInt(6, this.interpreteBox(this.fUsuarios.boxProveedores));
+            psUsuarios.setInt(7, this.interpreteBox(this.fUsuarios.boxFactura));
+            psUsuarios.setInt(8, this.interpreteBox(this.fUsuarios.boxCompra));
+            psUsuarios.setInt(9, this.interpreteBox(this.fUsuarios.boxKardex));
+            psUsuarios.setInt(10, this.interpreteBox(this.fUsuarios.boxProvincia));
+            psUsuarios.setInt(11, this.interpreteBox(this.fUsuarios.boxCiudad));
+            psUsuarios.setInt(12, this.interpreteBox(this.fUsuarios.boxCompras));
+            psUsuarios.setInt(13, this.interpreteBox(this.fUsuarios.boxFacturas));
+            psUsuarios.setInt(14, this.interpreteBox(this.fUsuarios.boxUsuarios));
+            psUsuarios.setInt(15, 0);
+            if (psUsuarios.executeUpdate()>0) { 
+            }else{
+                JOptionPane.showMessageDialog(null, "No se ha podido modificar el usuario");
+            }
+            psUsuarios.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error "+e);
+            msUsuarios.finalizarConexion(conUsuarios);
+        }
+        this.cargarUsuarios();
     }
     public int interpreteBox(JCheckBox entrada){
         if (entrada.isSelected()) {
@@ -185,8 +238,52 @@ public class ControladorPermisosUsusario implements ActionListener{
         return "No";
         }
     }
+    public LinkedList<modeloUsuario> ListarUsuarios(){
+    LinkedList<modeloUsuario>ListaUsuarios = new LinkedList<>();
+    String OrdenSeleccionarUsuarios=("select * from usuarios");
+    conUsuarios= msUsuarios.iniciarConexion();
+        try {
+            PreparedStatement psUsuarios = conUsuarios.prepareStatement(OrdenSeleccionarUsuarios);
+            ResultSet rsUsuarios = psUsuarios.executeQuery();
+            while (rsUsuarios.next()) {  
+                modeloUsuario moUsuario = new modeloUsuario();
+                moUsuario.setUserID(rsUsuarios.getString("userID"));
+                moUsuario.setContraseña(rsUsuarios.getString("contraseña"));
+                moUsuario.setIntentos(rsUsuarios.getInt("intentos"));
+                moUsuario.setPermiso_producto(rsUsuarios.getInt("permiso_producto"));
+                moUsuario.setPermiso_cliente(rsUsuarios.getInt("permiso_cliente"));
+                moUsuario.setPermiso_proveedor(rsUsuarios.getInt("permiso_proveedor"));
+                moUsuario.setPermiso_factura(rsUsuarios.getInt("permiso_factura"));
+                moUsuario.setPermiso_compra(rsUsuarios.getInt("permiso_compra"));
+                moUsuario.setPermiso_kardex(rsUsuarios.getInt("permiso_kardex"));
+                moUsuario.setPermiso_provincias(rsUsuarios.getInt("permiso_provincias"));
+                moUsuario.setPermiso_ciudades(rsUsuarios.getInt("permiso_ciudades"));
+                moUsuario.setPermiso_lista_venta(rsUsuarios.getInt("permiso_lista_venta"));
+                moUsuario.setPermiso_lista_compra(rsUsuarios.getInt("permiso_lista_compra"));
+                moUsuario.setPermiso_gestor_usuario(rsUsuarios.getInt("permiso_gestor_usuario"));
+                moUsuario.setBloqueo(rsUsuarios.getInt("bloqueo"));
+                ListaUsuarios.add(moUsuario);
+            }
+            rsUsuarios.close();
+            psUsuarios.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al listar los usuarios"+e);
+        }
+        msUsuarios.finalizarConexion(conUsuarios);
+    return ListaUsuarios;
+    }
     
     public void cargarUsuarios(){
+        DefaultTableModel model = (DefaultTableModel)this.fUsuarios.TablaUsuarios.getModel();
+        try {
+            model.getDataVector().removeAllElements();
+            this.fUsuarios.TablaUsuarios.updateUI();
+            ListarUsuarios().forEach((lista) ->model.addRow(new Object[]{lista.getUserID(),lista.getContraseña(),this.interpreteBox2(lista.getPermiso_producto()),this.interpreteBox2(lista.getPermiso_cliente()),
+                this.interpreteBox2(lista.getPermiso_proveedor()),this.interpreteBox2(lista.getPermiso_factura()),this.interpreteBox2(lista.getPermiso_compra()),this.interpreteBox2(lista.getPermiso_kardex()),this.interpreteBox2(lista.getPermiso_provincias()),this.interpreteBox2(lista.getPermiso_ciudades()),
+                this.interpreteBox2(lista.getPermiso_lista_venta()),this.interpreteBox2(lista.getPermiso_lista_compra()),this.interpreteBox2(lista.getPermiso_gestor_usuario()),this.interpreteBox2(lista.getBloqueo())}));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se pudo cargar los usuarios"+e);
+        }
     
     }
 }

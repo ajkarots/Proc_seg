@@ -172,7 +172,7 @@ public class ControladorProvincias implements ActionListener {
 
         try {
             PreparedStatement psProvincias = conProvincias.prepareStatement(OrdenAgregarProvincia);
-            psProvincias.setInt(1, Integer.parseInt(this.fProvincia.CodigoProvinciatxt.getText()));
+            psProvincias.setString(1,this.fProvincia.CodigoProvinciatxt.getText());
             psProvincias.setString(2, this.fProvincia.nombreProvinciatxt.getText());
             if (this.fProvincia.CodigoProvinciatxt.getText().isEmpty() || this.fProvincia.nombreProvinciatxt.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "No puede dejar los campos en blanco", "Error", WARNING_MESSAGE);
