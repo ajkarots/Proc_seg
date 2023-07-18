@@ -27,24 +27,24 @@ public class FrameUsuarios extends javax.swing.JPanel {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        buscarCliente = new javax.swing.JButton();
+        buscarUsuariobtn = new javax.swing.JButton();
         title = new javax.swing.JLabel();
-        buscadorCliente = new javax.swing.JTextField();
+        buscadorClientetxt = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        editarCliente = new javax.swing.JButton();
-        eliminarCliente = new javax.swing.JButton();
-        guardarCliente = new javax.swing.JButton();
-        nombreCliente = new javax.swing.JTextField();
+        TablaUsuarios = new javax.swing.JTable();
+        editarUsuariobtn = new javax.swing.JButton();
+        eliminarUsuariobtn = new javax.swing.JButton();
+        AgregarUsuariobtn = new javax.swing.JButton();
+        nombreUsuariotxt = new javax.swing.JTextField();
         title1 = new javax.swing.JLabel();
-        cedulaCliente = new javax.swing.JTextField();
+        contraseñaUsuariotxt = new javax.swing.JTextField();
         title2 = new javax.swing.JLabel();
         title4 = new javax.swing.JLabel();
         boxCiudad = new javax.swing.JCheckBox();
         boxProvincia = new javax.swing.JCheckBox();
         boxFactura = new javax.swing.JCheckBox();
         boxCliente = new javax.swing.JCheckBox();
-        boxVentas = new javax.swing.JCheckBox();
+        boxCompras = new javax.swing.JCheckBox();
         boxCompra = new javax.swing.JCheckBox();
         boxProveedores = new javax.swing.JCheckBox();
         boxKardex = new javax.swing.JCheckBox();
@@ -52,36 +52,37 @@ public class FrameUsuarios extends javax.swing.JPanel {
         boxFacturas = new javax.swing.JCheckBox();
         boxUsuarios = new javax.swing.JCheckBox();
         jLabel3 = new javax.swing.JLabel();
+        Actualizarbtn = new javax.swing.JButton();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setMinimumSize(new java.awt.Dimension(809, 544));
 
-        buscarCliente.setBackground(new java.awt.Color(153, 0, 0));
-        buscarCliente.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        buscarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        buscarCliente.setText("Buscar");
-        buscarCliente.setBorderPainted(false);
-        buscarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        buscarCliente.addActionListener(new java.awt.event.ActionListener() {
+        buscarUsuariobtn.setBackground(new java.awt.Color(153, 0, 0));
+        buscarUsuariobtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        buscarUsuariobtn.setForeground(new java.awt.Color(255, 255, 255));
+        buscarUsuariobtn.setText("Buscar");
+        buscarUsuariobtn.setBorderPainted(false);
+        buscarUsuariobtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        buscarUsuariobtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarClienteActionPerformed(evt);
+                buscarUsuariobtnActionPerformed(evt);
             }
         });
 
         title.setText("UserID");
 
-        buscadorCliente.addActionListener(new java.awt.event.ActionListener() {
+        buscadorClientetxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscadorClienteActionPerformed(evt);
+                buscadorClientetxtActionPerformed(evt);
             }
         });
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        TablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "userID", "contraseña", "permiso_producto", "permiso_cliente", "permiso_proveedor", "permiso_factura", "permiso_compra", "permiso_kardex", "permiso_provincias", "permiso_ciudades", "permiso_lista_venta", "permiso_lista_compra", "permiso_gestor_usuario"
+                "userID", "contraseña", "producto", "cliente", "proveedor", "factura", "compra", "kardex", "provincias", "ciudades", "lista_venta", "lista_compra", "gestor_usuario"
             }
         ) {
             Class[] types = new Class [] {
@@ -92,43 +93,43 @@ public class FrameUsuarios extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jTable2.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        jScrollPane1.setViewportView(jTable2);
+        TablaUsuarios.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        jScrollPane1.setViewportView(TablaUsuarios);
 
-        editarCliente.setBackground(new java.awt.Color(153, 0, 0));
-        editarCliente.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        editarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        editarCliente.setText("Editar");
-        editarCliente.setBorderPainted(false);
+        editarUsuariobtn.setBackground(new java.awt.Color(153, 0, 0));
+        editarUsuariobtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        editarUsuariobtn.setForeground(new java.awt.Color(255, 255, 255));
+        editarUsuariobtn.setText("Editar");
+        editarUsuariobtn.setBorderPainted(false);
 
-        eliminarCliente.setBackground(new java.awt.Color(153, 0, 0));
-        eliminarCliente.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        eliminarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        eliminarCliente.setText("Eliminar");
-        eliminarCliente.setBorderPainted(false);
-        eliminarCliente.addActionListener(new java.awt.event.ActionListener() {
+        eliminarUsuariobtn.setBackground(new java.awt.Color(153, 0, 0));
+        eliminarUsuariobtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        eliminarUsuariobtn.setForeground(new java.awt.Color(255, 255, 255));
+        eliminarUsuariobtn.setText("Eliminar");
+        eliminarUsuariobtn.setBorderPainted(false);
+        eliminarUsuariobtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarClienteActionPerformed(evt);
+                eliminarUsuariobtnActionPerformed(evt);
             }
         });
 
-        guardarCliente.setBackground(new java.awt.Color(153, 0, 0));
-        guardarCliente.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        guardarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        guardarCliente.setText("Agregar");
-        guardarCliente.setBorderPainted(false);
+        AgregarUsuariobtn.setBackground(new java.awt.Color(153, 0, 0));
+        AgregarUsuariobtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        AgregarUsuariobtn.setForeground(new java.awt.Color(255, 255, 255));
+        AgregarUsuariobtn.setText("Agregar");
+        AgregarUsuariobtn.setBorderPainted(false);
 
-        nombreCliente.addActionListener(new java.awt.event.ActionListener() {
+        nombreUsuariotxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreClienteActionPerformed(evt);
+                nombreUsuariotxtActionPerformed(evt);
             }
         });
 
         title1.setText("UserID");
 
-        cedulaCliente.addActionListener(new java.awt.event.ActionListener() {
+        contraseñaUsuariotxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cedulaClienteActionPerformed(evt);
+                contraseñaUsuariotxtActionPerformed(evt);
             }
         });
 
@@ -144,7 +145,7 @@ public class FrameUsuarios extends javax.swing.JPanel {
 
         boxCliente.setText("CLIENTE");
 
-        boxVentas.setText("VENTAS");
+        boxCompras.setText("COMPRAS");
 
         boxCompra.setText("COMPRA");
 
@@ -161,6 +162,18 @@ public class FrameUsuarios extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
         jLabel3.setText("GESTION USUARIOS");
 
+        Actualizarbtn.setBackground(new java.awt.Color(153, 0, 0));
+        Actualizarbtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        Actualizarbtn.setForeground(new java.awt.Color(255, 255, 255));
+        Actualizarbtn.setText("Actualizar");
+        Actualizarbtn.setBorderPainted(false);
+        Actualizarbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Actualizarbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ActualizarbtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
@@ -173,17 +186,17 @@ public class FrameUsuarios extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(editarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(editarUsuariobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(eliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(eliminarUsuariobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(title)
                                     .addGroup(bgLayout.createSequentialGroup()
-                                        .addComponent(buscadorCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(buscadorClientetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(buscarCliente))
+                                        .addComponent(buscarUsuariobtn))
                                     .addGroup(bgLayout.createSequentialGroup()
                                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(boxCiudad)
@@ -195,17 +208,9 @@ public class FrameUsuarios extends javax.swing.JPanel {
                                         .addGap(18, 18, 18)
                                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(boxCompra)
-                                            .addComponent(boxVentas))))
+                                            .addComponent(boxCompras))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(bgLayout.createSequentialGroup()
-                                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(title1)
-                                            .addComponent(nombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(title2)
-                                            .addComponent(cedulaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(bgLayout.createSequentialGroup()
                                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(boxKardex)
@@ -216,9 +221,19 @@ public class FrameUsuarios extends javax.swing.JPanel {
                                                 .addComponent(boxFacturas)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(boxUsuarios))
-                                            .addComponent(boxProductos))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(guardarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                            .addComponent(boxProductos)))
+                                    .addGroup(bgLayout.createSequentialGroup()
+                                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(title1)
+                                            .addComponent(nombreUsuariotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(title2)
+                                            .addComponent(contraseñaUsuariotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(AgregarUsuariobtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Actualizarbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(title4)))
@@ -227,23 +242,28 @@ public class FrameUsuarios extends javax.swing.JPanel {
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(bgLayout.createSequentialGroup()
-                            .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(6, 6, 6)
-                            .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(buscadorCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(bgLayout.createSequentialGroup()
-                            .addComponent(title1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(6, 6, 6)
-                            .addComponent(nombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(title2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(cedulaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap()
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(bgLayout.createSequentialGroup()
+                                    .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(6, 6, 6)
+                                    .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(buscadorClientetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(buscarUsuariobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(bgLayout.createSequentialGroup()
+                                    .addComponent(title1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(6, 6, 6)
+                                    .addComponent(nombreUsuariotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addComponent(title2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(contraseñaUsuariotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(Actualizarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(title4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
@@ -253,7 +273,7 @@ public class FrameUsuarios extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                                 .addComponent(boxCompra)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(boxVentas))
+                                .addComponent(boxCompras))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                                 .addComponent(boxCliente)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -272,15 +292,15 @@ public class FrameUsuarios extends javax.swing.JPanel {
                             .addComponent(boxUsuarios))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(boxProductos))
-                    .addComponent(guardarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AgregarUsuariobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(editarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(eliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(editarUsuariobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(eliminarUsuariobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel3)))
@@ -302,32 +322,40 @@ public class FrameUsuarios extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarClienteActionPerformed
+    private void buscarUsuariobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarUsuariobtnActionPerformed
 
-    }//GEN-LAST:event_buscarClienteActionPerformed
+    }//GEN-LAST:event_buscarUsuariobtnActionPerformed
 
-    private void buscadorClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorClienteActionPerformed
+    private void buscadorClientetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorClientetxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buscadorClienteActionPerformed
+    }//GEN-LAST:event_buscadorClientetxtActionPerformed
 
-    private void eliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarClienteActionPerformed
+    private void eliminarUsuariobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarUsuariobtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_eliminarClienteActionPerformed
+    }//GEN-LAST:event_eliminarUsuariobtnActionPerformed
 
-    private void nombreClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreClienteActionPerformed
+    private void nombreUsuariotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreUsuariotxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nombreClienteActionPerformed
+    }//GEN-LAST:event_nombreUsuariotxtActionPerformed
 
-    private void cedulaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaClienteActionPerformed
+    private void contraseñaUsuariotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraseñaUsuariotxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaClienteActionPerformed
+    }//GEN-LAST:event_contraseñaUsuariotxtActionPerformed
+
+    private void ActualizarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarbtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ActualizarbtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton Actualizarbtn;
+    public javax.swing.JButton AgregarUsuariobtn;
+    public javax.swing.JTable TablaUsuarios;
     private javax.swing.JPanel bg;
     public javax.swing.JCheckBox boxCiudad;
     public javax.swing.JCheckBox boxCliente;
     public javax.swing.JCheckBox boxCompra;
+    public javax.swing.JCheckBox boxCompras;
     public javax.swing.JCheckBox boxFactura;
     public javax.swing.JCheckBox boxFacturas;
     public javax.swing.JCheckBox boxKardex;
@@ -335,17 +363,14 @@ public class FrameUsuarios extends javax.swing.JPanel {
     public javax.swing.JCheckBox boxProveedores;
     public javax.swing.JCheckBox boxProvincia;
     public javax.swing.JCheckBox boxUsuarios;
-    public javax.swing.JCheckBox boxVentas;
-    public javax.swing.JTextField buscadorCliente;
-    public javax.swing.JButton buscarCliente;
-    public javax.swing.JTextField cedulaCliente;
-    public javax.swing.JButton editarCliente;
-    public javax.swing.JButton eliminarCliente;
-    public javax.swing.JButton guardarCliente;
+    public javax.swing.JTextField buscadorClientetxt;
+    public javax.swing.JButton buscarUsuariobtn;
+    public javax.swing.JTextField contraseñaUsuariotxt;
+    public javax.swing.JButton editarUsuariobtn;
+    public javax.swing.JButton eliminarUsuariobtn;
     private javax.swing.JLabel jLabel3;
     public javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable jTable2;
-    public javax.swing.JTextField nombreCliente;
+    public javax.swing.JTextField nombreUsuariotxt;
     private javax.swing.JLabel title;
     private javax.swing.JLabel title1;
     private javax.swing.JLabel title2;

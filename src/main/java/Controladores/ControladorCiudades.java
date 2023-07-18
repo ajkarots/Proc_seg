@@ -7,7 +7,7 @@ package Controladores;
 import Clases.MySql;
 import Frames.FrameCiudades;
 import Modelo.modeloCiudad;
-import Modelo.modeloCiudades;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -15,6 +15,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.CANCEL_OPTION;
 import static javax.swing.JOptionPane.WARNING_MESSAGE;
@@ -38,6 +41,7 @@ public class ControladorCiudades implements ActionListener{
         this.fCiudad.EditarCiudad.addActionListener(this);
         this.fCiudad.Buscarciudad.addActionListener(this);
         this.fCiudad.Actualizarbtn.addActionListener(this);
+        this.cargarCiudades();
     }
 
     public modeloCiudad getmCiudad() {
@@ -59,24 +63,45 @@ public class ControladorCiudades implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==fCiudad.Actualizarbtn) {
-            
+            this.cargarCiudades();
+            try {
+                this.cargarCombobox();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorCiudades.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if (e.getSource()==fCiudad.AgregarCiudad) {
-            
+            try {
+                this.agregarCiudad();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorCiudades.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-        if (e.getSource()==fCiudad.BuscarCiudadtxt) {
-            
+        if (e.getSource()==fCiudad.Buscarciudad) {
+            try {
+                this.buscaCiudad();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorCiudades.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if (e.getSource()==fCiudad.EditarCiudad) {
-            
+            try {
+                this.modificarCiudad();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorCiudades.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if (e.getSource()==fCiudad.EliminarCiudad) {
-            
+            try {
+                this.eliminarCiudad();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorCiudades.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     
         public void buscaCiudad() throws SQLException {
-        String OrdenBuscarCiudad = ("select * from provincias where codigoProvincia =?;");
+        String OrdenBuscarCiudad = ("select * from ciudades where codigoCiudad =?;");
         conCiudad = msCiudades.iniciarConexion();
         DefaultTableModel model = (DefaultTableModel) fCiudad.tablaCiudades.getModel();
         PreparedStatement psCiudades = conCiudad.prepareStatement(OrdenBuscarCiudad);
@@ -100,7 +125,7 @@ public class ControladorCiudades implements ActionListener{
                 }
             }
 
-        } catch (Exception e) {
+        } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, e);
             System.out.println("Ingrese unicamente hasta 4 digitos entre numeros y letras" + e);
         }
@@ -109,7 +134,7 @@ public class ControladorCiudades implements ActionListener{
     }
 
     public void modificarCiudad() throws SQLException {
-        String OrdenModificarCiudad = ("update provincias set codigoProvincia =?, NombreProvincia=? where codigoProvincia=?;");
+        String OrdenModificarCiudad = ("update Ciudades set codigoCiudad =?, NombreCiudad=?, codigoProvincia=? where codigoCiudad=?;");
         conCiudad = msCiudades.iniciarConexion();
         DefaultTableModel model = (DefaultTableModel) fCiudad.tablaCiudades.getModel();
         PreparedStatement psCiudad = conCiudad.prepareStatement(OrdenModificarCiudad);
@@ -119,102 +144,127 @@ public class ControladorCiudades implements ActionListener{
             } else {
                 psCiudad.setString(1, this.fCiudad.CodigoCiudadtxt.getText());
                 psCiudad.setString(2, this.fCiudad.Nombreciudadtxt.getText());
-                psCiudad.setString(3, (String) this.fCiudad.tablaProvincias.getValueAt(this.fProvincia.tablaProvincias.getSelectedRow(), 0));
-                if (psProvincia.executeUpdate() > 0) {
+                psCiudad.setString(3, (String) this.fCiudad.CodigoProvinciaBox.getSelectedItem());
+                psCiudad.setString(4, this.fCiudad.tablaCiudades.getValueAt(this.fCiudad.tablaCiudades.getSelectedRow(), 0).toString());
+                if (psCiudad.executeUpdate() > 0) {
 
                 } else {
                     JOptionPane.showMessageDialog(null, "Error al modificar");
                 }
             }
 
-        } catch (Exception e) {
+        } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al modificar debe seleccionar un item para modificar");
             System.out.println("Error del servidor" + e);
         }
-        this.cargarProvincias();
+        this.cargarCiudades();
     }
 
-    public void eliminarProvincia() throws SQLException {
-        this.fProvincia.tablaProvincias.getSelectedRows();
-        String ordenEliminarProvincia = ("delete from provincias where codigoProvincia =?;");
-        conProvincias = msProvincias.iniciarConexion();
-        DefaultTableModel model = (DefaultTableModel) fProvincia.tablaProvincias.getModel();
+    public void eliminarCiudad() throws SQLException {
+        
+        String OrdenEliminarCiudad = ("delete from ciudades where codigoCiudad =?;");
+        conCiudad = msCiudades.iniciarConexion();
+        DefaultTableModel model = (DefaultTableModel) fCiudad.tablaCiudades.getModel();
 
-        PreparedStatement psProvincia = conProvincias.prepareStatement(ordenEliminarProvincia);
+        PreparedStatement psCiudades = conCiudad.prepareStatement(OrdenEliminarCiudad);
         try {
-            if (this.fProvincia.tablaProvincias.getSelectedRows().length == 0) {
-                JOptionPane.showMessageDialog(null, "Seleccione alemnos una provincia", "Error", WARNING_MESSAGE);
+            if (this.fCiudad.tablaCiudades.getSelectedRows().length == 0) {
+                JOptionPane.showMessageDialog(null, "Seleccione alemnos una ciudad", "Error", WARNING_MESSAGE);
             } else {
-                for (int i = 0; i < this.fProvincia.tablaProvincias.getSelectedRows().length; i++) {
-                    System.out.println(this.fProvincia.tablaProvincias.getValueAt(this.fProvincia.tablaProvincias.getSelectedRows()[i], 0));
-                    psProvincia.setString(1, (String) this.fProvincia.tablaProvincias.getValueAt(this.fProvincia.tablaProvincias.getSelectedRows()[i], 0));
-                    psProvincia.executeUpdate();
+                for (int i = 0; i < this.fCiudad.tablaCiudades.getSelectedRows().length; i++) {
+                    psCiudades.setString(1, (String) this.fCiudad.tablaCiudades.getValueAt(this.fCiudad.tablaCiudades.getSelectedRows()[i], 0));
+                    psCiudades.executeUpdate();
                 }
             }
 
-        } catch (Exception e) {
+        } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "No se pudo Eliminar", "Atencion", CANCEL_OPTION);
         }
-        psProvincia.close();
-        msProvincias.finalizarConexion(conProvincias);
-        this.cargarProvincias();
+        psCiudades.close();
+        msCiudades.finalizarConexion(conCiudad);
+        this.cargarCiudades();
     }
 
-    public void agregarProvincia() throws SQLException {
-        String OrdenAgregarProvincia = ("insert into provincias(codigoProvincia,NombreProvincia) values(?,?);");
-        conProvincias = msProvincias.iniciarConexion();
+    public void agregarCiudad() throws SQLException {
+        String OrdenAgregarCiudad = ("insert into ciudades(codigoCiudad,NombreCiudad,codigoProvincia) values(?,?,?);");
+        conCiudad = msCiudades.iniciarConexion();
 
         try {
-            PreparedStatement psProvincias = conProvincias.prepareStatement(OrdenAgregarProvincia);
-            psProvincias.setInt(1, Integer.parseInt(this.fProvincia.CodigoProvinciatxt.getText()));
-            psProvincias.setString(2, this.fProvincia.nombreProvinciatxt.getText());
-            if (this.fProvincia.CodigoProvinciatxt.getText().isEmpty() || this.fProvincia.nombreProvinciatxt.getText().isEmpty()) {
+            PreparedStatement psCiudad = conCiudad.prepareStatement(OrdenAgregarCiudad);
+            psCiudad.setString(1, this.fCiudad.CodigoCiudadtxt.getText());
+            psCiudad.setString(2, this.fCiudad.Nombreciudadtxt.getText());
+            psCiudad.setString(3, this.fCiudad.CodigoProvinciaBox.getSelectedItem().toString());
+            if (this.fCiudad.CodigoCiudadtxt.getText().isEmpty() || this.fCiudad.CodigoCiudadtxt.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "No puede dejar los campos en blanco", "Error", WARNING_MESSAGE);
             } else {
-                psProvincias.executeUpdate();
+                psCiudad.executeUpdate();
             }
-            msProvincias.finalizarConexion(conProvincias);
-            psProvincias.close();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se a podido agregar la provincia" + e);
+            msCiudades.finalizarConexion(conCiudad);
+            psCiudad.close();
+        } catch (HeadlessException | NumberFormatException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "No se a podido agregar la ciudad" + e);
         }
-        this.cargarProvincias();
+        this.cargarCiudades();
     }
 
-    public LinkedList<modeloCiudades> ListarProvincias() {
-        LinkedList<modeloCiudades> listaProvincias = new LinkedList<>();
+    public LinkedList<modeloCiudad> ListarCiudades() {
+        LinkedList<modeloCiudad> listaCiudad = new LinkedList<>();
         try {
-            conProvincias = msProvincias.iniciarConexion();
-            PreparedStatement psProvincias = conProvincias.prepareStatement("select * from provincias;");
-            ResultSet rsProvincias = psProvincias.executeQuery();
+            conCiudad = msCiudades.iniciarConexion();
+            PreparedStatement psCiudades = conCiudad.prepareStatement("select * from ciudades;");
+            ResultSet rsProvincias = psCiudades.executeQuery();
             while (rsProvincias.next()) {
 
-                modeloCiudades moProvincia = new modeloCiudades();
-                moProvincia.setCodigoProvincia(rsProvincias.getString("codigoProvincia"));
-                moProvincia.setNombreProvincia(rsProvincias.getString("NombreProvincia"));
-                listaProvincias.add(moProvincia);
+                modeloCiudad moCiudad = new modeloCiudad();
+                moCiudad.setCodigoCiudad(rsProvincias.getString("codigoCiudad"));
+                moCiudad.setNombreCiudad(rsProvincias.getString("NombreCiudad"));
+                moCiudad.setCodigoProvincia(rsProvincias.getString("codigoProvincia"));
+                listaCiudad.add(moCiudad);
             }
-            psProvincias.close();
+            psCiudades.close();
             rsProvincias.close();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "No se ha podido listar las provincias", "Error", WARNING_MESSAGE);
         }
-        msProvincias.finalizarConexion(conProvincias);
-        return listaProvincias;
+        msCiudades.finalizarConexion(conCiudad);
+        return listaCiudad;
     }
 
-    public void cargarProvincias() {
+    public void cargarCiudades() {
         try {
 
-            DefaultTableModel model = (DefaultTableModel) fProvincia.tablaProvincias.getModel();
+            DefaultTableModel model = (DefaultTableModel) fCiudad.tablaCiudades.getModel();
             model.getDataVector().removeAllElements();
-            fProvincia.tablaProvincias.updateUI();
-            ListarProvincias().forEach((lista) -> model.addRow(new Object[]{lista.getCodigoProvincia(), lista.getNombreProvincia()}));
+            fCiudad.tablaCiudades.updateUI();
+            ListarCiudades().forEach((lista) -> model.addRow(new Object[]{lista.getCodigoCiudad(), lista.getNombreCiudad(),lista.getCodigoProvincia()}));
         } catch (Exception e) {
-
+            JOptionPane.showMessageDialog(null,"Error al cargar las ciudad");
         }
     }
-
-}
     
+        public LinkedList<String> ListarProvincias() throws SQLException{
+    LinkedList<String> ListaCiudades = new LinkedList<>();
+    conCiudad = msCiudades.iniciarConexion();
+    PreparedStatement psCiudades = conCiudad.prepareStatement("select codigoProvincia from provincias;");
+        try {
+        ResultSet rsProveedores = psCiudades.executeQuery();
+            while (rsProveedores.next()) {
+              ListaCiudades.add(rsProveedores.getString("codigoProvincia"));
+              
+            }
+            rsProveedores.close();
+            msCiudades.finalizarConexion(conCiudad);
+        } catch (SQLException e) {
+            
+        }
+ 
+    return ListaCiudades;
+    }
+            public void cargarCombobox() throws SQLException{
+                DefaultComboBoxModel model = (DefaultComboBoxModel) fCiudad.CodigoProvinciaBox.getModel();
+                model.removeAllElements();
+                
+                ListarProvincias().forEach((lista)->model.addElement(lista));}
+  
+        
 }

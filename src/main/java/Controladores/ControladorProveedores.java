@@ -44,7 +44,7 @@ public class ControladorProveedores implements ActionListener {
         this.fProveedores.Actualizarbtn.addActionListener(this);
         this.fProveedores.AgregarProveedorbtn.addActionListener(this);
         this.cargarProveedores();
-        
+
     }
 
     public void setfProveedores(FrameProveedores fProveedores) {
@@ -85,7 +85,7 @@ public class ControladorProveedores implements ActionListener {
         }
         if (e.getSource() == fProveedores.AgregarProveedorbtn) {
             try {
-                System.out.println("Agregar");
+
                 this.agregarProveedor();
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorProveedores.class.getName()).log(Level.SEVERE, null, ex);
@@ -93,7 +93,7 @@ public class ControladorProveedores implements ActionListener {
         }
         if (e.getSource() == fProveedores.BuscarProveedorbtn) {
             try {
-                System.out.println("Buscar");
+
                 this.buscarProveedor();
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorProveedores.class.getName()).log(Level.SEVERE, null, ex);
@@ -114,10 +114,10 @@ public class ControladorProveedores implements ActionListener {
                 ResultSet rsProveedores = psProveedores.executeQuery();
                 if (rsProveedores.next()) {
                     modeloProveedor moProveedor = new modeloProveedor();
-                    moProveedor.setCodigoCiudad(rsProveedores.getString("codigoProveedor"));
-                    moProveedor.setRucProveedor(rsProveedores.getInt("rucProveedor"));
+                    moProveedor.setCodigoProveedor(rsProveedores.getString("codigoProveedor"));
+                    moProveedor.setRucProveedor(rsProveedores.getString("rucProveedor"));
                     moProveedor.setNombreProveedor(rsProveedores.getString("nombreProveedor"));
-                    moProveedor.setTelefonoProveedor(rsProveedores.getInt("telefonoProveedor"));
+                    moProveedor.setTelefonoProveedor(rsProveedores.getString("telefonoProveedor"));
                     moProveedor.setDireccionProveedor(rsProveedores.getString("direccionProveedor"));
                     moProveedor.setCodigoCiudad(rsProveedores.getString("codigoCiudad"));
                     moProveedor.setCodigoProvincia(rsProveedores.getString("codigoProvincia"));
@@ -181,7 +181,6 @@ public class ControladorProveedores implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Seleccione alemnos un proveedor", "Error", WARNING_MESSAGE);
             } else {
                 for (int i = 0; i < this.fProveedores.tablaProveedores.getSelectedRows().length; i++) {
-                    System.out.println(this.fProveedores.tablaProveedores.getValueAt(this.fProveedores.tablaProveedores.getSelectedRows()[i], 0));
                     psProvincia.setString(1, (String) this.fProveedores.tablaProveedores.getValueAt(this.fProveedores.tablaProveedores.getSelectedRows()[i], 0));
                     psProvincia.executeUpdate();
                 }
@@ -197,16 +196,15 @@ public class ControladorProveedores implements ActionListener {
 
     public void agregarProveedor() throws SQLException {
         String OrdenAgregarProveedor = ("insert into proveedores(codigoProveedor,rucProveedor,nombreProveedor,telefonoProveedor,direccionProveedor\n"
-                + ",codigoCiudad,cdoigoProvincia) values(?,?,?,?,?,?,?);");
-        
+                + ",codigoCiudad,codigoProvincia) values(?,?,?,?,?,?,?);");
 
         try {
             conProveedores = msProveedores.iniciarConexion();
             PreparedStatement psProveedores = conProveedores.prepareStatement(OrdenAgregarProveedor);
             psProveedores.setString(1, this.fProveedores.codigoProveedortxt.getText());
-            psProveedores.setInt(2, Integer.parseInt(this.fProveedores.rucproveedortxt.getText()));
+            psProveedores.setString(2, this.fProveedores.rucproveedortxt.getText());
             psProveedores.setString(3, this.fProveedores.nombreProveedor.getText());
-            psProveedores.setInt(4, Integer.parseInt(this.fProveedores.telefonoProveedor.getText()));
+            psProveedores.setString(4, this.fProveedores.telefonoProveedor.getText());
             psProveedores.setString(5, this.fProveedores.direccionProveedor.getText());
             psProveedores.setString(6, this.fProveedores.CiudadProveedortxt.getSelectedItem().toString());
             psProveedores.setString(7, this.fProveedores.ProvinciaProveedortxt.getSelectedItem().toString());
@@ -216,8 +214,9 @@ public class ControladorProveedores implements ActionListener {
                 JOptionPane.showMessageDialog(null, "No puede dejar los campos en blanco", "Error", WARNING_MESSAGE);
             } else {
                 if (psProveedores.executeUpdate() > 0) {
-                }else{
-                  JOptionPane.showMessageDialog(null,"No puede dejar los campos en blanco", "Error", WARNING_MESSAGE);  }
+                } else {
+                    JOptionPane.showMessageDialog(null, "No puede dejar los campos en blanco", "Error", WARNING_MESSAGE);
+                }
             }
             msProveedores.finalizarConexion(conProveedores);
             psProveedores.close();
@@ -237,10 +236,10 @@ public class ControladorProveedores implements ActionListener {
             while (rsProveedores.next()) {
 
                 modeloProveedor moProveedor = new modeloProveedor();
-                moProveedor.setCodigoCiudad(rsProveedores.getString("codigoProveedor"));
-                moProveedor.setRucProveedor(rsProveedores.getInt("rucProveedor"));
+                moProveedor.setCodigoProveedor(rsProveedores.getString("codigoProveedor"));
+                moProveedor.setRucProveedor(rsProveedores.getString("rucProveedor"));
                 moProveedor.setNombreProveedor(rsProveedores.getString("nombreProveedor"));
-                moProveedor.setTelefonoProveedor(rsProveedores.getInt("telefonoProveedor"));
+                moProveedor.setTelefonoProveedor(rsProveedores.getString("telefonoProveedor"));
                 moProveedor.setDireccionProveedor(rsProveedores.getString("direccionProveedor"));
                 moProveedor.setCodigoCiudad(rsProveedores.getString("codigoCiudad"));
                 moProveedor.setCodigoProvincia(rsProveedores.getString("codigoProvincia"));
@@ -261,40 +260,71 @@ public class ControladorProveedores implements ActionListener {
             DefaultTableModel model = (DefaultTableModel) fProveedores.tablaProveedores.getModel();
             model.getDataVector().removeAllElements();
             this.fProveedores.tablaProveedores.updateUI();
-            ListarProveedores().forEach((lista) -> model.addRow(new Object[]{lista.getCodigoProveedor(), lista.getRucProveedor(), lista.getNombreProveedor(), lista.getTelefonoProveedor(),
+            ListarProveedores().forEach((modeloProveedor lista) -> model.addRow(new Object[]{lista.getCodigoProveedor(), lista.getRucProveedor(), lista.getNombreProveedor(), lista.getTelefonoProveedor(),
                 lista.getDireccionProveedor(), lista.getCodigoCiudad(), lista.getCodigoProvincia()}));
         } catch (Exception e) {
 
         }
     }
-    public LinkedList<String> listarCiudad() throws SQLException{
-    LinkedList<String> ListaCiudades= new LinkedList<>();
-    conProveedores = msProveedores.iniciarConexion();
-    PreparedStatement psProveedores = conProveedores.prepareStatement("select codigoCiudad from ciudades;");
-    
+
+    public LinkedList<String> listarCiudad() throws SQLException {
+        LinkedList<String> ListaCiudades = new LinkedList<>();
+        conProveedores = msProveedores.iniciarConexion();
+        PreparedStatement psProveedores = conProveedores.prepareStatement("select codigoCiudad from ciudades;");
+
         try {
-        ResultSet rsProveedores = psProveedores.executeQuery();
+            ResultSet rsProveedores = psProveedores.executeQuery();
             while (rsProveedores.next()) {
-              ListaCiudades.add(rsProveedores.getString("codigoCiudad"));
-              
+                ListaCiudades.add(rsProveedores.getString("codigoCiudad"));
+
             }
             rsProveedores.close();
             msProveedores.finalizarConexion(conProveedores);
         } catch (SQLException e) {
-            
+
         }
- 
-    return ListaCiudades;
+
+        return ListaCiudades;
     }
-    
-    public void Combobox() throws SQLException{
+
+    public void CargarCiudadesCombobox() throws SQLException {
         try {
-              DefaultComboBoxModel model = (DefaultComboBoxModel) fProveedores.ProvinciaProveedortxt.getModel();
-    listarCiudad().forEach((lista)->model.addElement(lista));
+            DefaultComboBoxModel model = (DefaultComboBoxModel) fProveedores.CiudadProveedortxt.getModel();
+            model.removeAllElements();
+            listarCiudad().forEach((lista) -> model.addElement(lista));
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "No se ha podido listar las ciudades");
         }
-  
+
+    }
+
+    public LinkedList<String> ListarProvincias() throws SQLException {
+        LinkedList<String> ListaProvincias = new LinkedList<>();
+        conProveedores = msProveedores.iniciarConexion();
+        PreparedStatement psProveedores = conProveedores.prepareStatement("select codigoProvincia from Provincias;");
+        try {
+            ResultSet rsProveedores = psProveedores.executeQuery();
+            while (rsProveedores.next()) {
+                ListaProvincias.add(rsProveedores.getString("codigoProvincia"));
+            }
+            rsProveedores.close();
+            msProveedores.finalizarConexion(conProveedores);
+        } catch (SQLException e) {
+
+        }
+
+        return ListaProvincias;
+    }
+
+    public void CargarProvinciasCombobox() throws SQLException {
+        try {
+            DefaultComboBoxModel model = (DefaultComboBoxModel) fProveedores.ProvinciaProveedortxt.getModel();
+            model.removeAllElements();
+            ListarProvincias().forEach((lista) -> model.addElement(lista));
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "No se ha podido listar las provincias");
+        }
+
     }
 
 }

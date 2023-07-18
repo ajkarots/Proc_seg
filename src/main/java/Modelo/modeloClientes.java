@@ -9,12 +9,12 @@ package Modelo;
  * @author JONATHAN
  */
 public class modeloClientes {
-    private int cedula;
-    private String nombres,direccion,codigoProvincia,codigoCiudad;
+    
+    private String nombre,direccion,codigoProvincia,codigoCiudad,cedula;
 
-    public modeloClientes(int cedula, String nombres, String direccion, String codigoProvincia, String codigoCiudad) {
+    public modeloClientes(String cedula, String nombres, String direccion, String codigoProvincia, String codigoCiudad) {
         this.cedula = cedula;
-        this.nombres = nombres;
+        this.nombre = nombres;
         this.direccion = direccion;
         this.codigoProvincia = codigoProvincia;
         this.codigoCiudad = codigoCiudad;
@@ -23,12 +23,12 @@ public class modeloClientes {
     public modeloClientes() {
     }
 
-    public int getCedula() {
+    public String getCedula() {
         return this.cedula;
     }
 
-    public String getNombres() {
-        return this.nombres;
+    public String getNombre() {
+        return this.nombre;
     }
 
     public String getDireccion() {
@@ -43,12 +43,12 @@ public class modeloClientes {
         return this.codigoCiudad;
     }
 
-    public void setCedula(int cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public void setDireccion(String direccion) {

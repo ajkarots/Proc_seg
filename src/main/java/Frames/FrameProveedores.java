@@ -81,7 +81,7 @@ public class FrameProveedores extends javax.swing.JPanel {
 
             },
             new String [] {
-                "CODIGO PROVEEDOR", "RUC", "NOMBRE", "TELEFONO", "DIRECCION", "PROVINCIA", "CIUDAD"
+                "CODIGO", "RUC", "NOMBRE", "TELEFONO", "DIRECCION", "CODIGO CIUDAD", "CODIGO PROVINCIA"
             }
         ) {
             Class[] types = new Class [] {
@@ -288,17 +288,17 @@ public class FrameProveedores extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Actualizarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(26, 26, 26)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(editarProveedorbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(eliminiarProveedorbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(46, 46, 46))
+                            .addComponent(eliminiarProveedorbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addContainerGap())))
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel3)))
+                .addGap(26, 26, 26))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

@@ -31,6 +31,12 @@ public class ControladorPrincipal implements ActionListener,Metvis{
     private FrameProveedores fProveedores = new FrameProveedores();
     private modeloProveedor mProveedor= new modeloProveedor();
     private ControladorProveedores cProveedores = new ControladorProveedores(fProveedores, mProveedor);
+    private FrameCiudades fCiudades = new FrameCiudades();
+    private modeloCiudad mCiudad = new modeloCiudad();
+    private ControladorCiudades cCiudades = new ControladorCiudades(mCiudad, fCiudades);   
+    private FrameClientes fClientes = new FrameClientes();
+    private modeloClientes mClientes = new modeloClientes();
+    private ControladorClientes cClientes = new ControladorClientes(fClientes, mClientes);
 
     
 
@@ -58,14 +64,26 @@ public class ControladorPrincipal implements ActionListener,Metvis{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==frmpri.BotonProductos) {
+            try {
+                controladorProductos.CargarProveedoresCombobox();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
             mostrarJpanel(fProductos);
         }
         if (e.getSource()==frmpri.BotonClientes) {
-            mostrarJpanel(new FrameClientes());
+            try {
+                cClientes.CargarCiudadesCombobox();
+                cClientes.CargarProvinciasCombobox();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            mostrarJpanel(fClientes);
         }
         if (e.getSource()==frmpri.BotonProveedor) {
             try {
-                cProveedores.Combobox();
+                cProveedores.CargarCiudadesCombobox();
+                cProveedores.CargarProvinciasCombobox();
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -90,7 +108,12 @@ public class ControladorPrincipal implements ActionListener,Metvis{
         }
         
         if (e.getSource()==frmpri.BotonCiudad) {
-            mostrarJpanel(new FrameCiudades());
+            try {
+                cCiudades.cargarCombobox();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            mostrarJpanel(fCiudades);
         }
         if (e.getSource()==frmpri.BotonVentas) {
             mostrarJpanel(new FrameListaFacturas());

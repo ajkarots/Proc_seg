@@ -41,6 +41,8 @@ public class FrameCiudades extends javax.swing.JPanel {
         title11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Actualizarbtn = new javax.swing.JButton();
+        CodigoProvinciaBox = new javax.swing.JComboBox<>();
+        title12 = new javax.swing.JLabel();
 
         bg3.setBackground(new java.awt.Color(255, 255, 255));
         bg3.setMinimumSize(new java.awt.Dimension(809, 544));
@@ -67,17 +69,14 @@ public class FrameCiudades extends javax.swing.JPanel {
 
         tablaCiudades.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "CODIGO PROVINCIA", "CODIGO CIUDAD", "NOMBRE CIUDAD"
+                "CODIGO CIUDAD", "NOMBRE CIUDAD", "CODIGO PROVINCIA"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -141,6 +140,8 @@ public class FrameCiudades extends javax.swing.JPanel {
             }
         });
 
+        title12.setText("Codigo Provincia");
+
         javax.swing.GroupLayout bg3Layout = new javax.swing.GroupLayout(bg3);
         bg3.setLayout(bg3Layout);
         bg3Layout.setHorizontalGroup(
@@ -160,24 +161,28 @@ public class FrameCiudades extends javax.swing.JPanel {
                             .addGroup(bg3Layout.createSequentialGroup()
                                 .addComponent(BuscarCiudadtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Buscarciudad)))
+                                .addComponent(Buscarciudad))
+                            .addComponent(Actualizarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(CodigoCiudadtxt, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
                             .addComponent(title10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Nombreciudadtxt)
-                            .addComponent(title11, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(AgregarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2)))
+                        .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bg3Layout.createSequentialGroup()
+                                .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Nombreciudadtxt)
+                                    .addComponent(title11, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CodigoProvinciaBox, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(title12, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2))
+                            .addGroup(bg3Layout.createSequentialGroup()
+                                .addComponent(AgregarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(35, 35, 35))
-            .addGroup(bg3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Actualizarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         bg3Layout.setVerticalGroup(
             bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,15 +201,19 @@ public class FrameCiudades extends javax.swing.JPanel {
                             .addGap(6, 6, 6)
                             .addComponent(CodigoCiudadtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(bg3Layout.createSequentialGroup()
-                        .addComponent(title11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(4, 4, 4)
                         .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Nombreciudadtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AgregarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(title11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(title12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Nombreciudadtxt, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                            .addComponent(CodigoProvinciaBox)))
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Actualizarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Actualizarbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AgregarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
                 .addGap(9, 9, 9)
                 .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -258,6 +267,7 @@ public class FrameCiudades extends javax.swing.JPanel {
     public javax.swing.JTextField BuscarCiudadtxt;
     public javax.swing.JButton Buscarciudad;
     public javax.swing.JTextField CodigoCiudadtxt;
+    public javax.swing.JComboBox<String> CodigoProvinciaBox;
     public javax.swing.JButton EditarCiudad;
     public javax.swing.JButton EliminarCiudad;
     public javax.swing.JTextField Nombreciudadtxt;
@@ -267,6 +277,7 @@ public class FrameCiudades extends javax.swing.JPanel {
     public javax.swing.JTable tablaCiudades;
     private javax.swing.JLabel title10;
     private javax.swing.JLabel title11;
+    private javax.swing.JLabel title12;
     private javax.swing.JLabel title9;
     // End of variables declaration//GEN-END:variables
 }

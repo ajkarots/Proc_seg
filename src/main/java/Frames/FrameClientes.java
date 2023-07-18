@@ -27,55 +27,53 @@ public class FrameClientes extends javax.swing.JPanel {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        buscarCliente = new javax.swing.JButton();
+        buscarClientebtn = new javax.swing.JButton();
         title = new javax.swing.JLabel();
-        buscadorCliente = new javax.swing.JTextField();
+        buscadorClientetxt = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaClientes = new javax.swing.JTable();
-        editarCliente = new javax.swing.JButton();
-        eliminarCliente = new javax.swing.JButton();
-        guardarCliente = new javax.swing.JButton();
-        nombreCliente = new javax.swing.JTextField();
+        editarClientebtn = new javax.swing.JButton();
+        eliminarClientebtn = new javax.swing.JButton();
+        guardarClientebtn = new javax.swing.JButton();
+        nombreClientetxt = new javax.swing.JTextField();
         title1 = new javax.swing.JLabel();
-        cedulaCliente = new javax.swing.JTextField();
+        cedulaClientetxt = new javax.swing.JTextField();
         title2 = new javax.swing.JLabel();
-        direccionCliente = new javax.swing.JTextField();
+        direccionClientetxt = new javax.swing.JTextField();
         title3 = new javax.swing.JLabel();
-        direccionCliente1 = new javax.swing.JTextField();
         title4 = new javax.swing.JLabel();
-        direccionCliente2 = new javax.swing.JTextField();
         title5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        ProvinciaBox = new javax.swing.JComboBox<>();
+        CiudadBox = new javax.swing.JComboBox<>();
+        ActualizarClientebtn = new javax.swing.JButton();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setMinimumSize(new java.awt.Dimension(809, 544));
 
-        buscarCliente.setBackground(new java.awt.Color(153, 0, 0));
-        buscarCliente.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        buscarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        buscarCliente.setText("Buscar");
-        buscarCliente.setBorderPainted(false);
-        buscarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        buscarCliente.addActionListener(new java.awt.event.ActionListener() {
+        buscarClientebtn.setBackground(new java.awt.Color(153, 0, 0));
+        buscarClientebtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        buscarClientebtn.setForeground(new java.awt.Color(255, 255, 255));
+        buscarClientebtn.setText("Buscar");
+        buscarClientebtn.setBorderPainted(false);
+        buscarClientebtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        buscarClientebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarClienteActionPerformed(evt);
+                buscarClientebtnActionPerformed(evt);
             }
         });
 
         title.setText("NOMBRE CLIENTE");
 
-        buscadorCliente.addActionListener(new java.awt.event.ActionListener() {
+        buscadorClientetxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscadorClienteActionPerformed(evt);
+                buscadorClientetxtActionPerformed(evt);
             }
         });
 
         tablaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "CEDULA", "NOMBRE", "DIRECCION", "PROVINCIA", "CIUDAD"
@@ -92,71 +90,76 @@ public class FrameClientes extends javax.swing.JPanel {
         tablaClientes.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         jScrollPane1.setViewportView(tablaClientes);
 
-        editarCliente.setBackground(new java.awt.Color(153, 0, 0));
-        editarCliente.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        editarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        editarCliente.setText("Editar");
-        editarCliente.setBorderPainted(false);
-
-        eliminarCliente.setBackground(new java.awt.Color(153, 0, 0));
-        eliminarCliente.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        eliminarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        eliminarCliente.setText("Eliminar");
-        eliminarCliente.setBorderPainted(false);
-        eliminarCliente.addActionListener(new java.awt.event.ActionListener() {
+        editarClientebtn.setBackground(new java.awt.Color(153, 0, 0));
+        editarClientebtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        editarClientebtn.setForeground(new java.awt.Color(255, 255, 255));
+        editarClientebtn.setText("Editar");
+        editarClientebtn.setBorderPainted(false);
+        editarClientebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarClienteActionPerformed(evt);
+                editarClientebtnActionPerformed(evt);
             }
         });
 
-        guardarCliente.setBackground(new java.awt.Color(153, 0, 0));
-        guardarCliente.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        guardarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        guardarCliente.setText("Agregar");
-        guardarCliente.setBorderPainted(false);
-
-        nombreCliente.addActionListener(new java.awt.event.ActionListener() {
+        eliminarClientebtn.setBackground(new java.awt.Color(153, 0, 0));
+        eliminarClientebtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        eliminarClientebtn.setForeground(new java.awt.Color(255, 255, 255));
+        eliminarClientebtn.setText("Eliminar");
+        eliminarClientebtn.setBorderPainted(false);
+        eliminarClientebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreClienteActionPerformed(evt);
+                eliminarClientebtnActionPerformed(evt);
+            }
+        });
+
+        guardarClientebtn.setBackground(new java.awt.Color(153, 0, 0));
+        guardarClientebtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        guardarClientebtn.setForeground(new java.awt.Color(255, 255, 255));
+        guardarClientebtn.setText("Agregar");
+        guardarClientebtn.setBorderPainted(false);
+
+        nombreClientetxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nombreClientetxtActionPerformed(evt);
             }
         });
 
         title1.setText("NOMBRE");
 
-        cedulaCliente.addActionListener(new java.awt.event.ActionListener() {
+        cedulaClientetxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cedulaClienteActionPerformed(evt);
+                cedulaClientetxtActionPerformed(evt);
             }
         });
 
         title2.setText("CEDULA");
 
-        direccionCliente.addActionListener(new java.awt.event.ActionListener() {
+        direccionClientetxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                direccionClienteActionPerformed(evt);
+                direccionClientetxtActionPerformed(evt);
             }
         });
 
         title3.setText("DIRECCION");
 
-        direccionCliente1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                direccionCliente1ActionPerformed(evt);
-            }
-        });
-
         title4.setText("PROVINCIA");
-
-        direccionCliente2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                direccionCliente2ActionPerformed(evt);
-            }
-        });
 
         title5.setText("CIUDAD");
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
         jLabel2.setText("CLIENTES");
+
+        ActualizarClientebtn.setBackground(new java.awt.Color(153, 0, 0));
+        ActualizarClientebtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        ActualizarClientebtn.setForeground(new java.awt.Color(255, 255, 255));
+        ActualizarClientebtn.setText("Actualizar");
+        ActualizarClientebtn.setBorderPainted(false);
+        ActualizarClientebtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ActualizarClientebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ActualizarClientebtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -165,46 +168,48 @@ public class FrameClientes extends javax.swing.JPanel {
             .addGroup(bgLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(editarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(editarClientebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(eliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(eliminarClientebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(buscadorCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                                    .addComponent(buscadorClientetxt, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
                                     .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(buscarCliente))
-                            .addComponent(title1)
-                            .addComponent(nombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(buscarClientebtn))
+                            .addComponent(ActualizarClientebtn))
                         .addGap(18, 18, 18)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(title2)
-                                    .addComponent(cedulaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(nombreClientetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(title1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(title3)
-                                    .addComponent(direccionCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(bgLayout.createSequentialGroup()
+                                        .addComponent(title2)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(cedulaClientetxt, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE))
+                                .addGap(14, 14, 14)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(direccionClientetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(title3))
+                                .addGap(18, 18, 18)
+                                .addComponent(guardarClientebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(title4)
-                                    .addComponent(direccionCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(ProvinciaBox, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(27, 27, 27)
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(title5)
-                                    .addGroup(bgLayout.createSequentialGroup()
-                                        .addComponent(direccionCliente2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(guardarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                                    .addComponent(CiudadBox, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(title5))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel2)))))
                 .addContainerGap())
         );
@@ -212,46 +217,45 @@ public class FrameClientes extends javax.swing.JPanel {
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(bgLayout.createSequentialGroup()
-                            .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(6, 6, 6)
-                            .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(buscadorCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(buscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(bgLayout.createSequentialGroup()
-                            .addComponent(title4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(6, 6, 6)
-                            .addComponent(direccionCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(bgLayout.createSequentialGroup()
-                            .addComponent(title5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(2, 2, 2)
-                            .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(direccionCliente2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(guardarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(bgLayout.createSequentialGroup()
-                            .addComponent(title1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(6, 6, 6)
-                            .addComponent(nombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(bgLayout.createSequentialGroup()
-                            .addComponent(title2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(6, 6, 6)
-                            .addComponent(cedulaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(direccionClientetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(guardarClientebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cedulaClientetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nombreClientetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(title3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(direccionCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(36, 36, 36)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(bgLayout.createSequentialGroup()
+                                    .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(6, 6, 6)
+                                    .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(buscadorClientetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(buscarClientebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(bgLayout.createSequentialGroup()
+                                    .addComponent(title4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(ProvinciaBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(CiudadBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(bgLayout.createSequentialGroup()
+                                    .addComponent(title5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(44, 44, 44)))
+                            .addComponent(jLabel2))
+                        .addGap(18, 18, 18)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(title2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(title3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(title1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ActualizarClientebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)))
+                .addGap(25, 25, 25)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
                 .addGap(9, 9, 9)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(editarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(editarClientebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eliminarClientebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60))
         );
 
@@ -269,53 +273,54 @@ public class FrameClientes extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarClienteActionPerformed
+    private void buscarClientebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarClientebtnActionPerformed
 
-    }//GEN-LAST:event_buscarClienteActionPerformed
+    }//GEN-LAST:event_buscarClientebtnActionPerformed
 
-    private void buscadorClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorClienteActionPerformed
+    private void buscadorClientetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorClientetxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buscadorClienteActionPerformed
+    }//GEN-LAST:event_buscadorClientetxtActionPerformed
 
-    private void eliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarClienteActionPerformed
+    private void eliminarClientebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarClientebtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_eliminarClienteActionPerformed
+    }//GEN-LAST:event_eliminarClientebtnActionPerformed
 
-    private void nombreClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreClienteActionPerformed
+    private void nombreClientetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreClientetxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nombreClienteActionPerformed
+    }//GEN-LAST:event_nombreClientetxtActionPerformed
 
-    private void cedulaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaClienteActionPerformed
+    private void cedulaClientetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaClientetxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaClienteActionPerformed
+    }//GEN-LAST:event_cedulaClientetxtActionPerformed
 
-    private void direccionClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_direccionClienteActionPerformed
+    private void direccionClientetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_direccionClientetxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_direccionClienteActionPerformed
+    }//GEN-LAST:event_direccionClientetxtActionPerformed
 
-    private void direccionCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_direccionCliente1ActionPerformed
+    private void ActualizarClientebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarClientebtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_direccionCliente1ActionPerformed
+    }//GEN-LAST:event_ActualizarClientebtnActionPerformed
 
-    private void direccionCliente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_direccionCliente2ActionPerformed
+    private void editarClientebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarClientebtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_direccionCliente2ActionPerformed
+    }//GEN-LAST:event_editarClientebtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton ActualizarClientebtn;
+    public javax.swing.JComboBox<String> CiudadBox;
+    public javax.swing.JComboBox<String> ProvinciaBox;
     private javax.swing.JPanel bg;
-    public javax.swing.JTextField buscadorCliente;
-    public javax.swing.JButton buscarCliente;
-    public javax.swing.JTextField cedulaCliente;
-    public javax.swing.JTextField direccionCliente;
-    public javax.swing.JTextField direccionCliente1;
-    public javax.swing.JTextField direccionCliente2;
-    public javax.swing.JButton editarCliente;
-    public javax.swing.JButton eliminarCliente;
-    public javax.swing.JButton guardarCliente;
+    public javax.swing.JTextField buscadorClientetxt;
+    public javax.swing.JButton buscarClientebtn;
+    public javax.swing.JTextField cedulaClientetxt;
+    public javax.swing.JTextField direccionClientetxt;
+    public javax.swing.JButton editarClientebtn;
+    public javax.swing.JButton eliminarClientebtn;
+    public javax.swing.JButton guardarClientebtn;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTextField nombreCliente;
+    public javax.swing.JTextField nombreClientetxt;
     public javax.swing.JTable tablaClientes;
     private javax.swing.JLabel title;
     private javax.swing.JLabel title1;

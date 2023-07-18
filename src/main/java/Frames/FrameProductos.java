@@ -54,6 +54,7 @@ public class FrameProductos extends javax.swing.JPanel {
         title3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         codigoProveedortxt = new javax.swing.JComboBox<>();
+        ActualizarProductosbtn = new javax.swing.JButton();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setMinimumSize(new java.awt.Dimension(809, 490));
@@ -150,7 +151,17 @@ public class FrameProductos extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
         jLabel2.setText("PRODUCTOS");
 
-        codigoProveedortxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ActualizarProductosbtn.setBackground(new java.awt.Color(153, 0, 0));
+        ActualizarProductosbtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        ActualizarProductosbtn.setForeground(new java.awt.Color(255, 255, 255));
+        ActualizarProductosbtn.setText("Actualizar");
+        ActualizarProductosbtn.setBorderPainted(false);
+        ActualizarProductosbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ActualizarProductosbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ActualizarProductosbtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -192,7 +203,9 @@ public class FrameProductos extends javax.swing.JPanel {
                                 .addContainerGap()
                                 .addComponent(buscadorProductostxt, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(buscarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(buscarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ActualizarProductosbtn)))
                         .addGap(0, 34, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -206,7 +219,8 @@ public class FrameProductos extends javax.swing.JPanel {
                         .addGap(6, 6, 6)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(buscadorProductostxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buscarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(buscarProductobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ActualizarProductosbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel2)))
@@ -273,8 +287,13 @@ public class FrameProductos extends javax.swing.JPanel {
 
     }//GEN-LAST:event_agregarProductobtnMouseClicked
 
+    private void ActualizarProductosbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarProductosbtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ActualizarProductosbtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton ActualizarProductosbtn;
     public javax.swing.JButton agregarProductobtn;
     private javax.swing.JPanel bg;
     public javax.swing.JTextField buscadorProductostxt;
@@ -292,4 +311,8 @@ public class FrameProductos extends javax.swing.JPanel {
     private javax.swing.JLabel title2;
     private javax.swing.JLabel title3;
     // End of variables declaration//GEN-END:variables
+
+    public String getValueAt(int selectedRow, int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

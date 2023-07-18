@@ -51,18 +51,18 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="editarCliente" min="-2" pref="99" max="-2" attributes="0"/>
+                                  <Component id="editarUsuariobtn" min="-2" pref="99" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="eliminarCliente" min="-2" pref="99" max="-2" attributes="0"/>
+                                  <Component id="eliminarUsuariobtn" min="-2" pref="99" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane1" alignment="1" pref="768" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="title" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="buscadorCliente" min="-2" pref="108" max="-2" attributes="0"/>
+                                          <Component id="buscadorClientetxt" min="-2" pref="108" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="buscarCliente" min="-2" max="-2" attributes="0"/>
+                                          <Component id="buscarUsuariobtn" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -77,23 +77,12 @@
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="boxCompra" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="boxVentas" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="boxCompras" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="title1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="nombreCliente" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="title2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="cedulaCliente" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="boxKardex" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -108,9 +97,23 @@
                                               </Group>
                                               <Component id="boxProductos" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="guardarCliente" min="-2" pref="108" max="-2" attributes="0"/>
                                       </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="title1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="nombreUsuariotxt" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="title2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="contraseñaUsuariotxt" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="AgregarUsuariobtn" max="32767" attributes="0"/>
+                                      <Component id="Actualizarbtn" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -127,30 +130,38 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="title" min="-2" pref="30" max="-2" attributes="0"/>
-                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="buscadorCliente" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                                  <Component id="buscarCliente" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="title" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="buscadorClientetxt" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                                          <Component id="buscarUsuariobtn" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="title1" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                      <Component id="nombreUsuariotxt" min="-2" pref="40" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="title2" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Component id="contraseñaUsuariotxt" min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="title1" min="-2" pref="30" max="-2" attributes="0"/>
-                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Component id="nombreCliente" min="-2" pref="40" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="title2" min="-2" pref="30" max="-2" attributes="0"/>
-                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          <Component id="cedulaCliente" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="Actualizarbtn" min="-2" pref="49" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="title4" min="-2" pref="30" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -159,7 +170,7 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="boxCompra" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="boxVentas" min="-2" max="-2" attributes="0"/>
+                                  <Component id="boxCompras" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="boxCliente" min="-2" max="-2" attributes="0"/>
@@ -186,7 +197,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="boxProductos" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="guardarCliente" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="AgregarUsuariobtn" min="-2" pref="44" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" pref="247" max="32767" attributes="0"/>
@@ -194,8 +205,8 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="editarCliente" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                              <Component id="eliminarCliente" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="editarUsuariobtn" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="eliminarUsuariobtn" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -209,7 +220,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="buscarCliente">
+        <Component class="javax.swing.JButton" name="buscarUsuariobtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="99" type="rgb"/>
@@ -227,7 +238,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarUsuariobtnActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -238,9 +249,9 @@
             <Property name="text" type="java.lang.String" value="UserID"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="buscadorCliente">
+        <Component class="javax.swing.JTextField" name="buscadorClientetxt">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscadorClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscadorClientetxtActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -253,23 +264,23 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable2">
+            <Component class="javax.swing.JTable" name="TablaUsuarios">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="13" rowCount="0">
                     <Column editable="true" title="userID" type="java.lang.String"/>
                     <Column editable="true" title="contrase&#xf1;a" type="java.lang.String"/>
-                    <Column editable="true" title="permiso_producto" type="java.lang.String"/>
-                    <Column editable="true" title="permiso_cliente" type="java.lang.String"/>
-                    <Column editable="true" title="permiso_proveedor" type="java.lang.String"/>
-                    <Column editable="true" title="permiso_factura" type="java.lang.String"/>
-                    <Column editable="true" title="permiso_compra" type="java.lang.String"/>
-                    <Column editable="true" title="permiso_kardex" type="java.lang.String"/>
-                    <Column editable="true" title="permiso_provincias" type="java.lang.String"/>
-                    <Column editable="true" title="permiso_ciudades" type="java.lang.String"/>
-                    <Column editable="true" title="permiso_lista_venta" type="java.lang.String"/>
-                    <Column editable="true" title="permiso_lista_compra" type="java.lang.String"/>
-                    <Column editable="true" title="permiso_gestor_usuario" type="java.lang.String"/>
+                    <Column editable="true" title="producto" type="java.lang.String"/>
+                    <Column editable="true" title="cliente" type="java.lang.String"/>
+                    <Column editable="true" title="proveedor" type="java.lang.String"/>
+                    <Column editable="true" title="factura" type="java.lang.String"/>
+                    <Column editable="true" title="compra" type="java.lang.String"/>
+                    <Column editable="true" title="kardex" type="java.lang.String"/>
+                    <Column editable="true" title="provincias" type="java.lang.String"/>
+                    <Column editable="true" title="ciudades" type="java.lang.String"/>
+                    <Column editable="true" title="lista_venta" type="java.lang.String"/>
+                    <Column editable="true" title="lista_compra" type="java.lang.String"/>
+                    <Column editable="true" title="gestor_usuario" type="java.lang.String"/>
                   </Table>
                 </Property>
                 <Property name="autoResizeMode" type="int" value="4"/>
@@ -280,7 +291,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="editarCliente">
+        <Component class="javax.swing.JButton" name="editarUsuariobtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="99" type="rgb"/>
@@ -298,7 +309,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="eliminarCliente">
+        <Component class="javax.swing.JButton" name="eliminarUsuariobtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="99" type="rgb"/>
@@ -313,13 +324,13 @@
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eliminarClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eliminarUsuariobtnActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="guardarCliente">
+        <Component class="javax.swing.JButton" name="AgregarUsuariobtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="99" type="rgb"/>
@@ -337,9 +348,9 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="nombreCliente">
+        <Component class="javax.swing.JTextField" name="nombreUsuariotxt">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreUsuariotxtActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -350,9 +361,9 @@
             <Property name="text" type="java.lang.String" value="UserID"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="cedulaCliente">
+        <Component class="javax.swing.JTextField" name="contrase&#xf1;aUsuariotxt">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cedulaClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="contrase&#xf1;aUsuariotxtActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -400,9 +411,9 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="boxVentas">
+        <Component class="javax.swing.JCheckBox" name="boxCompras">
           <Properties>
-            <Property name="text" type="java.lang.String" value="VENTAS"/>
+            <Property name="text" type="java.lang.String" value="COMPRAS"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -463,6 +474,30 @@
             </Property>
             <Property name="text" type="java.lang.String" value="GESTION USUARIOS"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="Actualizarbtn">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="99" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Roboto" size="18" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Actualizar"/>
+            <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Default Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ActualizarbtnActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

@@ -9,7 +9,6 @@ Modelo\modeloCiudad.class
 Frames\FrameCompra.class
 Frames\FrameProveedores$11.class
 Frames\FrameUsuarios$2.class
-Controladores\ControladorPrincipal.class
 Frames\Principal$2.class
 Frames\FrameProveedores$7.class
 Controladores\ControladorProductos.class

@@ -12,27 +12,27 @@ import javax.swing.DefaultComboBoxModel;
  */
 public class modeloProveedor {
 
-    private int rucProveedor, telefonoProveedor;
-    private String nombreProveedor, codigoProvincia, direccionProveedor, codigoCiudad, codigoProveedor;
+    
+    private String nombreProveedor, codigoProvincia, direccionProveedor, codigoCiudad, codigoProveedor,rucProveedor, telefonoProveedor;
 
-    public modeloProveedor(int rucProveedor, int telefonoProveedor, String nombreProveedor, String codigoProvincia, String direccionProveedor, String codigoCiudad, String codigoProveedor) {
+    public modeloProveedor(String rucProveedor, String telefonoProveedor, String nombreProveedor, String codigoProvincia, String direccionProveedor, String codigoCiudad, String codigoProveedor) {
+        this.codigoProveedor = codigoProveedor;
         this.rucProveedor = rucProveedor;
         this.telefonoProveedor = telefonoProveedor;
         this.nombreProveedor = nombreProveedor;
         this.codigoProvincia = codigoProvincia;
         this.direccionProveedor = direccionProveedor;
         this.codigoCiudad = codigoCiudad;
-        this.codigoProveedor = codigoProveedor;
     }
 
     public modeloProveedor() {
+        this.codigoProveedor = codigoProveedor;
         this.rucProveedor = rucProveedor;
         this.telefonoProveedor = telefonoProveedor;
         this.nombreProveedor = nombreProveedor;
         this.codigoProvincia = codigoProvincia;
         this.direccionProveedor = direccionProveedor;
         this.codigoCiudad = codigoCiudad;
-        this.codigoProveedor = codigoProveedor;
     }
 
     public void setCodigoProveedor(String codigoProveedor) {
@@ -43,11 +43,11 @@ public class modeloProveedor {
         return this.codigoProveedor;
     }
 
-    public void setRucProveedor(int rucProveedor) {
+    public void setRucProveedor(String rucProveedor) {
         this.rucProveedor = rucProveedor;
     }
 
-    public void setTelefonoProveedor(int telefonoProveedor) {
+    public void setTelefonoProveedor(String telefonoProveedor) {
         this.telefonoProveedor = telefonoProveedor;
     }
 
@@ -67,11 +67,11 @@ public class modeloProveedor {
         this.codigoCiudad = codigoCiudad;
     }
 
-    public int getRucProveedor() {
+    public String getRucProveedor() {
         return this.rucProveedor;
     }
 
-    public int getTelefonoProveedor() {
+    public String getTelefonoProveedor() {
         return this.telefonoProveedor;
     }
 
