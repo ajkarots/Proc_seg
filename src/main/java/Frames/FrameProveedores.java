@@ -165,9 +165,11 @@ public class FrameProveedores extends javax.swing.JPanel {
 
         title7.setText("CODIGO PROVEEDOR");
 
-        ProvinciaProveedortxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        CiudadProveedortxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ProvinciaProveedortxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProvinciaProveedortxtActionPerformed(evt);
+            }
+        });
 
         Actualizarbtn.setBackground(new java.awt.Color(153, 0, 0));
         Actualizarbtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -346,6 +348,10 @@ public class FrameProveedores extends javax.swing.JPanel {
     private void ActualizarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarbtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ActualizarbtnActionPerformed
+
+    private void ProvinciaProveedortxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProvinciaProveedortxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ProvinciaProveedortxtActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

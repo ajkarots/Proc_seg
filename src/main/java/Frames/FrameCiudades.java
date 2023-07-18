@@ -40,6 +40,7 @@ public class FrameCiudades extends javax.swing.JPanel {
         Nombreciudadtxt = new javax.swing.JTextField();
         title11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        Actualizarbtn = new javax.swing.JButton();
 
         bg3.setBackground(new java.awt.Color(255, 255, 255));
         bg3.setMinimumSize(new java.awt.Dimension(809, 544));
@@ -128,6 +129,18 @@ public class FrameCiudades extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
         jLabel2.setText("CIUDADES");
 
+        Actualizarbtn.setBackground(new java.awt.Color(153, 0, 0));
+        Actualizarbtn.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        Actualizarbtn.setForeground(new java.awt.Color(255, 255, 255));
+        Actualizarbtn.setText("Actualizar");
+        Actualizarbtn.setBorderPainted(false);
+        Actualizarbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Actualizarbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ActualizarbtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout bg3Layout = new javax.swing.GroupLayout(bg3);
         bg3.setLayout(bg3Layout);
         bg3Layout.setHorizontalGroup(
@@ -161,6 +174,10 @@ public class FrameCiudades extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2)))
                 .addGap(35, 35, 35))
+            .addGroup(bg3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Actualizarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         bg3Layout.setVerticalGroup(
             bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,8 +202,10 @@ public class FrameCiudades extends javax.swing.JPanel {
                             .addComponent(Nombreciudadtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AgregarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel2))
-                .addGap(70, 70, 70)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Actualizarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
                 .addGap(9, 9, 9)
                 .addGroup(bg3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EditarCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -228,8 +247,13 @@ public class FrameCiudades extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_NombreciudadtxtActionPerformed
 
+    private void ActualizarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarbtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ActualizarbtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton Actualizarbtn;
     public javax.swing.JButton AgregarCiudad;
     public javax.swing.JTextField BuscarCiudadtxt;
     public javax.swing.JButton Buscarciudad;

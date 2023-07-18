@@ -4,6 +4,8 @@
  */
 package Modelo;
 
+import javax.swing.DefaultComboBoxModel;
+
 /**
  *
  * @author JONATHAN
@@ -88,5 +90,6 @@ public class modeloProveedor {
     public String getCodigoCiudad() {
         return this.codigoCiudad;
     }
-
+    
+   
 }

@@ -64,6 +64,11 @@ public class ControladorPrincipal implements ActionListener,Metvis{
             mostrarJpanel(new FrameClientes());
         }
         if (e.getSource()==frmpri.BotonProveedor) {
+            try {
+                cProveedores.Combobox();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
             mostrarJpanel(fProveedores);
         }
         if (e.getSource()==frmpri.BotonFactura) {

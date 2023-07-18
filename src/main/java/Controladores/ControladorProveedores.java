@@ -17,6 +17,7 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.CANCEL_OPTION;
 import static javax.swing.JOptionPane.WARNING_MESSAGE;
@@ -43,6 +44,7 @@ public class ControladorProveedores implements ActionListener {
         this.fProveedores.Actualizarbtn.addActionListener(this);
         this.fProveedores.AgregarProveedorbtn.addActionListener(this);
         this.cargarProveedores();
+        
     }
 
     public void setfProveedores(FrameProveedores fProveedores) {
@@ -264,6 +266,35 @@ public class ControladorProveedores implements ActionListener {
         } catch (Exception e) {
 
         }
+    }
+    public LinkedList<String> listarCiudad() throws SQLException{
+    LinkedList<String> ListaCiudades= new LinkedList<>();
+    conProveedores = msProveedores.iniciarConexion();
+    PreparedStatement psProveedores = conProveedores.prepareStatement("select codigoCiudad from ciudades;");
+    
+        try {
+        ResultSet rsProveedores = psProveedores.executeQuery();
+            while (rsProveedores.next()) {
+              ListaCiudades.add(rsProveedores.getString("codigoCiudad"));
+              
+            }
+            rsProveedores.close();
+            msProveedores.finalizarConexion(conProveedores);
+        } catch (SQLException e) {
+            
+        }
+ 
+    return ListaCiudades;
+    }
+    
+    public void Combobox() throws SQLException{
+        try {
+              DefaultComboBoxModel model = (DefaultComboBoxModel) fProveedores.ProvinciaProveedortxt.getModel();
+    listarCiudad().forEach((lista)->model.addElement(lista));
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "No se ha podido listar las ciudades");
+        }
+  
     }
 
 }
