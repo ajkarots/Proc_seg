@@ -40,8 +40,13 @@ public class ControladorPrincipal implements ActionListener,Metvis{
     private FrameUsuarios fUsuario = new FrameUsuarios();
     private modeloUsuario mUsuario = new modeloUsuario();
     private ControladorPermisosUsusario cPermisosUsuario = new ControladorPermisosUsusario(mUsuario, fUsuario);
+    private FrameFacturas fFacturas = new FrameFacturas();
+    private modeloFactura mFactura = new modeloFactura();
+    private ControladorFactura cFactura = new ControladorFactura(mFactura, fFacturas);
+    private FrameCompra fCompra = new FrameCompra();
+    private modeloCompra mCompra = new modeloCompra();
+    private ControladorCompra cCompra = new ControladorCompra(fCompra, mCompra);
 
-    
 
     public ControladorPrincipal(Principal frmpri) {
         this.frmpri = frmpri;        
@@ -57,6 +62,9 @@ public class ControladorPrincipal implements ActionListener,Metvis{
         this.frmpri.BotonProvincia.addActionListener(this);
         this.frmpri.BotonUsuarios.addActionListener(this);
         this.frmpri.BotonVentas.addActionListener(this);
+        this.frmpri.BotonSalir.addActionListener(this);
+        
+        
         
     }
     
@@ -68,6 +76,7 @@ public class ControladorPrincipal implements ActionListener,Metvis{
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==frmpri.BotonProductos) {
             try {
+               
                 controladorProductos.CargarProveedoresCombobox();
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
@@ -76,8 +85,9 @@ public class ControladorPrincipal implements ActionListener,Metvis{
         }
         if (e.getSource()==frmpri.BotonClientes) {
             try {
-                cClientes.CargarCiudadesCombobox();
+                
                 cClientes.CargarProvinciasCombobox();
+                
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -93,15 +103,20 @@ public class ControladorPrincipal implements ActionListener,Metvis{
             mostrarJpanel(fProveedores);
         }
         if (e.getSource()==frmpri.BotonFactura) {
-            String CodigoDeCliente;
-            CodigoDeCliente = JOptionPane.showInputDialog(null,"Ingrese su codigo de cliente");
-            if (true) {
-               mostrarJpanel(new FrameFacturas()); 
-            }
+
+               mostrarJpanel(fFacturas); 
+            
             
         }
         if (e.getSource()==frmpri.BotonCompra) {
-            mostrarJpanel(new FrameCompra());
+            try {
+                cCompra.cargarBoxProductos();
+            cCompra.CargarProveedoresCombobox();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            mostrarJpanel(fCompra);
         }
         if (e.getSource()==frmpri.BotonKardex) {
             mostrarJpanel(new FrameCompra());
@@ -127,9 +142,17 @@ public class ControladorPrincipal implements ActionListener,Metvis{
         if (e.getSource()==frmpri.BotonUsuarios) {
             mostrarJpanel(fUsuario);
         }
-        
-        
-        
+        if (e.getSource()==frmpri.BotonSalir) {
+            this.frmpri.dispose();   
+        }
+    }
+
+    public void setmUsuario(modeloUsuario mUsuario) {
+        this.mUsuario = mUsuario;
+    }
+
+    public modeloUsuario getmUsuario() {
+        return mUsuario;
     }
 
     @Override
@@ -147,8 +170,8 @@ public class ControladorPrincipal implements ActionListener,Metvis{
         this.frmpri.Contenido.repaint();
     }
     public void visibleframe(){
-    this.frmpri.setVisible(true);
+           this.frmpri.setVisible(true); 
+        }
+        
+    
     }
-    
-    
-}

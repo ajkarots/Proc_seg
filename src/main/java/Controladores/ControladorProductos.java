@@ -79,18 +79,18 @@ public class ControladorProductos implements ActionListener {
                 Logger.getLogger(ControladorProductos.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        if (e.getSource()==this.fProductos.ActualizarProductosbtn) {
+        if (e.getSource() == this.fProductos.ActualizarProductosbtn) {
             this.cargarProductos();
             try {
                 this.CargarProveedoresCombobox();
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorProductos.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+
         }
     }
-    
-        public void agregarProductos() throws SQLException {
+
+    public void agregarProductos() throws SQLException {
         String ordenAgregarProductos = ("insert into productos(codigoProducto,nombreProducto,codigoProveedor) values(?,?,?);");
         Connection conProductos = msProductos.iniciarConexion();
         try {
@@ -174,7 +174,7 @@ public class ControladorProductos implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Seleccione alemnos una ciudad", "Error", WARNING_MESSAGE);
             } else {
                 for (int i = 0; i < this.fProductos.tablaProductos.getSelectedRows().length; i++) {
-                    psProductos.setString(1,this.fProductos.tablaProductos.getValueAt(this.fProductos.tablaProductos.getSelectedRows()[i], 0).toString());
+                    psProductos.setString(1, this.fProductos.tablaProductos.getValueAt(this.fProductos.tablaProductos.getSelectedRows()[i], 0).toString());
                     psProductos.executeUpdate();
                 }
             }
@@ -186,8 +186,8 @@ public class ControladorProductos implements ActionListener {
         msProductos.finalizarConexion(conProductos);
         this.cargarProductos();
     }
-    
-        public LinkedList<modeloProductos> ListarProductos() {
+
+    public LinkedList<modeloProductos> ListarProductos() {
         LinkedList<modeloProductos> listaProductos = new LinkedList<>();
         try {
             conProductos = msProductos.iniciarConexion();
@@ -215,13 +215,13 @@ public class ControladorProductos implements ActionListener {
             DefaultTableModel model = (DefaultTableModel) fProductos.tablaProductos.getModel();
             model.getDataVector().removeAllElements();
             this.fProductos.tablaProductos.updateUI();
-            ListarProductos().forEach((lista) -> model.addRow(new Object[]{lista.getCodigoProducto(), lista.getNombreProducto(),lista.getCodigoProveedor()}));
+            ListarProductos().forEach((lista) -> model.addRow(new Object[]{lista.getCodigoProducto(), lista.getNombreProducto(), lista.getCodigoProveedor()}));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al cargar los Productos");
         }
     }
-    
-        public LinkedList<String> ListarProveedores() throws SQLException {
+
+    public LinkedList<String> ListarProveedores() throws SQLException {
         LinkedList<String> ListaProveedores = new LinkedList<>();
         conProductos = msProductos.iniciarConexion();
         PreparedStatement psProductos = conProductos.prepareStatement("select codigoProveedor from proveedores;");

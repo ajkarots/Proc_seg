@@ -304,4 +304,5 @@ public class ControladorPermisosUsusario implements ActionListener {
         this.fUsuarios.boxProvincia.setSelected(false);
         this.fUsuarios.boxUsuarios.setSelected(false);
     }
+    
 }

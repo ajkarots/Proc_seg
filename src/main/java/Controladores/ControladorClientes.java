@@ -40,6 +40,7 @@ public class ControladorClientes implements ActionListener {
         this.fClientes.editarClientebtn.addActionListener(this);
         this.fClientes.eliminarClientebtn.addActionListener(this);
         this.fClientes.guardarClientebtn.addActionListener(this);
+        this.fClientes.ProvinciaBox.addActionListener(this);
         this.cargarClientes();
     }
 
@@ -61,11 +62,19 @@ public class ControladorClientes implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==this.fClientes.ProvinciaBox) {
+            try {
+                this.CargarCiudadesCombobox2();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorClientes.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         if (e.getSource() == this.fClientes.ActualizarClientebtn) {
             this.cargarClientes();
             try {
-                this.CargarCiudadesCombobox();
                 this.CargarProvinciasCombobox();
+                
+                
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorClientes.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -105,21 +114,23 @@ public class ControladorClientes implements ActionListener {
         String OrdenAgregarClientes = ("insert into clientes(cedulaCliente,nombreCliente,direccionCliente,codigoCiudad,codigoProvincia) values(?,?,?,?,?);");
         conClientes = msClientes.iniciarConexion();
         try {
-            PreparedStatement psClientes = conClientes.prepareStatement(OrdenAgregarClientes);
+           
+            if (this.fClientes.cedulaClientetxt.getText().isEmpty() || this.fClientes.direccionClientetxt.getText().isEmpty()
+                    || this.fClientes.nombreClientetxt.getText().isEmpty()||this.fClientes.CiudadBox.getSelectedItem().toString().isEmpty()||
+                    this.fClientes.ProvinciaBox.getSelectedItem().toString().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "No Puede dejar campos en blanco");
+            } else {
+                 PreparedStatement psClientes = conClientes.prepareStatement(OrdenAgregarClientes);
             psClientes.setString(1, fClientes.cedulaClientetxt.getText());
             psClientes.setString(2, fClientes.nombreClientetxt.getText());
             psClientes.setString(3, fClientes.direccionClientetxt.getText());
             psClientes.setString(4, fClientes.CiudadBox.getSelectedItem().toString());
             psClientes.setString(5, fClientes.ProvinciaBox.getSelectedItem().toString());
-            if (this.fClientes.cedulaClientetxt.getText().isEmpty() || this.fClientes.direccionClientetxt.getText().isEmpty()
-                    || this.fClientes.nombreClientetxt.getText().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "No Puede dejar campos en blanco");
-            } else {
                 psClientes.executeUpdate();
                 psClientes.close();
             }
         } catch (HeadlessException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al agregar al cliente" + e);
+            JOptionPane.showMessageDialog(null, "Error al agregar al cliente ya esta registrado" );
         }
         this.cargarClientes();
 
@@ -239,6 +250,8 @@ public class ControladorClientes implements ActionListener {
     public void cargarClientes() {
         try {
             DefaultTableModel model = (DefaultTableModel) this.fClientes.tablaClientes.getModel();
+            model.getDataVector().removeAllElements();
+            this.fClientes.tablaClientes.updateUI();
             this.ListarClientes().forEach((lista) -> model.addRow(new Object[]{lista.getCedula(), lista.getNombre(), lista.getDireccion(), lista.getCodigoCiudad(), lista.getCodigoProvincia()}));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al cargar los clientes" + e);
@@ -270,6 +283,7 @@ public class ControladorClientes implements ActionListener {
         try {
             DefaultComboBoxModel model = (DefaultComboBoxModel) fClientes.CiudadBox.getModel();
             model.removeAllElements();
+            this.fClientes.CiudadBox.updateUI();
             listarCiudad().forEach((lista) -> model.addElement(lista));
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "No se ha podido listar las ciudades");
@@ -299,11 +313,45 @@ public class ControladorClientes implements ActionListener {
         try {
             DefaultComboBoxModel model = (DefaultComboBoxModel) fClientes.ProvinciaBox.getModel();
             model.removeAllElements();
+            this.fClientes.ProvinciaBox.updateUI();
             ListarProvincias().forEach((lista) -> model.addElement(lista));
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "No se ha podido listar las provincias");
         }
 
     }
+        public void CargarCiudadesCombobox2() throws SQLException {
+        try {
+            DefaultComboBoxModel model = (DefaultComboBoxModel) fClientes.CiudadBox.getModel();
+            //model.removeAllElements();
+            this.fClientes.CiudadBox.removeAllItems();
+            this.fClientes.CiudadBox.updateUI();
+            listarCiudad2().forEach((lista) -> model.addElement(lista));
+            this.fClientes.CiudadBox.revalidate();
+                    this.fClientes.CiudadBox.repaint();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "No se ha podido listar las ciudades");
+        }}
+        
+        
+        public LinkedList<String> listarCiudad2() throws SQLException {
+        LinkedList<String> ListaCiudades = new LinkedList<>();
+        conClientes = msClientes.iniciarConexion();
+        PreparedStatement psProveedores = conClientes.prepareStatement("select * from ciudades where codigoProvincia = (select codigoProvincia from provincias where codigoProvincia =?);");
+        psProveedores.setString(1, fClientes.ProvinciaBox.getSelectedItem().toString());
+        try {
+            ResultSet rsClientes = psProveedores.executeQuery();
+            while (rsClientes.next()) {
+                ListaCiudades.add(rsClientes.getString("codigoCiudad"));
 
+            }
+            rsClientes.close();
+            msClientes.finalizarConexion(conClientes);
+        } catch (SQLException e) {
+
+        }
+
+        return ListaCiudades;
+    }
+    
 }

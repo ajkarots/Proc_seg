@@ -112,6 +112,11 @@ public class FrameProvincias extends javax.swing.JPanel {
                 CodigoProvinciatxtActionPerformed(evt);
             }
         });
+        CodigoProvinciatxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CodigoProvinciatxtKeyTyped(evt);
+            }
+        });
 
         title1.setText("Codigo provincia");
 
@@ -251,6 +256,12 @@ public class FrameProvincias extends javax.swing.JPanel {
     private void actualizarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarbtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_actualizarbtnActionPerformed
+
+    private void CodigoProvinciatxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CodigoProvinciatxtKeyTyped
+        if (this.CodigoProvinciatxt.getText().length()>=4) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_CodigoProvinciatxtKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

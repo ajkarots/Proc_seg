@@ -123,6 +123,11 @@ public class FrameProveedores extends javax.swing.JPanel {
                 rucproveedortxtActionPerformed(evt);
             }
         });
+        rucproveedortxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                rucproveedortxtKeyTyped(evt);
+            }
+        });
 
         title1.setText("RUC");
 
@@ -137,6 +142,11 @@ public class FrameProveedores extends javax.swing.JPanel {
         telefonoProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 telefonoProveedorActionPerformed(evt);
+            }
+        });
+        telefonoProveedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                telefonoProveedorKeyTyped(evt);
             }
         });
 
@@ -160,6 +170,11 @@ public class FrameProveedores extends javax.swing.JPanel {
         codigoProveedortxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 codigoProveedortxtActionPerformed(evt);
+            }
+        });
+        codigoProveedortxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                codigoProveedortxtKeyTyped(evt);
             }
         });
 
@@ -352,6 +367,24 @@ public class FrameProveedores extends javax.swing.JPanel {
     private void ProvinciaProveedortxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProvinciaProveedortxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ProvinciaProveedortxtActionPerformed
+
+    private void codigoProveedortxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_codigoProveedortxtKeyTyped
+        if (this.codigoProveedortxt.getText().length()>=4) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_codigoProveedortxtKeyTyped
+
+    private void rucproveedortxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rucproveedortxtKeyTyped
+        if (this.rucproveedortxt.getText().length()>=13) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_rucproveedortxtKeyTyped
+
+    private void telefonoProveedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telefonoProveedorKeyTyped
+        if (this.telefonoProveedor.getText().length()>=10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_telefonoProveedorKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

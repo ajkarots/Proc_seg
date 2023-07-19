@@ -131,6 +131,11 @@ public class FrameClientes extends javax.swing.JPanel {
                 cedulaClientetxtActionPerformed(evt);
             }
         });
+        cedulaClientetxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cedulaClientetxtKeyTyped(evt);
+            }
+        });
 
         title2.setText("CEDULA");
 
@@ -304,6 +309,12 @@ public class FrameClientes extends javax.swing.JPanel {
     private void editarClientebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarClientebtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_editarClientebtnActionPerformed
+
+    private void cedulaClientetxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cedulaClientetxtKeyTyped
+        if (this.cedulaClientetxt.getText().length()>=10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_cedulaClientetxtKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -55,6 +55,7 @@ public class Principal extends javax.swing.JFrame implements Fechas {
         BotonComprasGeneradas = new javax.swing.JButton();
         BotonCiudad = new javax.swing.JButton();
         BotonUsuarios = new javax.swing.JButton();
+        BotonSalir = new javax.swing.JButton();
         CABECERA = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         Fecha = new javax.swing.JLabel();
@@ -202,6 +203,20 @@ public class Principal extends javax.swing.JFrame implements Fechas {
             }
         });
 
+        BotonSalir.setBackground(new java.awt.Color(153, 0, 0));
+        BotonSalir.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        BotonSalir.setForeground(new java.awt.Color(255, 255, 255));
+        BotonSalir.setText("SALIR");
+        BotonSalir.setBorder(null);
+        BotonSalir.setBorderPainted(false);
+        BotonSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonSalir.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BotonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonSalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -217,6 +232,7 @@ public class Principal extends javax.swing.JFrame implements Fechas {
             .addComponent(BotonVentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(BotonCiudad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(BotonUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BotonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,7 +259,9 @@ public class Principal extends javax.swing.JFrame implements Fechas {
                 .addComponent(BotonComprasGeneradas, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BotonUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62))
         );
 
         CABECERA.setBackground(new java.awt.Color(204, 0, 51));
@@ -385,6 +403,10 @@ public class Principal extends javax.swing.JFrame implements Fechas {
         mousey = evt.getY();
     }//GEN-LAST:event_CABECERAMousePressed
 
+    private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonSalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -412,6 +434,7 @@ public class Principal extends javax.swing.JFrame implements Fechas {
     public javax.swing.JButton BotonProductos;
     public javax.swing.JButton BotonProveedor;
     public javax.swing.JButton BotonProvincia;
+    public javax.swing.JButton BotonSalir;
     public javax.swing.JButton BotonUsuarios;
     public javax.swing.JButton BotonVentas;
     private javax.swing.JPanel CABECERA;

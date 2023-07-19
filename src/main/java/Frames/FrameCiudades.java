@@ -114,6 +114,11 @@ public class FrameCiudades extends javax.swing.JPanel {
                 CodigoCiudadtxtActionPerformed(evt);
             }
         });
+        CodigoCiudadtxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CodigoCiudadtxtKeyTyped(evt);
+            }
+        });
 
         title10.setText("Codigo ciudad");
 
@@ -259,6 +264,13 @@ public class FrameCiudades extends javax.swing.JPanel {
     private void ActualizarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarbtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ActualizarbtnActionPerformed
+
+    private void CodigoCiudadtxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CodigoCiudadtxtKeyTyped
+        if (this.CodigoCiudadtxt.getText().length()>=4) {
+            evt.consume();
+        }
+// TODO add your handling code here:
+    }//GEN-LAST:event_CodigoCiudadtxtKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
